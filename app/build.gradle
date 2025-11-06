@@ -13,6 +13,9 @@ android {
         testApplicationId "net.sourceforge.opencamera.test"
         //testInstrumentationRunner "android.test.InstrumentationTestRunner"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
     }
 
     buildTypes {
@@ -33,6 +36,16 @@ android {
     }
     namespace 'net.sourceforge.opencamera'
     buildFeatures {
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
     }
     //useLibrary 'android.test.mock'
 }

@@ -1,0 +1,1 @@
+ninja: error: '/home/meijr/Documents/GitHub/opencamera/app/src/main/jniLibs/arm64-v8a/libheif.so', needed by '/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/arm64-v8a/libheif_writer.so', missing and no known rule to make it

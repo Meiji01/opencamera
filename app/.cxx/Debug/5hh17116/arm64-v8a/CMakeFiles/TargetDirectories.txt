@@ -1,0 +1,3 @@
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/arm64-v8a/CMakeFiles/heif_writer.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/arm64-v8a/CMakeFiles/rebuild_cache.dir

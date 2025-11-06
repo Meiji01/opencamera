@@ -1963,6 +1963,8 @@ public class MyApplicationInterface extends BasicApplicationInterface {
         drawPreview.updateSettings();
     }
 
+
+
     @Override
     public void onContinuousFocusMove(boolean start) {
         if( MyDebug.LOG )
@@ -3358,7 +3360,7 @@ public class MyApplicationInterface extends BasicApplicationInterface {
      * @param current_date The current date/time stamp for the images.
      * @return Whether saving was successful.
      */
-    private boolean saveImage(boolean save_expo, List<byte []> images, Date current_date) {
+    private boolean saveImage(boolean is_burst, List<byte[]> images, android.media.Image image, Date current_date) {
         if( MyDebug.LOG )
             Log.d(TAG, "saveImage");
 
@@ -3566,67 +3568,87 @@ public class MyApplicationInterface extends BasicApplicationInterface {
             success = true;
         }
         else {
-            ImageSaver.Request.ProcessType processType;
-            if( photo_mode == PhotoMode.DRO || photo_mode == PhotoMode.HDR )
-                processType = ImageSaver.Request.ProcessType.HDR;
-            else if( photo_mode == PhotoMode.X_Night )
-                processType = ImageSaver.Request.ProcessType.X_NIGHT;
-            else
-                processType = ImageSaver.Request.ProcessType.NORMAL;
-            boolean force_suffix = forceSuffix(photo_mode);
-
-            HDRProcessor.TonemappingAlgorithm preference_hdr_tonemapping_algorithm = HDRProcessor.default_tonemapping_algorithm_c;
-            {
-                String tonemapping_algorithm_pref = sharedPreferences.getString(PreferenceKeys.HDRTonemappingPreferenceKey, "preference_hdr_tonemapping_default");
-                switch( tonemapping_algorithm_pref ) {
-                    case "preference_hdr_tonemapping_clamp":
-                        preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_CLAMP;
-                        break;
-                    case "preference_hdr_tonemapping_exponential":
-                        preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_EXPONENTIAL;
-                        break;
-                    case "preference_hdr_tonemapping_default": // reinhard
-                        preference_hdr_tonemapping_algorithm = HDRProcessor.default_tonemapping_algorithm_c;
-                        break;
-                    case "preference_hdr_tonemapping_aces":
-                        preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_ACES;
-                        break;
-                    default:
-                        Log.e(TAG, "unhandled case for tonemapping: " + tonemapping_algorithm_pref);
-                        break;
-                }
+            if( image_format == ImageSaver.Request.ImageFormat.HEIC ) {
+                success = imageSaver.saveImageHeic(do_in_background,
+                        image,
+                        image_capture_intent, image_capture_intent_uri,
+                        using_camera2, using_camera_extensions,
+                        image_quality,
+                        do_auto_stabilise, level_angle,
+                        is_front_facing,
+                        mirror,
+                        current_date,
+                        preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
+                        preference_units_distance,
+                        remove_device_exif,
+                        store_location, location, store_geo_direction, geo_direction,
+                        pitch_angle, store_ypr,
+                        custom_tag_artist, custom_tag_copyright,
+                        sample_factor);
             }
-            String preference_hdr_contrast_enhancement = sharedPreferences.getString(PreferenceKeys.HDRContrastEnhancementPreferenceKey, "preference_hdr_contrast_enhancement_smart");
+            else {
+                ImageSaver.Request.ProcessType processType;
+                if( photo_mode == PhotoMode.DRO || photo_mode == PhotoMode.HDR )
+                    processType = ImageSaver.Request.ProcessType.HDR;
+                else if( photo_mode == PhotoMode.X_Night )
+                    processType = ImageSaver.Request.ProcessType.X_NIGHT;
+                else
+                    processType = ImageSaver.Request.ProcessType.NORMAL;
+                boolean force_suffix = forceSuffix(photo_mode);
 
-            success = imageSaver.saveImageJpeg(do_in_background, processType,
-                    force_suffix,
-                    // N.B., n_capture_images will be 1 for first image, not 0, so subtract 1 so we start off from _0.
-                    // (It wouldn't be a huge problem if we did start from _1, but it would be inconsistent with the naming
-                    // of images where images.size() > 1 (e.g., expo bracketing mode) where we also start from _0.)
-                    force_suffix ? (n_capture_images-1) : 0,
-                    save_expo, images,
-                    preshot_bitmaps,
-                    image_capture_intent, image_capture_intent_uri,
-                    using_camera2, using_camera_extensions,
-                    image_format, image_quality,
-                    do_auto_stabilise, level_angle,
-                    is_front_facing,
-                    mirror,
-                    current_date,
-                    preference_hdr_tonemapping_algorithm,
-                    preference_hdr_contrast_enhancement,
-                    iso,
-                    exposure_time,
-                    zoom_factor,
-                    preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
-                    //preference_stamp_geo_address,
-                    preference_units_distance,
-                    false, // panorama doesn't use this codepath
-                    remove_device_exif,
-                    store_location, location, store_geo_direction, geo_direction,
-                    pitch_angle, store_ypr,
-                    custom_tag_artist, custom_tag_copyright,
-                    sample_factor);
+                HDRProcessor.TonemappingAlgorithm preference_hdr_tonemapping_algorithm = HDRProcessor.default_tonemapping_algorithm_c;
+                {
+                    String tonemapping_algorithm_pref = sharedPreferences.getString(PreferenceKeys.HDRTonemappingPreferenceKey, "preference_hdr_tonemapping_default");
+                    switch( tonemapping_algorithm_pref ) {
+                        case "preference_hdr_tonemapping_clamp":
+                            preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_CLAMP;
+                            break;
+                        case "preference_hdr_tonemapping_exponential":
+                            preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_EXPONENTIAL;
+                            break;
+                        case "preference_hdr_tonemapping_default": // reinhard
+                            preference_hdr_tonemapping_algorithm = HDRProcessor.default_tonemapping_algorithm_c;
+                            break;
+                        case "preference_hdr_tonemapping_aces":
+                            preference_hdr_tonemapping_algorithm = HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_ACES;
+                            break;
+                        default:
+                            Log.e(TAG, "unhandled case for tonemapping: " + tonemapping_algorithm_pref);
+                            break;
+                    }
+                }
+                String preference_hdr_contrast_enhancement = sharedPreferences.getString(PreferenceKeys.HDRContrastEnhancementPreferenceKey, "preference_hdr_contrast_enhancement_smart");
+
+                success = imageSaver.saveImageJpeg(do_in_background, processType,
+                        force_suffix,
+                        // N.B., n_capture_images will be 1 for first image, not 0, so subtract 1 so we start off from _0.
+                        // (It wouldn't be a huge problem if we did start from _1, but it would be inconsistent with the naming
+                        // of images where images.size() > 1 (e.g., expo bracketing mode) where we also start from _0.)
+                        force_suffix ? (n_capture_images-1) : 0,
+                        save_expo, images,
+                        preshot_bitmaps,
+                        image_capture_intent, image_capture_intent_uri,
+                        using_camera2, using_camera_extensions,
+                        image_format, image_quality,
+                        do_auto_stabilise, level_angle,
+                        is_front_facing,
+                        mirror,
+                        current_date,
+                        preference_hdr_tonemapping_algorithm,
+                        preference_hdr_contrast_enhancement,
+                        iso,
+                        exposure_time,
+                        zoom_factor,
+                        preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
+                        //preference_stamp_geo_address,
+                        preference_units_distance,
+                        false, // panorama doesn't use this codepath
+                        remove_device_exif,
+                        store_location, location, store_geo_direction, geo_direction,
+                        pitch_angle, store_ypr,
+                        custom_tag_artist, custom_tag_copyright,
+                        sample_factor);
+            }
         }
 
         if( MyDebug.LOG )
@@ -3647,12 +3669,29 @@ public class MyApplicationInterface extends BasicApplicationInterface {
         List<byte []> images = new ArrayList<>();
         images.add(data);
 
-        boolean success = saveImage(false, images, current_date);
+        boolean success = saveImage(false, images, null, current_date);
 
         if( MyDebug.LOG )
             Log.d(TAG, "onPictureTaken complete, success: " + success);
 
         return success;
+    }
+
+    @Override
+    public void onHeicPictureTaken(android.media.Image image) {
+        if( MyDebug.LOG )
+            Log.d(TAG, "onHeicPictureTaken");
+
+        n_capture_images++;
+        if( MyDebug.LOG )
+            Log.d(TAG, "n_capture_images is now " + n_capture_images);
+
+        saveImage(false, null, image, new Date());
+    }
+
+    @Override
+    public String getImageFormat() {
+        return sharedPreferences.getString(PreferenceKeys.ImageFormatPreferenceKey, "preference_image_format_jpeg");
     }
 
     @Override

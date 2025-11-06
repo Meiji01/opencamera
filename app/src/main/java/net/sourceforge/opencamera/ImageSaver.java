@@ -119,6 +119,7 @@ public class ImageSaver extends Thread {
         enum Type {
             JPEG, // also covers WEBP
             RAW,
+            HEIC,
             DUMMY,
             ON_DESTROY // indicate that application is being destroyed, so should exit thread
         }
@@ -146,6 +147,7 @@ public class ImageSaver extends Thread {
          * If process_type==NORMAL, then multiple images are saved sequentially.
          */
         final List<byte []> jpeg_images;
+        final android.media.Image image; // for HEIC
         final List<Bitmap> preshot_bitmaps; // if non-null, bitmaps for preshots; bitmaps will be recycled once processed
         final RawImage raw_image; // for raw
         final boolean image_capture_intent;
@@ -209,6 +211,7 @@ public class ImageSaver extends Thread {
                 int suffix_offset,
                 SaveBase save_base,
                 List<byte []> jpeg_images,
+                android.media.Image image,
                 List<Bitmap> preshot_bitmaps,
                 RawImage raw_image,
                 boolean image_capture_intent, Uri image_capture_intent_uri,
@@ -239,6 +242,7 @@ public class ImageSaver extends Thread {
             this.suffix_offset = suffix_offset;
             this.save_base = save_base;
             this.jpeg_images = jpeg_images;
+            this.image = image;
             this.preshot_bitmaps = preshot_bitmaps;
             this.raw_image = raw_image;
             this.image_capture_intent = image_capture_intent;
@@ -291,6 +295,7 @@ public class ImageSaver extends Thread {
                     this.suffix_offset,
                     this.save_base,
                     this.jpeg_images,
+                    this.image,
                     this.preshot_bitmaps,
                     this.raw_image,
                     this.image_capture_intent, this.image_capture_intent_uri,
@@ -519,6 +524,7 @@ public class ImageSaver extends Thread {
                     null,
                     null,
                     null,
+                    null,
                     false, null,
                     false, false,
                     Request.ImageFormat.STD, 0,
@@ -575,6 +581,11 @@ public class ImageSaver extends Thread {
                         if (MyDebug.LOG)
                             Log.d(TAG, "request is jpeg");
                         success = saveImageNow(request);
+                        break;
+                    case HEIC:
+                        if (MyDebug.LOG)
+                            Log.d(TAG, "request is heic");
+                        success = saveImageNowHeic(request);
                         break;
                     case DUMMY:
                         if (MyDebug.LOG)
@@ -679,18 +690,19 @@ public class ImageSaver extends Thread {
             Log.d(TAG, "number of images: " + images.size());
         }
         return saveImage(do_in_background,
-                false,
+                Request.Type.JPEG,
                 processType,
                 force_suffix,
                 suffix_offset,
                 save_expo,
                 images,
+                null, // image
                 preshot_bitmaps,
-                null,
+                null, // raw_image
                 image_capture_intent, image_capture_intent_uri,
                 using_camera2, using_camera_extensions,
                 image_format, image_quality,
-                do_auto_stabilise, level_angle,
+                do_auto_stabilise, level_angle, null,
                 is_front_facing,
                 mirror,
                 current_date,
@@ -725,22 +737,23 @@ public class ImageSaver extends Thread {
             Log.d(TAG, "do_in_background? " + do_in_background);
         }
         return saveImage(do_in_background,
-                true,
+                Request.Type.RAW,
                 Request.ProcessType.NORMAL,
                 force_suffix,
                 suffix_offset,
                 false,
                 null,
+                null, // image
                 null,
                 raw_image,
                 false, null,
                 false, false,
                 Request.ImageFormat.STD, 0,
-                false, 0.0,
+                false, 0.0, null,
                 false,
                 false,
                 current_date,
-                HDRProcessor.default_tonemapping_algorithm_c,
+                null,
                 null,
                 0,
                 0,
@@ -753,6 +766,62 @@ public class ImageSaver extends Thread {
                 null, null,
                 1);
     }
+/*
+    boolean saveImageHeic(boolean do_in_background,
+                          android.media.Image image,
+                          boolean image_capture_intent, Uri image_capture_intent_uri,
+                          boolean using_camera2, boolean using_camera_extensions,
+                          int image_quality,
+                          boolean do_auto_stabilise, double level_angle,
+                          boolean is_front_facing,
+                          boolean mirror,
+                          Date current_date,
+                          String preference_stamp, String preference_textstamp, int font_size, int color, String pref_style, String preference_stamp_dateformat, String preference_stamp_timeformat, String preference_stamp_gpsformat,
+                          String preference_units_distance,
+                          Request.RemoveDeviceExif remove_device_exif,
+                          boolean store_location, Location location, boolean store_geo_direction, double geo_direction,
+                          double pitch_angle, boolean store_ypr,
+                          String custom_tag_artist,
+                          String custom_tag_copyright,
+                          int sample_factor) {
+        if( MyDebug.LOG ) {
+            Log.d(TAG, "saveImageHeic");
+            Log.d(TAG, "do_in_background? " + do_in_background);
+        }
+        return saveImage(do_in_background,
+                Request.Type.HEIC,
+                Request.ProcessType.NORMAL,
+                false, // force_suffix
+                0, // suffix_offset
+                false, // save_base
+                null, // jpeg_images
+                image, // image
+                null, // preshot_bitmaps
+                null, // raw_image
+                image_capture_intent, image_capture_intent_uri,
+                using_camera2, using_camera_extensions,
+                Request.ImageFormat.HEIC, image_quality,
+                do_auto_stabilise, level_angle, null,
+                is_front_facing,
+                mirror,
+                current_date,
+                null, // preference_hdr_tonemapping_algorithm
+                null, // preference_hdr_contrast_enhancement
+                0, // iso
+                0, // exposure_time
+                1.0f, // zoom_factor
+                preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
+                preference_units_distance,
+                false, // panorama_crop
+                remove_device_exif,
+                store_location, location, store_geo_direction, geo_direction,
+                pitch_angle, store_ypr,
+                custom_tag_artist,
+                custom_tag_copyright,
+                sample_factor);
+    }
+
+ */
 
     private Request pending_image_average_request = null;
 
@@ -793,6 +862,7 @@ public class ImageSaver extends Thread {
                 0,
                 save_base,
                 new ArrayList<>(),
+                null,
                 preshot_bitmaps,
                 null,
                 image_capture_intent, image_capture_intent_uri,
@@ -869,98 +939,99 @@ public class ImageSaver extends Thread {
 
     /** Internal saveImage method to handle both JPEG and RAW.
      */
-    private boolean saveImage(boolean do_in_background,
-                              boolean is_raw,
-                              Request.ProcessType processType,
-                              boolean force_suffix,
-                              int suffix_offset,
-                              boolean save_expo,
-                              List<byte []> jpeg_images,
-                              List<Bitmap> preshot_bitmaps,
-                              RawImage raw_image,
-                              boolean image_capture_intent, Uri image_capture_intent_uri,
-                              boolean using_camera2, boolean using_camera_extensions,
-                              Request.ImageFormat image_format, int image_quality,
-                              boolean do_auto_stabilise, double level_angle,
-                              boolean is_front_facing,
-                              boolean mirror,
-                              Date current_date,
-                              HDRProcessor.TonemappingAlgorithm preference_hdr_tonemapping_algorithm,
-                              String preference_hdr_contrast_enhancement,
-                              int iso,
-                              long exposure_time,
-                              float zoom_factor,
-                              String preference_stamp, String preference_textstamp, int font_size, int color, String pref_style, String preference_stamp_dateformat, String preference_stamp_timeformat, String preference_stamp_gpsformat,
-                              //String preference_stamp_geo_address,
-                              String preference_units_distance,
-                              boolean panorama_crop,
-                              Request.RemoveDeviceExif remove_device_exif,
-                              boolean store_location, Location location, boolean store_geo_direction, double geo_direction,
-                              double pitch_angle, boolean store_ypr,
-                              String custom_tag_artist,
-                              String custom_tag_copyright,
-                              int sample_factor) {
-        if( MyDebug.LOG ) {
-            Log.d(TAG, "saveImage");
-            Log.d(TAG, "do_in_background? " + do_in_background);
-        }
-        boolean success;
-
-        //do_in_background = false;
-
-        Request request = new Request(is_raw ? Request.Type.RAW : Request.Type.JPEG,
-                processType,
-                force_suffix,
-                suffix_offset,
-                save_expo ? Request.SaveBase.SAVEBASE_ALL : Request.SaveBase.SAVEBASE_NONE,
-                jpeg_images,
-                preshot_bitmaps,
-                raw_image,
-                image_capture_intent, image_capture_intent_uri,
-                using_camera2, using_camera_extensions,
-                image_format, image_quality,
-                do_auto_stabilise, level_angle, null,
-                is_front_facing,
-                mirror,
-                current_date,
-                preference_hdr_tonemapping_algorithm,
-                preference_hdr_contrast_enhancement,
-                iso,
-                exposure_time,
-                zoom_factor,
-                preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
-                //preference_stamp_geo_address,
-                preference_units_distance,
-                panorama_crop, remove_device_exif, store_location, location, store_geo_direction, geo_direction,
-                pitch_angle, store_ypr,
-                custom_tag_artist,
-                custom_tag_copyright,
-                sample_factor);
-
-        if( do_in_background ) {
-            if( MyDebug.LOG )
-                Log.d(TAG, "add background request");
-            int cost = computeRequestCost(is_raw, is_raw ? 1 : request.jpeg_images.size());
-            addRequest(request, cost);
-            success = true; // always return true when done in background
-        }
-        else {
-            // wait for queue to be empty
-            waitUntilDone();
-            if( is_raw ) {
-                success = saveImageNowRaw(request);
-            }
-            else {
-                success = saveImageNow(request);
-            }
-        }
-
-        if( MyDebug.LOG )
-            Log.d(TAG, "success: " + success);
-        return success;
-    }
-
-    /** Adds a request to the background queue, blocking if the queue is already full
+            private boolean saveImage(boolean do_in_background,
+                                      Request.Type type,
+                                      Request.ProcessType processType,
+                                      boolean force_suffix,
+                                      int suffix_offset,
+                                      boolean save_base,
+                                      List<byte []> jpeg_images,
+                                      android.media.Image image,
+                                      List<Bitmap> preshot_bitmaps,
+                                      RawImage raw_image,
+                                      boolean image_capture_intent, Uri image_capture_intent_uri,
+                                      boolean using_camera2, boolean using_camera_extensions,
+                                      Request.ImageFormat image_format, int image_quality,
+                                      boolean do_auto_stabilise, double level_angle, List<float []> gyro_rotation_matrix,
+                                      boolean is_front_facing,
+                                      boolean mirror,
+                                      Date current_date,
+                                       HDRProcessor.TonemappingAlgorithm preference_hdr_tonemapping_algorithm,
+                                      String preference_hdr_contrast_enhancement,
+                                      int iso,
+                                      long exposure_time,
+                                      float zoom_factor,
+                                      String preference_stamp, String preference_textstamp, int font_size, int color, String pref_style, String preference_stamp_dateformat, String preference_stamp_timeformat, String preference_stamp_gpsformat,
+                                      //String preference_stamp_geo_address,
+                                      String preference_units_distance,
+                                      boolean panorama_crop,
+                                      Request.RemoveDeviceExif remove_device_exif,
+                                      boolean store_location, Location location, boolean store_geo_direction, double geo_direction,
+                                      double pitch_angle, boolean store_ypr,
+                                      String custom_tag_artist,
+                                      String custom_tag_copyright,
+                                      int sample_factor) {
+                if( MyDebug.LOG ) {
+                    Log.d(TAG, "saveImage");
+                    Log.d(TAG, "do_in_background? " + do_in_background);
+                }
+                boolean success;
+        
+                Request request = new Request(type,
+                        processType,
+                        force_suffix,
+                        suffix_offset,
+                        save_base ? Request.SaveBase.SAVEBASE_ALL : Request.SaveBase.SAVEBASE_NONE,
+                        jpeg_images,
+                        image,
+                        preshot_bitmaps,
+                        raw_image,
+                        image_capture_intent, image_capture_intent_uri,
+                        using_camera2, using_camera_extensions,
+                        image_format, image_quality,
+                        do_auto_stabilise, level_angle, gyro_rotation_matrix,
+                        is_front_facing,
+                        mirror,
+                        current_date,
+                        preference_hdr_tonemapping_algorithm,
+                        preference_hdr_contrast_enhancement,
+                        iso,
+                        exposure_time,
+                        zoom_factor,
+                        preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
+                        //preference_stamp_geo_address,
+                        preference_units_distance,
+                        panorama_crop, remove_device_exif, store_location, location, store_geo_direction, geo_direction,
+                        pitch_angle, store_ypr,
+                        custom_tag_artist,
+                        custom_tag_copyright,
+                        sample_factor);
+        
+                if( do_in_background ) {
+                    if( MyDebug.LOG )
+                        Log.d(TAG, "add background request");
+                    int cost = computeRequestCost(type == Request.Type.RAW, type == Request.Type.RAW ? 1 : (type == Request.Type.HEIC ? 1 : request.jpeg_images.size()));
+                    addRequest(request, cost);
+                    success = true; // always return true when done in background
+                }
+                else {
+                    // wait for queue to be empty
+                    waitUntilDone();
+                    if( type == Request.Type.RAW ) {
+                        success = saveImageNowRaw(request);
+                    }
+                    else if (type == Request.Type.HEIC) {
+                        success = saveImageNowHeic(request);
+                    }
+                    else {
+                        success = saveImageNow(request);
+                    }
+                }
+        
+                if( MyDebug.LOG )
+                    Log.d(TAG, "success: " + success);
+                return success;
+            }    /** Adds a request to the background queue, blocking if the queue is already full
      */
     private void addRequest(Request request, int cost) {
         if( MyDebug.LOG )
@@ -1025,6 +1096,7 @@ public class ImageSaver extends Thread {
                 false,
                 0,
                 Request.SaveBase.SAVEBASE_NONE,
+                null,
                 null,
                 null,
                 null,
@@ -1872,6 +1944,60 @@ public class ImageSaver extends Thread {
         }
 
         return success;
+    }
+
+    boolean saveImageHeic(boolean do_in_background,
+                          android.media.Image image,
+                          boolean image_capture_intent, Uri image_capture_intent_uri,
+                          boolean using_camera2, boolean using_camera_extensions,
+                          int image_quality,
+                          boolean do_auto_stabilise, double level_angle,
+                          boolean is_front_facing,
+                          boolean mirror,
+                          Date current_date,
+                          String preference_stamp, String preference_textstamp, int font_size, int color, String pref_style, String preference_stamp_dateformat, String preference_stamp_timeformat, String preference_stamp_gpsformat,
+                          String preference_units_distance,
+                          Request.RemoveDeviceExif remove_device_exif,
+                          boolean store_location, Location location, boolean store_geo_direction, double geo_direction,
+                          double pitch_angle, boolean store_ypr,
+                          String custom_tag_artist,
+                          String custom_tag_copyright,
+                          int sample_factor) {
+        if( MyDebug.LOG ) {
+            Log.d(TAG, "saveImageHeic");
+            Log.d(TAG, "do_in_background? " + do_in_background);
+        }
+        return saveImage(do_in_background,
+                Request.Type.HEIC,
+                Request.ProcessType.NORMAL,
+                false, // force_suffix
+                0, // suffix_offset
+                false, // save_base
+                null, // jpeg_images
+                image, // image
+                null, // preshot_bitmaps
+                null, // raw_image
+                image_capture_intent, image_capture_intent_uri,
+                using_camera2, using_camera_extensions,
+                Request.ImageFormat.HEIC, image_quality,
+                do_auto_stabilise, level_angle, null,
+                is_front_facing,
+                mirror,
+                current_date,
+                null, // preference_hdr_tonemapping_algorithm
+                null, // preference_hdr_contrast_enhancement
+                0, // iso
+                0, // exposure_time
+                1.0f, // zoom_factor
+                preference_stamp, preference_textstamp, font_size, color, pref_style, preference_stamp_dateformat, preference_stamp_timeformat, preference_stamp_gpsformat,
+                preference_units_distance,
+                false, // panorama_crop
+                remove_device_exif,
+                store_location, location, store_geo_direction, geo_direction,
+                pitch_angle, store_ypr,
+                custom_tag_artist,
+                custom_tag_copyright,
+                sample_factor);
     }
 
     /** Alternative to android.util.Range&lt;Integer&gt;, since that is not mocked so can't be used

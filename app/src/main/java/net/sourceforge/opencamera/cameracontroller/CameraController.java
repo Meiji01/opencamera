@@ -306,6 +306,10 @@ public abstract class CameraController {
 
         void onPictureTaken(byte[] data);
 
+        void onHeicPictureTaken(Image image);
+
+        String getImageFormat();
+
         /** Only called if RAW is requested.
          *  Caller should call raw_image.close() when done with the image.
          */
