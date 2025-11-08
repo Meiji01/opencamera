@@ -1,8 +1,17 @@
 #include <jni.h>
-#include <string>
+#include "libheif/heif.h"
 
-extern "C" JNIEXPORT jboolean JNICALL
-Java_net_sourceforge_opencamera_HeifWriter_saveHeif(JNIEnv *env, jobject /* this */, jobject image, jstring path) {
-    // TODO: Implement HEIF writing using libheif
-    return false;
+extern "C"
+JNIEXPORT jint JNICALL
+Java_com_yourpackage_HeifBridge_encodeHeif(JNIEnv *env, jobject obj, jbyteArray input, jstring outputPath) {
+    // Convert input and outputPath
+    // Use libheif API to encode HEIC
+    return 0;
+}
+extern "C"
+JNIEXPORT jint JNICALL
+Java_net_sourceforge_opencamera_HeifWriter_encodeHeif(JNIEnv *env, jobject thiz, jbyteArray input,
+                                                      jstring output_path) {
+    // TODO: implement encodeHeif()
+    return 0;
 }

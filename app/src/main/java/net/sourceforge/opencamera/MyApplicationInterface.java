@@ -3360,7 +3360,7 @@ public class MyApplicationInterface extends BasicApplicationInterface {
      * @param current_date The current date/time stamp for the images.
      * @return Whether saving was successful.
      */
-    private boolean saveImage(boolean is_burst, List<byte[]> images, android.media.Image image, Date current_date) {
+    private boolean saveImage(boolean do_in_background, ImageSaver.Request.Type type, List<byte[]> jpeg_images, android.media.Image heic_image, RawImage raw_image, Date current_date) {
         if( MyDebug.LOG )
             Log.d(TAG, "saveImage");
 

@@ -6716,6 +6716,11 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 }
             }
 
+            public String getImageFormat() {
+                // TODO: Return actual image format based on the request
+                return "jpeg";
+            }
+
             public void onRawPictureTaken(RawImage raw_image) {
                 if( MyDebug.LOG )
                     Log.d(TAG, "onRawPictureTaken");

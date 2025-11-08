@@ -7,5 +7,6 @@ public class HeifWriter {
         System.loadLibrary("heif");
     }
 
-    public native boolean saveHeif(Image image, String path);
+    public native int encodeHeif(byte[] input, String outputPath);
+
 }

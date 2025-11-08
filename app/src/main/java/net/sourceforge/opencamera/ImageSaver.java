@@ -1534,36 +1534,6 @@ public class ImageSaver extends Thread {
             saveBaseImages(request, "_");
             main_activity.savingImage(true);
 
-            /*List<Bitmap> bitmaps = loadBitmaps(request.jpeg_images, 0);
-            if (bitmaps == null) {
-                if (MyDebug.LOG)
-                    Log.e(TAG, "failed to load bitmaps");
-                main_activity.savingImage(false);
-                return false;
-            }*/
-            /*Bitmap nr_bitmap = loadBitmap(request.jpeg_images.get(0), true);
-
-            if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ) {
-                try {
-                    for(int i = 1; i < request.jpeg_images.size(); i++) {
-                        Log.d(TAG, "processAvg for image: " + i);
-                        Bitmap new_bitmap = loadBitmap(request.jpeg_images.get(i), false);
-                        float avg_factor = (float) i;
-                        hdrProcessor.processAvg(nr_bitmap, new_bitmap, avg_factor, true);
-                        // processAvg recycles new_bitmap
-                    }
-                    //hdrProcessor.processAvgMulti(bitmaps, hdr_strength, 4);
-                    //hdrProcessor.avgBrighten(nr_bitmap);
-                }
-                catch(HDRProcessorException e) {
-                    MyDebug.logStackTrace(TAG, "HDRProcessorException from processAvg", e);
-                    throw new RuntimeException();
-                }
-            }
-            else {
-                Log.e(TAG, "shouldn't have offered NoiseReduction as an option if not on Android 5");
-                throw new RuntimeException();
-            }*/
             Bitmap nr_bitmap;
             {
                 try {
@@ -2117,8 +2087,7 @@ public class ImageSaver extends Thread {
 
                 encoder.releaseOutputBuffer(outputBufferIndex, false);
 
-                break;
-                /*if( (bufferInfo.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0 ) {
+                if( (bufferInfo.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0 ) {
                     if( MyDebug.LOG ) {
                         if( !end_of_stream ) {
                             Log.e(TAG, "    reached end of stream unexpectedly");
@@ -2127,8 +2096,9 @@ public class ImageSaver extends Thread {
                             Log.d(TAG, "    end of stream reached");
                         }
                     }
-                    break;
-                }*/
+                    break; // exit loop
+                }
+
             }
             else {
                 if( outputBufferIndex == MediaCodec.INFO_TRY_AGAIN_LATER ) {
@@ -3117,7 +3087,7 @@ public class ImageSaver extends Thread {
         try {
             int video_width = bitmap.getWidth();
             int video_height = bitmap.getHeight();
-            final String mime_type = "image/heic";
+            final String mime_type = MediaFormat.MIMETYPE_VIDEO_HEVC;
             MediaFormat format = MediaFormat.createVideoFormat(mime_type, video_width, video_height);
             format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
             format.setInteger(MediaFormat.KEY_BIT_RATE, 8 * 1024 * 1024); // 8 Mbps
