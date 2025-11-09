@@ -1,4 +1,4 @@
-net.sourceforge.opencamera.test:style/WhiteBackgroundTheme = 0x7f030001
-net.sourceforge.opencamera.test:style/WhiteBackgroundDialogTheme = 0x7f030000
-net.sourceforge.opencamera.test:string/app_name = 0x7f020000
-net.sourceforge.opencamera.test:drawable/ic_launcher = 0x7f010000
+net.sourceforge.com.meij.cameraadvance.test:style/WhiteBackgroundTheme = 0x7f030001
+net.sourceforge.com.meij.cameraadvance.test:style/WhiteBackgroundDialogTheme = 0x7f030000
+net.sourceforge.com.meij.cameraadvance.test:string/app_name = 0x7f020000
+net.sourceforge.com.meij.cameraadvance.test:drawable/ic_launcher = 0x7f010000

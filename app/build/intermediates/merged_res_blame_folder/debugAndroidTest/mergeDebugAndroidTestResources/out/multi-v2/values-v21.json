@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "net.sourceforge.opencamera.test.app-mergeDebugAndroidTestResources-2:/values-v21/values-v21.xml",
+            "outputFile": "com.meijsoft.cameraadvance.test.app-mergeDebugAndroidTestResources-2:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v21/values.xml",

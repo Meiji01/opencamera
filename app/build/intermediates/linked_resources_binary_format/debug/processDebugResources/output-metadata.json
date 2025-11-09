@@ -4,7 +4,7 @@
     "type": "LINKED_RESOURCES_BINARY_FORMAT",
     "kind": "Directory"
   },
-  "applicationId": "net.sourceforge.opencamera",
+  "applicationId": "net.sourceforge.com.meij.cameraadvance",
   "variantName": "debug",
   "elements": [
     {

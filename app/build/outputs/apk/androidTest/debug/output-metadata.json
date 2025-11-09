@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "net.sourceforge.opencamera.test",
+  "applicationId": "net.sourceforge.com.meij.cameraadvance.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

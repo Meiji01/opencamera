@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-ca/values-ca.xml",
+            "outputFile": "com.meijsoft.cameraadvance.app-mergeDebugResources-24:/values-ca/values-ca.xml",
             "map": [
                 {
                     "source": "/home/meijr/Documents/GitHub/opencamera/app/src/main/res/values-ca/strings.xml",

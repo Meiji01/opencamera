@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.sourceforge.opencamera.test" >
+    package="net.sourceforge.com.meij.cameraadvance.test" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -10,8 +10,8 @@
         android:name="android.test.InstrumentationTestRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for net.sourceforge.opencamera"
-        android:targetPackage="net.sourceforge.opencamera" />
+        android:label="Tests for net.sourceforge.com.meij.cameraadvance"
+        android:targetPackage="net.sourceforge.com.meij.cameraadvance" />
 
     <queries>
         <package android:name="androidx.test.orchestrator" />

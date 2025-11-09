@@ -38,10 +38,13 @@
         android:name=".OpenCameraApplication"
         android:theme="@style/AppTheme"
         android:largeHeap="true"
-        >
+    >
+        <meta-data
+            android:name="author"
+            android:value="Mei Racpan(github.com/Meiji01)" />
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <activity
-            android:name="net.sourceforge.opencamera.MainActivity"
+            android:name="com.meijsoft.cameraadvance.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:clearTaskOnLaunch="true"
             android:exported="true"
@@ -79,7 +82,7 @@
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name="net.sourceforge.opencamera.remotecontrol.DeviceScanner"
+            android:name="com.meijsoft.cameraadvance.remotecontrol.DeviceScanner"
             android:label="@string/scan_ble"
             android:exported="false"
         >
@@ -111,7 +114,7 @@
         </receiver>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileService"
+            android:name="com.meijsoft.cameraadvance.MyTileService"
             android:icon="@drawable/ic_photo_camera_white_48dp"
             android:label="@string/camera"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -123,7 +126,7 @@
         </service>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileServiceVideo"
+            android:name="com.meijsoft.cameraadvance.MyTileServiceVideo"
             android:icon="@drawable/ic_videocam_white_48dp"
             android:label="@string/record_video"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -135,7 +138,7 @@
         </service>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileServiceFrontCamera"
+            android:name="com.meijsoft.cameraadvance.MyTileServiceFrontCamera"
             android:icon="@drawable/ic_face_white_48dp"
             android:label="@string/selfie"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
@@ -145,7 +148,7 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-        <service android:name="net.sourceforge.opencamera.remotecontrol.BluetoothLeService"
+        <service android:name="com.meijsoft.cameraadvance.remotecontrol.BluetoothLeService"
             android:enabled="true"
             android:exported="false"
             />

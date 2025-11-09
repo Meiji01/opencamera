@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.sourceforge.opencamera"
+    package="net.sourceforge.com.meij.cameraadvance"
     android:installLocation="auto"
     android:versionCode="93"
     android:versionName="1.55" >
@@ -48,13 +48,13 @@
     </queries>
 
     <permission
-        android:name="net.sourceforge.opencamera.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="net.sourceforge.com.meij.cameraadvance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="net.sourceforge.opencamera.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="net.sourceforge.com.meij.cameraadvance.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
-        android:name="net.sourceforge.opencamera.OpenCameraApplication"
+        android:name="com.meijsoft.cameraadvance.OpenCameraApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
@@ -62,12 +62,13 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
-
+        <meta-data
+            android:name="author"
+            android:value="Mei Racpan(github.com/Meiji01)" />
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <activity
-            android:name="net.sourceforge.opencamera.MainActivity"
+            android:name="com.meijsoft.cameraadvance.MainActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" >
@@ -115,14 +116,14 @@
                 android:resource="@xml/shortcuts" />
         </activity>
         <activity
-            android:name="net.sourceforge.opencamera.remotecontrol.DeviceScanner"
+            android:name="com.meijsoft.cameraadvance.remotecontrol.DeviceScanner"
             android:exported="false"
             android:label="@string/scan_ble" >
         </activity>
 
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <activity
-            android:name="net.sourceforge.opencamera.TakePhoto"
+            android:name="com.meijsoft.cameraadvance.TakePhoto"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -132,7 +133,7 @@
         </activity>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <receiver
-            android:name="net.sourceforge.opencamera.MyWidgetProviderTakePhoto"
+            android:name="com.meijsoft.cameraadvance.MyWidgetProviderTakePhoto"
             android:exported="true"
             android:icon="@drawable/ic_launcher_take_photo"
             android:label="@string/take_photo" >
@@ -146,7 +147,7 @@
         </receiver>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileService"
+            android:name="com.meijsoft.cameraadvance.MyTileService"
             android:exported="true"
             android:icon="@drawable/ic_photo_camera_white_48dp"
             android:label="@string/camera"
@@ -157,7 +158,7 @@
         </service>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileServiceVideo"
+            android:name="com.meijsoft.cameraadvance.MyTileServiceVideo"
             android:exported="true"
             android:icon="@drawable/ic_videocam_white_48dp"
             android:label="@string/record_video"
@@ -168,7 +169,7 @@
         </service>
         <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
         <service
-            android:name="net.sourceforge.opencamera.MyTileServiceFrontCamera"
+            android:name="com.meijsoft.cameraadvance.MyTileServiceFrontCamera"
             android:exported="true"
             android:icon="@drawable/ic_face_white_48dp"
             android:label="@string/selfie"
@@ -178,13 +179,13 @@
             </intent-filter>
         </service>
         <service
-            android:name="net.sourceforge.opencamera.remotecontrol.BluetoothLeService"
+            android:name="com.meijsoft.cameraadvance.remotecontrol.BluetoothLeService"
             android:enabled="true"
             android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="net.sourceforge.opencamera.androidx-startup"
+            android:authorities="net.sourceforge.com.meij.cameraadvance.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

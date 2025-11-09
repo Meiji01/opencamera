@@ -15,7 +15,7 @@ To build this project, ensure you have the Android SDK installed and configured.
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/gdelac/opencamera.git
-    cd opencamera
+    cd com.meij.cameraadvance
     ```
     (Note: Replace `https://github.com/gdelac/opencamera.git` with the actual repository URL if available, otherwise, I'll use a placeholder or omit this step if it's a local project.)
 

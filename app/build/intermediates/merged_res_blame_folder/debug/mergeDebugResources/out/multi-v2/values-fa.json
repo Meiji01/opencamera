@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-fa/values-fa.xml",
+            "outputFile": "com.meijsoft.cameraadvance.app-mergeDebugResources-24:/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/home/meijr/.gradle/caches/8.9/transforms/e7b00e66593cf2a3d4b77c079dbadee0/transformed/appcompat-1.7.1/res/values-fa/values-fa.xml",
