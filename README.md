@@ -14,10 +14,10 @@ To build this project, ensure you have the Android SDK installed and configured.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/gdelac/opencamera.git
+    git clone https://github.com/Meiji01/opencamera.git
     cd com.meij.cameraadvance
     ```
-    (Note: Replace `https://github.com/gdelac/opencamera.git` with the actual repository URL if available, otherwise, I'll use a placeholder or omit this step if it's a local project.)
+    (Note: Replace `https://github.com/Meiji01/opencamera.git` with the actual repository URL if available, otherwise, I'll use a placeholder or omit this step if it's a local project.)
 
 2.  **Open in Android Studio:**
     Import the project into Android Studio. Android Studio should automatically configure the Gradle environment.
