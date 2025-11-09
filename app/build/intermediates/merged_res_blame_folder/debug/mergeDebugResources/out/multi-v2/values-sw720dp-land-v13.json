@@ -4,7 +4,7 @@
             "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/meijr/Documents/Programming/opencamera-code/app/src/main/res/values-sw720dp-land/dimens.xml",
+                    "source": "/home/meijr/Documents/GitHub/opencamera/app/src/main/res/values-sw720dp-land/dimens.xml",
                     "from": {
                         "startLines": "6",
                         "startColumns": "4",
