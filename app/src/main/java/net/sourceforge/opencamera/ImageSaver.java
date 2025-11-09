@@ -6,8 +6,10 @@ import net.sourceforge.opencamera.preview.ApplicationInterface;
 import net.sourceforge.opencamera.preview.Preview;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileDescriptor;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -68,6 +70,9 @@ import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
+
+//import com.wanghonglin.libheif.HeifNative;
+//import net.sourceforge.opencamera.HeifSaver;
 
 /** Handles the saving (and any required processing) of photos.
  */
@@ -3231,17 +3236,57 @@ public class ImageSaver extends Thread {
                 Log.d(TAG, "saveUri: " + saveUri);
 
             if( picFile != null || saveUri != null ) {
-                if (bitmap != null && request.image_format == Request.ImageFormat.HEIC && Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    FileDescriptor fd;
-                    if (picFile != null) {
-                        try (FileOutputStream fos = new FileOutputStream(picFile)) {
-                            fd = fos.getFD();
-                            saveBitmapAsHeic(bitmap, fd);
+                if (bitmap != null && request.image_format == Request.ImageFormat.HEIC) {
+                    //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        FileDescriptor fd;
+                        if (picFile != null) {
+                            try (FileOutputStream fos = new FileOutputStream(picFile)) {
+                                fd = fos.getFD();
+                                saveBitmapAsHeic(bitmap, fd);
+                            }
+                        } else {
+                            try (ParcelFileDescriptor pfd = main_activity.getContentResolver().openFileDescriptor(saveUri, "rw")) {
+                                fd = pfd.getFileDescriptor();
+                                saveBitmapAsHeic(bitmap, fd);
+                            }
                         }
                     } else {
-                        try (ParcelFileDescriptor pfd = main_activity.getContentResolver().openFileDescriptor(saveUri, "rw")) {
-                            fd = pfd.getFileDescriptor();
-                            saveBitmapAsHeic(bitmap, fd);
+                        // Use libheif.so for older Android versions
+                        if (MyDebug.LOG)
+                            Log.d(TAG, "Using libheif.so for HEIC encoding");
+                        String outputPath;
+                        File tempFile = null;
+                        if (picFile != null) {
+                            outputPath = picFile.getAbsolutePath();
+                        } else {
+                            // For SAF/MediaStore, we need to write to a temporary file first, then copy to URI
+                            // This is a simplification, a more robust solution would involve writing directly to the URI
+                            // or using a content provider for the native library.
+                            // For now, we'll use a temporary file.
+                            tempFile = File.createTempFile("heic_temp", ".heic", main_activity.getCacheDir());
+                            outputPath = tempFile.getAbsolutePath();
+                            if (MyDebug.LOG)
+                                Log.d(TAG, "Saving HEIC to temporary file: " + outputPath);
+                        }
+
+                        boolean success_heif = HeifSaver.saveBitmapAsHeic(bitmap, outputPath);
+                        if (MyDebug.LOG)
+                            Log.d(TAG, "HeifNative.encodeBitmap success: " + success_heif);
+
+                        if (picFile == null && saveUri != null) {
+                            // Copy from temp file to saveUri
+                            try (InputStream is = new FileInputStream(outputPath);
+                                 OutputStream os = main_activity.getContentResolver().openOutputStream(saveUri)) {
+                                byte[] buffer = new byte[1024];
+                                int length;
+                                while ((length = is.read(buffer)) > 0) {
+                                    os.write(buffer, 0, length);
+                                }
+                            }
+                            if (tempFile != null && tempFile.exists()) {
+                                tempFile.delete();
+                            }
                         }
                     }
                 } else {
@@ -4669,5 +4714,11 @@ public class ImageSaver extends Thread {
 
     public PanoramaProcessor getPanoramaProcessor() {
         return panoramaProcessor;
+    }
+
+    private byte[] bitmapToByteArray(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream); // HEIF doesn't support JPEG compression directly from Android Bitmap
+        return stream.toByteArray();
     }
 }

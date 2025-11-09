@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "net.sourceforge.opencamera.test.app-mergeDebugAndroidTestResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,11",
+                        "startColumns": "0,0",
+                        "startOffsets": "142,510",
+                        "endLines": "10,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "509,875"
+                    },
+                    "to": {
+                        "startLines": "3,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "112,484",
+                        "endLines": "9,16",
+                        "endColumns": "8,8",
+                        "endOffsets": "479,849"
+                    }
+                },
+                {
+                    "source": "/home/meijr/Documents/GitHub/opencamera/app/src/androidTest/res/values/strings.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "56",
+                        "endColumns": "56",
+                        "endOffsets": "108"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "56",
+                        "endOffsets": "107"
+                    }
+                }
+            ]
+        }
+    ]
+}

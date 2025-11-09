@@ -1,0 +1,5 @@
+net.sourceforge.opencamera.test
+drawable ic_launcher
+string app_name
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
