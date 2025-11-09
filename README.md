@@ -1,4 +1,4 @@
-# Open Camera (Enhanced)
+# Open Camera Advanced
 
 This project is an enhanced fork of the original Open Camera project by Mark Harman, available at [https://sourceforge.net/projects/opencamera](https://sourceforge.net/projects/opencamera).
 
