@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "net.sourceforge.opencamera.app-mergeDebugResources-24:/values-zh-rTW/values-zh-rTW.xml",
+            "outputFile": "com.meijsoft.cameraadvance.app-mergeDebugResources-24:/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
                     "source": "/home/meijr/Documents/GitHub/opencamera/app/src/main/res/values-zh-rTW/arrays.xml",

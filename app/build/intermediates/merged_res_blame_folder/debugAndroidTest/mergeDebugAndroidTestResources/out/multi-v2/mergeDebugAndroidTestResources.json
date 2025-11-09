@@ -1,31 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "net.sourceforge.opencamera.test.app-debugAndroidTest-4:/values-v18_values-v18.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v18/values.xml",
-                    "from": {
-                        "startLines": "4,12",
-                        "startColumns": "0,0",
-                        "startOffsets": "146,562",
-                        "endLines": "11,19",
-                        "endColumns": "8,8",
-                        "endOffsets": "561,975"
-                    },
-                    "to": {
-                        "startLines": "2,10",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,475",
-                        "endLines": "9,17",
-                        "endColumns": "8,8",
-                        "endOffsets": "470,888"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "net.sourceforge.opencamera.test.app-debugAndroidTest-4:/values-v28_values-v28.arsc.flat",
+            "outputFile": "com.meijsoft.cameraadvance.test.app-debugAndroidTest-4:/values-v28_values-v28.arsc.flat",
             "map": [
                 {
                     "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v28/values.xml",
@@ -49,7 +25,55 @@
             ]
         },
         {
-            "outputFile": "net.sourceforge.opencamera.test.app-debugAndroidTest-4:/values_values.arsc.flat",
+            "outputFile": "com.meijsoft.cameraadvance.test.app-debugAndroidTest-4:/values-v18_values-v18.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v18/values.xml",
+                    "from": {
+                        "startLines": "4,12",
+                        "startColumns": "0,0",
+                        "startOffsets": "146,562",
+                        "endLines": "11,19",
+                        "endColumns": "8,8",
+                        "endOffsets": "561,975"
+                    },
+                    "to": {
+                        "startLines": "2,10",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,475",
+                        "endLines": "9,17",
+                        "endColumns": "8,8",
+                        "endOffsets": "470,888"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.meijsoft.cameraadvance.test.app-debugAndroidTest-4:/values-v21_values-v21.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v21/values.xml",
+                    "from": {
+                        "startLines": "4,13",
+                        "startColumns": "0,0",
+                        "startOffsets": "146,621",
+                        "endLines": "12,21",
+                        "endColumns": "8,8",
+                        "endOffsets": "620,1093"
+                    },
+                    "to": {
+                        "startLines": "2,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,534",
+                        "endLines": "10,19",
+                        "endColumns": "8,8",
+                        "endOffsets": "529,1006"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.meijsoft.cameraadvance.test.app-debugAndroidTest-4:/values_values.arsc.flat",
             "map": [
                 {
                     "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values/values.xml",
@@ -85,30 +109,6 @@
                         "startOffsets": "55",
                         "endColumns": "56",
                         "endOffsets": "107"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "net.sourceforge.opencamera.test.app-debugAndroidTest-4:/values-v21_values-v21.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res/values-v21/values.xml",
-                    "from": {
-                        "startLines": "4,13",
-                        "startColumns": "0,0",
-                        "startOffsets": "146,621",
-                        "endLines": "12,21",
-                        "endColumns": "8,8",
-                        "endOffsets": "620,1093"
-                    },
-                    "to": {
-                        "startLines": "2,11",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,534",
-                        "endLines": "10,19",
-                        "endColumns": "8,8",
-                        "endOffsets": "529,1006"
                     }
                 }
             ]

@@ -7,8 +7,8 @@
         >
         <intent
             android:action="net.sourceforge.opencamera.SHORTCUT_SETTINGS"
-            android:targetPackage="net.sourceforge.opencamera"
-            android:targetClass="net.sourceforge.opencamera.MainActivity"
+            android:targetPackage="com.meijsoft.cameraadvance"
+            android:targetClass="com.meijsoft.cameraadvance.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -19,8 +19,8 @@
         >
         <intent
             android:action="net.sourceforge.opencamera.SHORTCUT_GALLERY"
-            android:targetPackage="net.sourceforge.opencamera"
-            android:targetClass="net.sourceforge.opencamera.MainActivity"
+            android:targetPackage="com.meijsoft.cameraadvance"
+            android:targetClass="com.meijsoft.cameraadvance.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -31,8 +31,8 @@
         >
         <intent
             android:action="net.sourceforge.opencamera.SHORTCUT_VIDEO"
-            android:targetPackage="net.sourceforge.opencamera"
-            android:targetClass="net.sourceforge.opencamera.MainActivity"
+            android:targetPackage="com.meijsoft.cameraadvance"
+            android:targetClass="com.meijsoft.cameraadvance.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -43,8 +43,8 @@
         >
         <intent
             android:action="net.sourceforge.opencamera.SHORTCUT_SELFIE"
-            android:targetPackage="net.sourceforge.opencamera"
-            android:targetClass="net.sourceforge.opencamera.MainActivity"
+            android:targetPackage="com.meijsoft.cameraadvance"
+            android:targetClass="com.meijsoft.cameraadvance.MainActivity"
         />
     </shortcut>
     <shortcut
@@ -55,8 +55,8 @@
         >
         <intent
             android:action="net.sourceforge.opencamera.SHORTCUT_CAMERA"
-            android:targetPackage="net.sourceforge.opencamera"
-            android:targetClass="net.sourceforge.opencamera.MainActivity"
+            android:targetPackage="com.meijsoft.cameraadvance"
+            android:targetClass="com.meijsoft.cameraadvance.MainActivity"
         />
     </shortcut>
 </shortcuts>

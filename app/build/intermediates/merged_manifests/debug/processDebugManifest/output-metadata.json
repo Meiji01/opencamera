@@ -4,7 +4,7 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "net.sourceforge.opencamera",
+  "applicationId": "net.sourceforge.com.meij.cameraadvance",
   "variantName": "debug",
   "elements": [
     {

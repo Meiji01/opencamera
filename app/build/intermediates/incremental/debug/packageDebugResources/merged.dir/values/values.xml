@@ -1064,7 +1064,7 @@
     <string name="anti_banding_auto">Auto</string>
     <string name="anti_banding_off">Off</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Open Camera</string>
+    <string name="app_name" translatable="false">Open Camera Adv</string>
     <string name="array_seekbar_preference_seekbar">Seekbar to change current preference value</string>
     <string name="audio_control_start">Start audio listening</string>
     <string name="audio_control_stop">Stop audio listening</string>
