@@ -10,7 +10,7 @@ public class HeifSaver {
 
     static {
         try {
-            System.loadLibrary("heif");
+            System.loadLibrary("opencamera_heif");
             Log.d(TAG, "heif library loaded");
         } catch (UnsatisfiedLinkError e) {
             Log.e(TAG, "failed to load heif library");

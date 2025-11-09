@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a",
+  "command": "/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dopencamera_heif_EXPORTS -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o -c /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/heif_saver.cpp",
+  "file": "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/heif_saver.cpp"
+},
+{
+  "directory": "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a",
+  "command": "/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dopencamera_heif_EXPORTS -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -o CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o -c /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/heif_jni.cpp",
+  "file": "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/heif_jni.cpp"
+}
+]

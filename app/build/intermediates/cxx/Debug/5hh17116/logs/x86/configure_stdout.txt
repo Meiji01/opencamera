@@ -1,3 +1,0 @@
--- Configuring done
--- Generating done
--- Build files have been written to: /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86
