@@ -1,0 +1,40 @@
+{
+  "buildFiles": [
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/meijr/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/meijr/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "opencamera_heif::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "opencamera_heif",
+      "output": "/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/x86/libopencamera_heif.so",
+      "runtimeFiles": [
+        "/home/meijr/Documents/GitHub/opencamera/app/src/main/jniLibs/x86/libheif.so"
+      ]
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

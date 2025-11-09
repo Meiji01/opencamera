@@ -1,6 +1,5 @@
-
 #include <jni.h>
-#include <libheif/heif.h>
+#include "libheif/heif.h"
 #include <android/log.h>
 #include <cstring>
 #include <android/bitmap.h>
@@ -148,7 +147,7 @@ Java_com_wanghonglin_libheif_HeifNative_encodeYUV(JNIEnv *env, jclass type, jbyt
 
 extern "C"
 JNIEXPORT jboolean JNICALL
-Java_net_sourceforge_opencamera_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jobject thiz,
+Java_net_sourceforge_opencamera_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass thiz,
                                                               jobject bitmap, jstring outputPath_) {
     AndroidBitmapInfo info;
     void* pixels;
