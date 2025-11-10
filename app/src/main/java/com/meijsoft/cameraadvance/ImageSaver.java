@@ -2986,7 +2986,7 @@ public class ImageSaver extends Thread {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    private void saveBitmapAsHeic(Bitmap bitmap, FileDescriptor fd) throws IOException {
+    private void saveBitmapAsHeic(Bitmap bitmap, FileDescriptor fd, int quality) throws IOException {
         if (MyDebug.LOG)
             Log.d(TAG, "saveBitmapAsHeic");
 
@@ -2999,7 +2999,7 @@ public class ImageSaver extends Thread {
             final String mime_type = "image/heic";
             MediaFormat format = MediaFormat.createVideoFormat(mime_type, video_width, video_height);
             format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
-            format.setInteger(MediaFormat.KEY_BIT_RATE, 8 * 1024 * 1024); // 8 Mbps
+            format.setInteger(MediaFormat.KEY_QUALITY, quality);
             format.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 0);
 
             MediaCodecList codecs = new MediaCodecList(MediaCodecList.REGULAR_CODECS);
@@ -3243,12 +3243,12 @@ public class ImageSaver extends Thread {
                         if (picFile != null) {
                             try (FileOutputStream fos = new FileOutputStream(picFile)) {
                                 fd = fos.getFD();
-                                saveBitmapAsHeic(bitmap, fd);
+                                saveBitmapAsHeic(bitmap, fd, request.image_quality);
                             }
                         } else {
                             try (ParcelFileDescriptor pfd = main_activity.getContentResolver().openFileDescriptor(saveUri, "rw")) {
                                 fd = pfd.getFileDescriptor();
-                                saveBitmapAsHeic(bitmap, fd);
+                                saveBitmapAsHeic(bitmap, fd, request.image_quality);
                             }
                         }
                     } else {
@@ -3270,7 +3270,7 @@ public class ImageSaver extends Thread {
                                 Log.d(TAG, "Saving HEIC to temporary file: " + outputPath);
                         }
 
-                        boolean success_heif = HeifSaver.saveBitmapAsHeic(bitmap, outputPath);
+                        boolean success_heif = HeifSaver.saveBitmapAsHeic(bitmap, outputPath, request.image_quality);
                         if (MyDebug.LOG)
                             Log.d(TAG, "HeifNative.encodeBitmap success: " + success_heif);
 

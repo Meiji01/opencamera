@@ -145,84 +145,12 @@ Java_com_wanghonglin_libheif_HeifNative_encodeYUV(JNIEnv *env, jclass type, jbyt
     return error.code;
 }
 
-extern "C"
-JNIEXPORT jboolean JNICALL
-Java_net_sourceforge_opencamera_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass clazz,
-                                                              jobject bitmap, jstring outputPath_) {
-    AndroidBitmapInfo info;
-    void* pixels;
-    int ret;
 
-    if ((ret = AndroidBitmap_getInfo(env, bitmap, &info)) < 0) {
-        __android_log_print(ANDROID_LOG_ERROR, TAG, "AndroidBitmap_getInfo() failed ! error=%d", ret);
-        return JNI_FALSE;
-    }
-
-    if ((ret = AndroidBitmap_lockPixels(env, bitmap, &pixels)) < 0) {
-        __android_log_print(ANDROID_LOG_ERROR, TAG, "AndroidBitmap_lockPixels() failed ! error=%d", ret);
-        return JNI_FALSE;
-    }
-
-    int width = info.width;
-    int height = info.height;
-    const char *outputPath = env->GetStringUTFChars(outputPath_, 0);
-
-    heif_image* image;
-    heif_image_create(width, height, heif_colorspace_RGB, heif_chroma_interleaved_RGBA, &image);
-    heif_image_add_plane(image, heif_channel_interleaved, width, height, 32);
-
-    int stride = 0;
-    uint8_t* p = heif_image_get_plane(image, heif_channel_interleaved, &stride);
-    std::memcpy(p, pixels, static_cast<size_t>(width * height * 4)); // Assuming RGBA_8888
-
-    heif_context* ctx = heif_context_alloc();
-    heif_encoder* encoder;
-    heif_context_get_encoder_for_format(ctx, heif_compression_HEVC, &encoder);
-    heif_encoder_set_logging_level(encoder, 4);
-
-    heif_encoding_options* encoding_options = heif_encoding_options_alloc();
-    encoding_options->save_alpha_channel = 0;
-
-    heif_error error;
-    heif_image_handle* handle;
-    error = heif_context_encode_image(ctx, image, encoder, encoding_options, &handle);
-    if (error.code != heif_error_Ok) {
-        __android_log_print(ANDROID_LOG_ERROR, TAG, "encode image error: %s", error.message);
-        AndroidBitmap_unlockPixels(env, bitmap);
-        env->ReleaseStringUTFChars(outputPath_, outputPath);
-        heif_encoder_release(encoder);
-        heif_image_release(image);
-        heif_context_free(ctx);
-        return JNI_FALSE;
-    }
-
-    error = heif_context_write_to_file(ctx, outputPath);
-    if (error.code != heif_error_Ok) {
-        __android_log_print(ANDROID_LOG_ERROR, TAG, "write to file failed: %s", error.message);
-        AndroidBitmap_unlockPixels(env, bitmap);
-        env->ReleaseStringUTFChars(outputPath_, outputPath);
-        heif_image_handle_release(handle);
-        heif_image_release(image);
-        heif_context_free(ctx);
-        return JNI_FALSE;
-    }
-
-    __android_log_print(ANDROID_LOG_DEBUG, TAG, "write to file success");
-
-    heif_image_handle_release(handle);
-    heif_image_release(image);
-    heif_context_free(ctx);
-
-    AndroidBitmap_unlockPixels(env, bitmap);
-    env->ReleaseStringUTFChars(outputPath_, outputPath);
-
-    return JNI_TRUE;
-}
 
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_meijsoft_cameraadvance_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass clazz,
-                                                           jobject bitmap, jstring outputPath_) {
+                                                           jobject bitmap, jstring outputPath_, jint quality) {
     AndroidBitmapInfo info;
     void* pixels;
     int ret;
@@ -253,6 +181,12 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass c
     heif_encoder* encoder;
     heif_context_get_encoder_for_format(ctx, heif_compression_HEVC, &encoder);
     heif_encoder_set_logging_level(encoder, 4);
+
+    if (quality >= 100) {
+        heif_encoder_set_lossless(encoder, 1);
+    } else {
+        heif_encoder_set_lossy_quality(encoder, quality);
+    }
 
     heif_encoding_options* encoding_options = heif_encoding_options_alloc();
     encoding_options->save_alpha_channel = 0;
