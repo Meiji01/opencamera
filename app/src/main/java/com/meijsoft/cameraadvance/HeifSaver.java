@@ -16,5 +16,5 @@ public class HeifSaver {
         }
     }
 
-    public static native boolean saveBitmapAsHeic(Bitmap bitmap, String path, int quality);
+    public static native boolean saveBitmapAsHeic(Bitmap bitmap, String path, byte[] exifData, int quality);
 }

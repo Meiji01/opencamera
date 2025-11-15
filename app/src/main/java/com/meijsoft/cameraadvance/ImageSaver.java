@@ -338,6 +338,53 @@ public class ImageSaver extends Thread {
         p.setAntiAlias(true);
     }
 
+    private byte[] getExifData(byte[] jpeg_data) {
+        if (jpeg_data == null || jpeg_data.length < 12) {
+            return null;
+        }
+        // Check for JPEG SOI marker
+        if (jpeg_data[0] != (byte) 0xFF || jpeg_data[1] != (byte) 0xD8) {
+            return null; // Not a JPEG
+        }
+
+        int offset = 2;
+        while (offset < jpeg_data.length - 9) { // -9 to avoid reading past array bounds
+            // Check for APP1 marker
+            if (jpeg_data[offset] == (byte) 0xFF && jpeg_data[offset+1] == (byte) 0xE1) {
+                int segmentLength = ((jpeg_data[offset+2] & 0xFF) << 8) | (jpeg_data[offset+3] & 0xFF);
+                // segmentLength includes the 2 bytes for the length itself.
+                if (offset + segmentLength + 2 > jpeg_data.length) {
+                    return null; // Invalid segment length
+                }
+
+                // Check for "Exif\0\0"
+                if (jpeg_data[offset+4] == 'E' && jpeg_data[offset+5] == 'x' && jpeg_data[offset+6] == 'i' &&
+                        jpeg_data[offset+7] == 'f' && jpeg_data[offset+8] == 0 && jpeg_data[offset+9] == 0) {
+
+                    // The EXIF data starts after "Exif\0\0"
+                    int exifStart = offset + 10;
+                    int exifLength = segmentLength - 8; // 2 for length, 6 for "Exif\0\0"
+                    if (exifLength <= 0 || exifStart + exifLength > jpeg_data.length) {
+                        return null;
+                    }
+                    byte[] exifData = new byte[exifLength];
+                    System.arraycopy(jpeg_data, exifStart, exifData, 0, exifLength);
+                    return exifData;
+                }
+            }
+
+            // Move to the next segment
+            int segmentLength = ((jpeg_data[offset+2] & 0xFF) << 8) | (jpeg_data[offset+3] & 0xFF);
+            if (offset + segmentLength + 2 > jpeg_data.length) {
+                return null; // Avoid running off the end.
+            }
+            offset += segmentLength + 2;
+        }
+
+        return null;
+    }
+
+
     /** Returns the length of the image saver queue. In practice, the number of images that can be taken at once before the UI
      *  blocks is 1 more than this, as 1 image will be taken off the queue to process straight away.
      */
@@ -3270,7 +3317,8 @@ public class ImageSaver extends Thread {
                                 Log.d(TAG, "Saving HEIC to temporary file: " + outputPath);
                         }
 
-                        boolean success_heif = HeifSaver.saveBitmapAsHeic(bitmap, outputPath, request.image_quality);
+                        byte[] exifData = getExifData(data);
+                        boolean success_heif = HeifSaver.saveBitmapAsHeic(bitmap, outputPath, exifData, request.image_quality);
                         if (MyDebug.LOG)
                             Log.d(TAG, "HeifNative.encodeBitmap success: " + success_heif);
 

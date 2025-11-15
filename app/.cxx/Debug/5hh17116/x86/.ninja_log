@@ -1,4 +1,4 @@
 # ninja log v5
-4	50	1762779825557532452	CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o	fd729a7938d3d726
-0	320	1762779825560492257	CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o	b6d512b232e692b8
-321	364	1762779825845687302	/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/x86/libopencamera_heif.so	58c824ed9708c31f
+5	104	1763221860236804286	CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o	fd729a7938d3d726
+1	510	1763221860643240312	CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o	b6d512b232e692b8
+512	560	1763221860693241485	/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/x86/libopencamera_heif.so	58c824ed9708c31f

@@ -150,7 +150,7 @@ Java_com_wanghonglin_libheif_HeifNative_encodeYUV(JNIEnv *env, jclass type, jbyt
 extern "C"
 JNIEXPORT jboolean JNICALL
 Java_com_meijsoft_cameraadvance_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass clazz,
-                                                           jobject bitmap, jstring outputPath_, jint quality) {
+                                                           jobject bitmap, jstring outputPath_, jbyteArray exifData, jint quality) {
     AndroidBitmapInfo info;
     void* pixels;
     int ret;
@@ -202,6 +202,19 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass c
         heif_image_release(image);
         heif_context_free(ctx);
         return JNI_FALSE;
+    }
+
+    // Add EXIF metadata
+    if (exifData != NULL) {
+        jsize exif_size = env->GetArrayLength(exifData);
+        if (exif_size > 0) {
+            jbyte* exif_bytes = env->GetByteArrayElements(exifData, NULL);
+            heif_error exif_error = heif_context_add_exif_metadata(ctx, handle, (uint8_t*)exif_bytes, exif_size);
+            if (exif_error.code != heif_error_Ok) {
+                __android_log_print(ANDROID_LOG_WARN, TAG, "heif_context_add_exif_metadata() failed: %s", exif_error.message);
+            }
+            env->ReleaseByteArrayElements(exifData, exif_bytes, JNI_ABORT);
+        }
     }
 
     error = heif_context_write_to_file(ctx, outputPath);
