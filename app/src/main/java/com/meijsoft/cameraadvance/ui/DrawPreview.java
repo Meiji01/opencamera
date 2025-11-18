@@ -320,6 +320,8 @@ public class DrawPreview {
     private String OSDLine1;
     private String OSDLine2;
 
+    private String image_format_string;
+
     private final static int histogram_width_dp = 100;
     private final static int histogram_height_dp = 60;
 
@@ -750,6 +752,36 @@ public class DrawPreview {
             ghost_selected_image_pref = "";
         }
         ghost_image_alpha = applicationInterface.getGhostImageAlpha();
+
+        String raw_pref_value = sharedPreferences.getString(PreferenceKeys.RawPreferenceKey, "preference_raw_no");
+        if (raw_pref_value.equals("preference_raw_only")) {
+            image_format_string = "RAW only";
+        } else {
+            String image_format_value = sharedPreferences.getString(PreferenceKeys.ImageFormatPreferenceKey, "preference_image_format_jpeg");
+            switch (image_format_value) {
+                case "preference_image_format_jpeg":
+                    image_format_string = "JPEG";
+                    break;
+                case "preference_image_format_jpeg_r":
+                    image_format_string = "JPEG_R";
+                    break;
+                case "preference_image_format_webp":
+                    image_format_string = "WebP";
+                    break;
+                case "preference_image_format_png":
+                    image_format_string = "PNG";
+                    break;
+                case "preference_image_format_heic":
+                    image_format_string = "HEIC";
+                    break;
+                default:
+                    image_format_string = "";
+                    break;
+            }
+            if (raw_pref_value.equals("preference_raw_yes")) {
+                image_format_string += "+RAW";
+            }
+        }
 
         String histogram_pref = sharedPreferences.getString(PreferenceKeys.HistogramPreferenceKey, "preference_histogram_off");
         want_histogram = !histogram_pref.equals("preference_histogram_off") && main_activity.supportsPreviewBitmaps();
@@ -1392,6 +1424,19 @@ public class DrawPreview {
                 else {
                     location_y += height;
                 }
+            }
+        }
+
+        if( image_format_string != null && image_format_string.length() > 0 ) {
+            if( MyDebug.LOG )
+                Log.d(TAG, "image_format_string: " + image_format_string);
+            int height = applicationInterface.drawTextWithBackground(canvas, p, image_format_string, Color.WHITE, Color.BLACK, location_x, location_y, MyApplicationInterface.Alignment.ALIGNMENT_TOP, ybounds_text, MyApplicationInterface.Shadow.SHADOW_OUTLINE);
+            height += gap_y;
+            if( device_ui_rotation == 90 ) {
+                location_y -= height;
+            }
+            else {
+                location_y += height;
             }
         }
 
