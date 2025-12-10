@@ -18,3 +18,7 @@
 14	646	1763488332798808138	CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o	da06d1d1fbd67205
 11	3036	1763488335150099220	CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o	86081205991ea178
 3039	3413	1763488335569151107	/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/arm64-v8a/libopencamera_heif.so	286e8b5012c930d6
+0	7	0	clean	91d69be2a14ea7ec
+47	893	1765380654629845083	CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o	da06d1d1fbd67205
+45	3788	1765380657523234340	CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o	86081205991ea178
+3788	4315	1765380658055305917	/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/arm64-v8a/libopencamera_heif.so	286e8b5012c930d6

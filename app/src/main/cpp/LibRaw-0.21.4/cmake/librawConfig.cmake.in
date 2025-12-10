@@ -1,0 +1,29 @@
+include(CMakeFindDependencyMacro)
+
+if(TARGET libraw::libraw_r)
+    find_dependency(Threads)
+endif()
+
+if(NOT TARGET libraw::libraw AND NOT TARGET libraw::libraw_r)
+    include("${CMAKE_CURRENT_LIST_DIR}/librawTargets.cmake")
+endif()
+
+# Old-style variables
+set(LIBRAW_FOUND TRUE)
+set(LIBRAW_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/../../../include/libraw")
+if(TARGET libraw::libraw_r)
+    set(LIBRAW_LIBRARIES libraw::libraw_r)
+else()
+    set(LIBRAW_LIBRARIES libraw::libraw)
+endif()
+set(LIBRAW_DEFINITIONS)
+
+# New-style variables
+set(LibRaw_FOUND TRUE)
+set(LibRaw_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/../../../include/libraw")
+if(TARGET libraw::libraw_r)
+    set(LibRaw_LIBRARIES libraw::libraw_r)
+else()
+    set(LibRaw_LIBRARIES libraw::libraw)
+endif()
+set(LibRaw_DEFINITIONS)

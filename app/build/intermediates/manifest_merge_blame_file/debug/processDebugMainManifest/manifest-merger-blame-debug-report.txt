@@ -113,296 +113,295 @@
 63-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:37:9-41
 64        android:largeHeap="true"
 64-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:40:9-33
-65        android:testOnly="true"
-66        android:theme="@style/AppTheme" >
-66-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:39:9-40
-67        <meta-data
-67-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:42:9-44:62
-68            android:name="author"
-68-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:43:13-34
-69            android:value="Mei Racpan(github.com/Meiji01)" />
-69-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:44:13-59
-70        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-71        <activity
-71-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:46:9-83:20
-72            android:name="com.meijsoft.cameraadvance.MainActivity"
-72-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:47:13-67
-73            android:clearTaskOnLaunch="true"
-73-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:49:13-45
-74            android:configChanges="orientation|screenSize|keyboardHidden"
-74-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:48:13-74
-75            android:exported="true" >
-75-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:50:13-36
-76
-77            <!-- clearTaskOnLaunch set to true, so if user goes to gallery then returns to home, we return to the camera rather than remaining in gallery if user relaunches Open Camera -->
-78            <intent-filter>
-78-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:53:13-57:29
-79                <action android:name="android.intent.action.MAIN" />
-79-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:54:17-69
-79-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:54:25-66
-80
-81                <category android:name="android.intent.category.LAUNCHER" />
-81-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:55:17-77
-81-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:55:27-74
-82                <category android:name="android.intent.category.DEFAULT" />
-82-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-82-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-83            </intent-filter>
-84            <intent-filter>
-84-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:58:13-61:29
-85                <action android:name="android.media.action.IMAGE_CAPTURE" />
-85-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:59:17-77
-85-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:59:25-74
-86
-87                <category android:name="android.intent.category.DEFAULT" />
-87-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-87-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-88            </intent-filter>
-89            <intent-filter>
-89-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:62:13-65:29
-90                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE" />
-90-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:63:17-84
-90-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:63:25-81
-91
-92                <category android:name="android.intent.category.DEFAULT" />
-92-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-92-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-93            </intent-filter>
-94            <intent-filter>
-94-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:66:13-69:29
-95                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
-95-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:67:17-82
-95-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:67:25-79
-96
-97                <category android:name="android.intent.category.DEFAULT" />
-97-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-97-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-98            </intent-filter>
-99            <intent-filter>
-99-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:70:13-73:29
-100                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
-100-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:71:17-89
-100-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:71:25-86
-101
-102                <category android:name="android.intent.category.DEFAULT" />
-102-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-102-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-103            </intent-filter>
-104            <intent-filter>
-104-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:74:13-77:29
-105                <action android:name="android.media.action.VIDEO_CAMERA" />
-105-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:75:17-76
-105-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:75:25-73
-106
-107                <category android:name="android.intent.category.DEFAULT" />
-107-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-107-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-108            </intent-filter>
-109            <intent-filter>
-109-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:78:13-81:29
-110                <action android:name="android.media.action.VIDEO_CAPTURE" />
-110-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:79:17-77
-110-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:79:25-74
-111
-112                <category android:name="android.intent.category.DEFAULT" />
-112-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
-112-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
-113            </intent-filter>
-114
-115            <meta-data
-115-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:13-97
-116                android:name="android.app.shortcuts"
-116-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:24-60
-117                android:resource="@xml/shortcuts" />
-117-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:61-94
-118        </activity>
-119        <activity
-119-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:84:9-89:20
-120            android:name="com.meijsoft.cameraadvance.remotecontrol.DeviceScanner"
-120-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:85:13-82
-121            android:exported="false"
-121-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:87:13-37
-122            android:label="@string/scan_ble" >
-122-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:86:13-45
-123        </activity>
-124
-125        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-126        <activity
-126-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:92:9-101:20
-127            android:name="com.meijsoft.cameraadvance.TakePhoto"
-127-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:93:13-37
-128            android:configChanges="orientation|screenSize|keyboardHidden"
-128-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:96:13-74
-129            android:excludeFromRecents="true"
-129-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:98:13-46
-130            android:exported="false"
-130-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:99:13-37
-131            android:icon="@drawable/ic_launcher_take_photo"
-131-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:95:13-60
-132            android:label="@string/take_photo"
-132-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:94:13-47
-133            android:taskAffinity="" >
-133-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:97:13-36
-134        </activity>
-135        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-136        <receiver
-136-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:103:9-114:20
-137            android:name="com.meijsoft.cameraadvance.MyWidgetProviderTakePhoto"
-137-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:106:13-53
-138            android:exported="true"
-138-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:107:13-36
-139            android:icon="@drawable/ic_launcher_take_photo"
-139-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:104:13-60
-140            android:label="@string/take_photo" >
-140-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:105:13-47
-141            <intent-filter>
-141-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:108:13-110:29
-142                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-142-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:109:18-85
-142-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:109:26-82
-143            </intent-filter>
-144
-145            <meta-data
-145-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:111:13-113:65
-146                android:name="android.appwidget.provider"
-146-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:112:16-57
-147                android:resource="@xml/widget_info_take_photo" />
-147-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:113:16-62
-148        </receiver>
-149        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-150        <service
-150-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:116:9-126:19
-151            android:name="com.meijsoft.cameraadvance.MyTileService"
-151-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:117:13-68
-152            android:exported="true"
-152-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:121:13-36
-153            android:icon="@drawable/ic_photo_camera_white_48dp"
-153-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:118:13-64
-154            android:label="@string/camera"
-154-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:119:13-43
-155            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-155-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:120:13-77
-156            <intent-filter>
-156-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
-157                <action android:name="android.service.quicksettings.action.QS_TILE" />
-157-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
-157-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
-158            </intent-filter>
-159        </service>
-160        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-161        <service
-161-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:128:9-138:19
-162            android:name="com.meijsoft.cameraadvance.MyTileServiceVideo"
-162-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:129:13-73
-163            android:exported="true"
-163-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:133:13-36
-164            android:icon="@drawable/ic_videocam_white_48dp"
-164-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:130:13-60
-165            android:label="@string/record_video"
-165-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:131:13-49
-166            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-166-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:132:13-77
-167            <intent-filter>
-167-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
-168                <action android:name="android.service.quicksettings.action.QS_TILE" />
-168-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
-168-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
-169            </intent-filter>
-170        </service>
-171        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
-172        <service
-172-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:140:9-150:19
-173            android:name="com.meijsoft.cameraadvance.MyTileServiceFrontCamera"
-173-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:141:13-79
-174            android:exported="true"
-174-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:145:13-36
-175            android:icon="@drawable/ic_face_white_48dp"
-175-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:142:13-56
-176            android:label="@string/selfie"
-176-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:143:13-43
-177            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
-177-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:144:13-77
-178            <intent-filter>
-178-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
-179                <action android:name="android.service.quicksettings.action.QS_TILE" />
-179-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
-179-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
-180            </intent-filter>
-181        </service>
-182        <service
-182-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:151:9-154:15
-183            android:name="com.meijsoft.cameraadvance.remotecontrol.BluetoothLeService"
-183-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:151:18-92
-184            android:enabled="true"
-184-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:152:13-35
-185            android:exported="false" />
-185-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:153:13-37
-186
-187        <provider
-187-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-188            android:name="androidx.startup.InitializationProvider"
-188-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
-189            android:authorities="net.sourceforge.com.meij.cameraadvance.androidx-startup"
-189-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
-190            android:exported="false" >
-190-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
-191            <meta-data
-191-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-192                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-192-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
-193                android:value="androidx.startup" />
-193-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
-194            <meta-data
-194-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-195                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-195-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-196                android:value="androidx.startup" />
-196-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-197            <meta-data
-197-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-198                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-198-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-199                android:value="androidx.startup" />
-199-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-200        </provider>
-201
-202        <receiver
-202-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-203            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-203-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-204            android:directBootAware="false"
-204-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-205            android:enabled="true"
-205-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-206            android:exported="true"
-206-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-207            android:permission="android.permission.DUMP" >
-207-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-208            <intent-filter>
-208-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-209                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-209-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-209-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-210            </intent-filter>
-211            <intent-filter>
-211-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-212                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-212-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-212-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-213            </intent-filter>
-214            <intent-filter>
-214-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-215                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-215-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-215-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-216            </intent-filter>
-217            <intent-filter>
-217-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-218                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-218-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-218-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-219            </intent-filter>
-220        </receiver>
-221    </application>
-222
-223</manifest>
+65        android:theme="@style/AppTheme" >
+65-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:39:9-40
+66        <meta-data
+66-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:42:9-44:62
+67            android:name="author"
+67-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:43:13-34
+68            android:value="Mei Racpan(github.com/Meiji01)" />
+68-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:44:13-59
+69        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+70        <activity
+70-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:46:9-83:20
+71            android:name="com.meijsoft.cameraadvance.MainActivity"
+71-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:47:13-67
+72            android:clearTaskOnLaunch="true"
+72-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:49:13-45
+73            android:configChanges="orientation|screenSize|keyboardHidden"
+73-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:48:13-74
+74            android:exported="true" >
+74-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:50:13-36
+75
+76            <!-- clearTaskOnLaunch set to true, so if user goes to gallery then returns to home, we return to the camera rather than remaining in gallery if user relaunches Open Camera -->
+77            <intent-filter>
+77-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:53:13-57:29
+78                <action android:name="android.intent.action.MAIN" />
+78-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:54:17-69
+78-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:54:25-66
+79
+80                <category android:name="android.intent.category.LAUNCHER" />
+80-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:55:17-77
+80-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:55:27-74
+81                <category android:name="android.intent.category.DEFAULT" />
+81-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+81-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+82            </intent-filter>
+83            <intent-filter>
+83-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:58:13-61:29
+84                <action android:name="android.media.action.IMAGE_CAPTURE" />
+84-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:59:17-77
+84-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:59:25-74
+85
+86                <category android:name="android.intent.category.DEFAULT" />
+86-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+86-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+87            </intent-filter>
+88            <intent-filter>
+88-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:62:13-65:29
+89                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE" />
+89-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:63:17-84
+89-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:63:25-81
+90
+91                <category android:name="android.intent.category.DEFAULT" />
+91-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+91-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+92            </intent-filter>
+93            <intent-filter>
+93-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:66:13-69:29
+94                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+94-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:67:17-82
+94-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:67:25-79
+95
+96                <category android:name="android.intent.category.DEFAULT" />
+96-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+96-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+97            </intent-filter>
+98            <intent-filter>
+98-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:70:13-73:29
+99                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
+99-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:71:17-89
+99-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:71:25-86
+100
+101                <category android:name="android.intent.category.DEFAULT" />
+101-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+101-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+102            </intent-filter>
+103            <intent-filter>
+103-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:74:13-77:29
+104                <action android:name="android.media.action.VIDEO_CAMERA" />
+104-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:75:17-76
+104-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:75:25-73
+105
+106                <category android:name="android.intent.category.DEFAULT" />
+106-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+106-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+107            </intent-filter>
+108            <intent-filter>
+108-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:78:13-81:29
+109                <action android:name="android.media.action.VIDEO_CAPTURE" />
+109-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:79:17-77
+109-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:79:25-74
+110
+111                <category android:name="android.intent.category.DEFAULT" />
+111-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:17-76
+111-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:56:27-73
+112            </intent-filter>
+113
+114            <meta-data
+114-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:13-97
+115                android:name="android.app.shortcuts"
+115-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:24-60
+116                android:resource="@xml/shortcuts" />
+116-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:82:61-94
+117        </activity>
+118        <activity
+118-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:84:9-89:20
+119            android:name="com.meijsoft.cameraadvance.remotecontrol.DeviceScanner"
+119-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:85:13-82
+120            android:exported="false"
+120-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:87:13-37
+121            android:label="@string/scan_ble" >
+121-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:86:13-45
+122        </activity>
+123
+124        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+125        <activity
+125-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:92:9-101:20
+126            android:name="com.meijsoft.cameraadvance.TakePhoto"
+126-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:93:13-37
+127            android:configChanges="orientation|screenSize|keyboardHidden"
+127-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:96:13-74
+128            android:excludeFromRecents="true"
+128-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:98:13-46
+129            android:exported="false"
+129-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:99:13-37
+130            android:icon="@drawable/ic_launcher_take_photo"
+130-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:95:13-60
+131            android:label="@string/take_photo"
+131-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:94:13-47
+132            android:taskAffinity="" >
+132-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:97:13-36
+133        </activity>
+134        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+135        <receiver
+135-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:103:9-114:20
+136            android:name="com.meijsoft.cameraadvance.MyWidgetProviderTakePhoto"
+136-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:106:13-53
+137            android:exported="true"
+137-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:107:13-36
+138            android:icon="@drawable/ic_launcher_take_photo"
+138-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:104:13-60
+139            android:label="@string/take_photo" >
+139-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:105:13-47
+140            <intent-filter>
+140-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:108:13-110:29
+141                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+141-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:109:18-85
+141-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:109:26-82
+142            </intent-filter>
+143
+144            <meta-data
+144-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:111:13-113:65
+145                android:name="android.appwidget.provider"
+145-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:112:16-57
+146                android:resource="@xml/widget_info_take_photo" />
+146-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:113:16-62
+147        </receiver>
+148        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+149        <service
+149-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:116:9-126:19
+150            android:name="com.meijsoft.cameraadvance.MyTileService"
+150-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:117:13-68
+151            android:exported="true"
+151-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:121:13-36
+152            android:icon="@drawable/ic_photo_camera_white_48dp"
+152-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:118:13-64
+153            android:label="@string/camera"
+153-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:119:13-43
+154            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
+154-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:120:13-77
+155            <intent-filter>
+155-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
+156                <action android:name="android.service.quicksettings.action.QS_TILE" />
+156-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
+156-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
+157            </intent-filter>
+158        </service>
+159        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+160        <service
+160-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:128:9-138:19
+161            android:name="com.meijsoft.cameraadvance.MyTileServiceVideo"
+161-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:129:13-73
+162            android:exported="true"
+162-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:133:13-36
+163            android:icon="@drawable/ic_videocam_white_48dp"
+163-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:130:13-60
+164            android:label="@string/record_video"
+164-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:131:13-49
+165            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
+165-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:132:13-77
+166            <intent-filter>
+166-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
+167                <action android:name="android.service.quicksettings.action.QS_TILE" />
+167-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
+167-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
+168            </intent-filter>
+169        </service>
+170        <!-- should not change the android:name, including moving to a subpackage - see http://android-developers.blogspot.co.uk/2011/06/things-that-cannot-change.html -->
+171        <service
+171-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:140:9-150:19
+172            android:name="com.meijsoft.cameraadvance.MyTileServiceFrontCamera"
+172-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:141:13-79
+173            android:exported="true"
+173-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:145:13-36
+174            android:icon="@drawable/ic_face_white_48dp"
+174-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:142:13-56
+175            android:label="@string/selfie"
+175-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:143:13-43
+176            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" >
+176-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:144:13-77
+177            <intent-filter>
+177-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:123:13-125:29
+178                <action android:name="android.service.quicksettings.action.QS_TILE" />
+178-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:17-87
+178-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:124:25-84
+179            </intent-filter>
+180        </service>
+181        <service
+181-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:151:9-154:15
+182            android:name="com.meijsoft.cameraadvance.remotecontrol.BluetoothLeService"
+182-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:151:18-92
+183            android:enabled="true"
+183-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:152:13-35
+184            android:exported="false" />
+184-->/home/meijr/Documents/GitHub/opencamera/app/src/main/AndroidManifest.xml:153:13-37
+185
+186        <provider
+186-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+187            android:name="androidx.startup.InitializationProvider"
+187-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:25:13-67
+188            android:authorities="net.sourceforge.com.meij.cameraadvance.androidx-startup"
+188-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:26:13-68
+189            android:exported="false" >
+189-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:27:13-37
+190            <meta-data
+190-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+191                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+191-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:30:17-75
+192                android:value="androidx.startup" />
+192-->[androidx.emoji2:emoji2:1.3.0] /home/meijr/.gradle/caches/8.9/transforms/2046e0353abb439d4deeb020898d4ea3/transformed/jetified-emoji2-1.3.0/AndroidManifest.xml:31:17-49
+193            <meta-data
+193-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+194                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+194-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+195                android:value="androidx.startup" />
+195-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/meijr/.gradle/caches/8.9/transforms/e919483b6085332082184f6427a9efc8/transformed/jetified-lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+196            <meta-data
+196-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+197                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+197-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+198                android:value="androidx.startup" />
+198-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+199        </provider>
+200
+201        <receiver
+201-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+202            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+202-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+203            android:directBootAware="false"
+203-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+204            android:enabled="true"
+204-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+205            android:exported="true"
+205-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+206            android:permission="android.permission.DUMP" >
+206-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+207            <intent-filter>
+207-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+208                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+208-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+209            </intent-filter>
+210            <intent-filter>
+210-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+211                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+211-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+212            </intent-filter>
+213            <intent-filter>
+213-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+214                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+214-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+215            </intent-filter>
+216            <intent-filter>
+216-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+217                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/meijr/.gradle/caches/8.9/transforms/bb754e11dad0f43cb7a87cb66f2cab9c/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+218            </intent-filter>
+219        </receiver>
+220    </application>
+221
+222</manifest>
