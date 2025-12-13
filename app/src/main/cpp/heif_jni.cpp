@@ -431,9 +431,11 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveDngToHeic(JNIEnv *env, jclass claz
 
     // Keep output as 8-bit RGB (we convert to YUV420 later)
     RawProcessor.imgdata.params.output_bps = 8;
+    // Disable automatic brightening (preserve original RAW exposure)
+    RawProcessor.imgdata.params.no_auto_bright = 1;
 
     // Log processing parameters to help diagnose behavior
-    __android_log_print(ANDROID_LOG_DEBUG, TAG, "LibRaw params before dcraw_process: use_auto_wb=%d, use_camera_wb=%d, use_camera_matrix=%d, output_color=%d, output_bps=%d, user_qual=%d, fbdd_noiserd=%d, med_passes=%d, iterations=%d, dcb_enhance=%d",
+    __android_log_print(ANDROID_LOG_DEBUG, TAG, "LibRaw params before dcraw_process: use_auto_wb=%d, use_camera_wb=%d, use_camera_matrix=%d, output_color=%d, output_bps=%d, user_qual=%d, fbdd_noiserd=%d, med_passes=%d, iterations=%d, dcb_enhance=%d, no_auto_bright=%d",
                         RawProcessor.imgdata.params.use_auto_wb,
                         RawProcessor.imgdata.params.use_camera_wb,
                         RawProcessor.imgdata.params.use_camera_matrix,
@@ -443,7 +445,8 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveDngToHeic(JNIEnv *env, jclass claz
                         RawProcessor.imgdata.params.fbdd_noiserd,
                         RawProcessor.imgdata.params.med_passes,
                         RawProcessor.imgdata.params.dcb_iterations,
-                        RawProcessor.imgdata.params.dcb_enhance_fl);
+                        RawProcessor.imgdata.params.dcb_enhance_fl,
+                        RawProcessor.imgdata.params.no_auto_bright);
     __android_log_print(ANDROID_LOG_DEBUG, TAG, "LibRaw cam_mul: %f, %f, %f, %f",
                         RawProcessor.imgdata.color.cam_mul[0],
                         RawProcessor.imgdata.color.cam_mul[1],

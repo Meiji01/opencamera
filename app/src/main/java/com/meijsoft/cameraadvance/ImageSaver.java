@@ -4415,6 +4415,101 @@ public static class Request {
 
         RawImage raw_image = request.raw_image;
         try {
+            // Determine RAW preference and whether user wants DNG saved
+            MyApplicationInterface applicationInterface = main_activity.getApplicationInterface();
+            boolean raw_only = applicationInterface.isRawOnly();
+            boolean want_dng = applicationInterface.getRawPref() == ApplicationInterface.RawPref.RAWPREF_JPEG_DNG;
+
+            // If RAW only mode, save only the DNG and skip HEIC conversion
+            if( raw_only ) {
+                if( MyDebug.LOG )
+                    Log.d(TAG, "RAW only mode - saving DNG only");
+                File picFile = null;
+                Uri saveUri = null;
+                boolean use_media_store = false;
+                ContentValues contentValues = null; // used if using scoped storage
+
+                String filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
+                if( storageUtils.isUsingSAF() ) {
+                    saveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "dng", request.current_date);
+                }
+                else if( MainActivity.useScopedStorage() ) {
+                    use_media_store = true;
+                    Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
+                            MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                    contentValues = new ContentValues();
+                    String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, 0, ".dng", request.current_date);
+                    contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
+                    contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/dng");
+                    if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                        contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
+                        contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
+                    }
+
+                    try {
+                        saveUri = main_activity.getContentResolver().insert(folder, contentValues);
+                    }
+                    catch(IllegalArgumentException e) {
+                        MyDebug.logStackTrace(TAG, "IllegalArgumentException inserting to mediastore", e);
+                        throw new IOException();
+                    }
+                    catch(IllegalStateException e) {
+                        MyDebug.logStackTrace(TAG, "IllegalStateException inserting to mediastore", e);
+                        throw new IOException();
+                    }
+                    if( saveUri == null )
+                        throw new IOException();
+                }
+                else {
+                    picFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "dng", request.current_date);
+                }
+
+                OutputStream output = null;
+                try {
+                    if( picFile != null ) {
+                        output = new FileOutputStream(picFile);
+                    }
+                    else {
+                        output = main_activity.getContentResolver().openOutputStream(saveUri);
+                    }
+                    raw_image.writeImage(output);
+                    raw_image.close();
+                    raw_image = null;
+                    output.close();
+                    output = null;
+                    // set last image for share/trash options for pause preview
+                    boolean hasnoexifdatetime = request.remove_device_exif != Request.RemoveDeviceExif.OFF && request.remove_device_exif != Request.RemoveDeviceExif.KEEP_DATETIME;
+                    if( picFile != null ) {
+                        storageUtils.broadcastFile(picFile, true, false, true, hasnoexifdatetime, null);
+                        main_activity.getApplicationInterface().addLastImage(picFile, true);
+                    }
+                    else if( use_media_store ) {
+                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                            contentValues.clear();
+                            contentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
+                            main_activity.getContentResolver().update(saveUri, contentValues, null, null);
+                        }
+                        main_activity.getApplicationInterface().addLastImageMediaStore(saveUri, true);
+                    }
+                    else {
+                        storageUtils.broadcastUri(saveUri, true, false, true, hasnoexifdatetime, false);
+                        main_activity.getApplicationInterface().addLastImageSAF(saveUri, true);
+                    }
+                }
+                finally {
+                    if( output != null ) {
+                        try { output.close(); } catch(IOException e) { MyDebug.logStackTrace(TAG, "ioexception closing raw output", e); }
+                    }
+                    if( raw_image != null ) raw_image.close();
+                }
+
+                System.gc();
+                main_activity.savingImage(false);
+                return true;
+            }
+
+            // Not RAW only: proceed to save HEIC (and possibly also save DNG afterwards)
             File picFile = null;
             Uri saveUri = null;
             boolean use_media_store = false;
@@ -4482,8 +4577,7 @@ public static class Request {
                 }
             }
 
-            raw_image.close();
-            raw_image = null;
+            
 
             if( success ) {
                 if( saveUri == null ) {
@@ -4503,6 +4597,79 @@ public static class Request {
                         main_activity.getApplicationInterface().addLastImageSAF(saveUri, true);
                     }
                 }
+            }
+
+            // If user wants DNG in addition to HEIC (standard + DNG), save the original RAW/DNG
+            if( want_dng ) {
+                try {
+                    // Save DNG similarly to saveImageNowRaw, but don't override the last image/share which was set for HEIC
+                    File dngPicFile = null;
+                    Uri dngSaveUri = null;
+                    boolean dng_use_media_store = false;
+                    ContentValues dngContentValues = null;
+                    String dng_filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
+                    if( storageUtils.isUsingSAF() ) {
+                        dngSaveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, "dng", request.current_date);
+                    }
+                    else if( MainActivity.useScopedStorage() ) {
+                        dng_use_media_store = true;
+                        Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
+                                MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
+                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                        dngContentValues = new ContentValues();
+                        String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, 0, ".dng", request.current_date);
+                        dngContentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
+                        dngContentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/dng");
+                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                            dngContentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
+                            dngContentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
+                        }
+                        dngSaveUri = main_activity.getContentResolver().insert(folder, dngContentValues);
+                        if( dngSaveUri == null ) throw new IOException();
+                    }
+                    else {
+                        dngPicFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, "dng", request.current_date);
+                    }
+
+                    OutputStream dngOut = null;
+                    try {
+                        if( dngPicFile != null )
+                            dngOut = new FileOutputStream(dngPicFile);
+                        else
+                            dngOut = main_activity.getContentResolver().openOutputStream(dngSaveUri);
+                        raw_image.writeImage(dngOut);
+                    }
+                    finally {
+                        if( dngOut != null ) try { dngOut.close(); } catch(IOException e) { MyDebug.logStackTrace(TAG, "failed to close dng output", e); }
+                    }
+
+                    boolean dng_hasnoexifdatetime = request.remove_device_exif != Request.RemoveDeviceExif.OFF && request.remove_device_exif != Request.RemoveDeviceExif.KEEP_DATETIME;
+                    if( dngPicFile != null ) {
+                        storageUtils.broadcastFile(dngPicFile, true, false, false, dng_hasnoexifdatetime, null);
+                        main_activity.getApplicationInterface().addLastImage(dngPicFile, false);
+                    }
+                    else if( dng_use_media_store ) {
+                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                            dngContentValues.clear();
+                            dngContentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
+                            main_activity.getContentResolver().update(dngSaveUri, dngContentValues, null, null);
+                        }
+                        main_activity.getApplicationInterface().addLastImageMediaStore(dngSaveUri, false);
+                    }
+                    else {
+                        storageUtils.broadcastUri(dngSaveUri, true, false, false, dng_hasnoexifdatetime, false);
+                        main_activity.getApplicationInterface().addLastImageSAF(dngSaveUri, false);
+                    }
+                }
+                catch(Exception e) {
+                    MyDebug.logStackTrace(TAG, "failed to save DNG alongside HEIC", e);
+                }
+            }
+
+            // close raw image now (after possibly saving the DNG)
+            if( raw_image != null ) {
+                raw_image.close();
+                raw_image = null;
             }
         }
         catch(Exception e) {
