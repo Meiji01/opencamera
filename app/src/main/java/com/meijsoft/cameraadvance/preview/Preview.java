@@ -5,6 +5,7 @@ import com.meijsoft.cameraadvance.JavaImageProcessing;
 import com.meijsoft.cameraadvance.cameracontroller.RawImage;
 //import net.sourceforge.com.meij.cameraadvance.MainActivity;
 import com.meijsoft.cameraadvance.MyDebug;
+import com.meijsoft.cameraadvance.ImageSaver;
 import com.meijsoft.cameraadvance.R;
 import com.meijsoft.cameraadvance.TakePhoto;
 import com.meijsoft.cameraadvance.ToastBoxer;
@@ -2219,7 +2220,8 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             camera_controller.setJpegR(false);
         }
 
-        if( this.supports_raw && applicationInterface.getRawPref() != ApplicationInterface.RawPref.RAWPREF_JPEG_ONLY ) {
+    boolean force_raw = applicationInterface.useCamera2() && applicationInterface.getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC;
+        if( (this.supports_raw && applicationInterface.getRawPref() != ApplicationInterface.RawPref.RAWPREF_JPEG_ONLY) || force_raw ) {
             camera_controller.setRaw(true, applicationInterface.getMaxRawImages());
         }
         else {
@@ -6720,9 +6722,17 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 if( MyDebug.LOG )
                     Log.d(TAG, "onRawPictureTaken");
                 initDate();
-                if( !applicationInterface.onRawPictureTaken(raw_image, current_date) ) {
-                    if( MyDebug.LOG )
-                        Log.e(TAG, "applicationInterface.onRawPictureTaken failed");
+                if( applicationInterface.useCamera2() && applicationInterface.getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC ) {
+                    if( !applicationInterface.onHEICPictureTaken(raw_image, current_date) ) {
+                        if( MyDebug.LOG )
+                            Log.e(TAG, "applicationInterface.onHEICPictureTaken failed");
+                    }
+                }
+                else {
+                    if( !applicationInterface.onRawPictureTaken(raw_image, current_date) ) {
+                        if( MyDebug.LOG )
+                            Log.e(TAG, "applicationInterface.onRawPictureTaken failed");
+                    }
                 }
             }
 

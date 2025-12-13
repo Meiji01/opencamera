@@ -24,6 +24,17 @@ it under the terms of the one of two licenses as you choose:
 #include <errno.h>
 #include <string.h>
 
+/* fseeko/ftello are not available on some Android NDK headers; map them to fseek/ftell
+ * as a compatibility workaround. This may limit support for very large files but
+ * avoids build failures on platforms lacking fseeko/ftello.
+ */
+#ifndef fseeko
+#define fseeko fseek
+#endif
+#ifndef ftello
+#define ftello ftell
+#endif
+
 #ifndef __cplusplus
 
 #else /* __cplusplus */

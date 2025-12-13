@@ -1,6 +1,11 @@
 {
   "buildFiles": [
-    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt"
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt",
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/CMakeLists.txt",
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/data/libraw_config.h.cmake",
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroBoolTo01.cmake",
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroLogFeature.cmake",
+    "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroOptionalFindPackage.cmake"
   ],
   "cleanCommandsComponents": [
     [
@@ -24,6 +29,18 @@
       "runtimeFiles": [
         "/home/meijr/Documents/GitHub/opencamera/app/src/main/jniLibs/armeabi-v7a/libheif.so"
       ]
+    },
+    "raw::@f43d2f8058717a03ac05": {
+      "artifactName": "raw",
+      "abi": "armeabi-v7a",
+      "output": "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/libraw.a",
+      "runtimeFiles": []
+    },
+    "raw_r::@f43d2f8058717a03ac05": {
+      "artifactName": "raw_r",
+      "abi": "armeabi-v7a",
+      "output": "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/libraw_r.a",
+      "runtimeFiles": []
     }
   }
 }

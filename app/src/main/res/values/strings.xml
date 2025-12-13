@@ -176,6 +176,11 @@
     <string name="preference_quality">Image quality</string>
     <string name="preference_quality_summary">Set the image quality of saved JPEG or WebP photo images (default value is 90%%). Has no effect for PNG image format.\n%s</string> <!-- '%' is encoded as '%%' - a single % can crash devices, and this isn't picked up by Android Lint! -->
     <string name="preference_raw">RAW</string>
+    <string name="preference_raw_wb_category">RAW white-balance settings</string>
+    <string name="preference_raw_use_auto_wb">Use LibRaw auto white balance</string>
+    <string name="preference_raw_use_auto_wb_summary">If enabled, LibRaw will apply automatic white balance during RAW processing</string>
+    <string name="preference_raw_use_camera_wb">Use camera white balance (if available)</string>
+    <string name="preference_raw_use_camera_wb_summary">If enabled, LibRaw will use the camera-provided white balance multipliers when available</string>
     <string name="preference_location">Store location data (Geotagging)</string>
     <string name="preference_location_summary">Store GPS location data in the photos/videos (for photos, location data can only be stored in JPEG and DNG formats)</string>
     <string name="preference_gps_direction">Store compass direction</string>

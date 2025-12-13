@@ -362,6 +362,9 @@ ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
 //Path to a library.
 ZLIB_LIBRARY_RELEASE:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libz.so
 
+//Path to a library.
+android-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libandroid.so
+
 //Value Computed by CMake
 heif_saver_BINARY_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86
 
@@ -371,6 +374,9 @@ heif_saver_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 heif_saver_SOURCE_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp
 
+//Path to a library.
+jnigraphics-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libjnigraphics.so
+
 //Value Computed by CMake
 libraw_BINARY_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4
 
@@ -379,6 +385,12 @@ libraw_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 libraw_SOURCE_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
+
+//Path to a library.
+log-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so
+
+//Dependencies for the target
+opencamera_heif_LIB_DEPENDS:STATIC=general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so;general;heif_prebuilt;general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libandroid.so;general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libjnigraphics.so;general;raw_r;
 
 
 ########################

@@ -1784,7 +1784,8 @@ public class MyApplicationInterface extends BasicApplicationInterface {
         return false;
     }
 
-    private ImageSaver.Request.ImageFormat getImageFormatPref() {
+    @Override
+    public ImageSaver.Request.ImageFormat getImageFormatPref() {
         switch( sharedPreferences.getString(PreferenceKeys.ImageFormatPreferenceKey, "preference_image_format_jpeg") ) {
             case "preference_image_format_webp":
                 return ImageSaver.Request.ImageFormat.WEBP;
@@ -3640,6 +3641,12 @@ public class MyApplicationInterface extends BasicApplicationInterface {
         if( MyDebug.LOG )
             Log.d(TAG, "onPictureTaken");
 
+        if( useCamera2() && getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC ) {
+            if( MyDebug.LOG )
+                Log.d(TAG, "HEIC enabled, ignoring JPEG");
+            return true; // do nothing with the JPEG data
+        }
+
         n_capture_images++;
         if( MyDebug.LOG )
             Log.d(TAG, "n_capture_images is now " + n_capture_images);
@@ -3737,6 +3744,25 @@ public class MyApplicationInterface extends BasicApplicationInterface {
 
         if( MyDebug.LOG )
             Log.d(TAG, "onRawBurstPictureTaken complete");
+        return success;
+    }
+
+    @Override
+    public boolean onHEICPictureTaken(RawImage raw_image, Date current_date) {
+        if( MyDebug.LOG )
+            Log.d(TAG, "onHEICPictureTaken");
+        System.gc();
+
+        n_capture_images_raw++;
+        if( MyDebug.LOG )
+            Log.d(TAG, "n_capture_images_raw is now " + n_capture_images_raw);
+
+        boolean do_in_background = saveInBackground(false);
+
+    boolean success = imageSaver.saveImageHeicFromRaw(do_in_background, raw_image, current_date, getSaveImageQualityPref());
+
+        if( MyDebug.LOG )
+            Log.d(TAG, "onHEICPictureTaken complete");
         return success;
     }
 

@@ -1,0 +1,7 @@
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/opencamera_heif.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/edit_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/rebuild_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4/CMakeFiles/raw.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4/CMakeFiles/raw_r.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4/CMakeFiles/edit_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4/CMakeFiles/rebuild_cache.dir

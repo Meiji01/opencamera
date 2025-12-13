@@ -99,6 +99,10 @@ public class PreferenceKeys {
 
     public static final String AllowRawForFocusBracketingPreferenceKey = "preference_raw_focus_bracketing";
 
+    // Raw white balance options for native LibRaw processing
+    public static final String RawUseAutoWBPreferenceKey = "preference_raw_use_auto_wb";
+    public static final String RawUseCameraWBPreferenceKey = "preference_raw_use_camera_wb";
+
     public static final String PanoramaCropPreferenceKey = "preference_panorama_crop";
 
     public static final String PanoramaSaveExpoPreferenceKey = "preference_panorama_save";

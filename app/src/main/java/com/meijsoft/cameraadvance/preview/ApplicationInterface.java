@@ -19,6 +19,7 @@ import android.view.MotionEvent;
 import androidx.annotation.RequiresApi;
 
 import com.meijsoft.cameraadvance.MyDebug;
+import com.meijsoft.cameraadvance.ImageSaver;
 import com.meijsoft.cameraadvance.cameracontroller.CameraController;
 import com.meijsoft.cameraadvance.cameracontroller.RawImage;
 
@@ -111,6 +112,7 @@ public interface ApplicationInterface {
      */
     Pair<Integer, Integer> getCameraResolutionPref(CameraResolutionConstraints constraints); // return null to let Preview choose size
     int getImageQualityPref(); // jpeg quality for taking photos; "90" is a recommended default
+    ImageSaver.Request.ImageFormat getImageFormatPref();
     boolean getFaceDetectionPref(); // whether to use face detection mode
     String getVideoQualityPref(); // should be one of Preview.getSupportedVideoQuality() (use Preview.getCamcorderProfile() or Preview.getCamcorderProfileDescription() for details); or return "" to let Preview choose quality
     boolean getVideoStabilizationPref(); // whether to use video stabilization for video
@@ -269,6 +271,7 @@ public interface ApplicationInterface {
     boolean onPictureTaken(byte [] data, Date current_date);
     boolean onBurstPictureTaken(List<byte []> images, Date current_date);
     boolean onRawPictureTaken(RawImage raw_image, Date current_date);
+    boolean onHEICPictureTaken(RawImage raw_image, Date current_date);
     boolean onRawBurstPictureTaken(List<RawImage> raw_images, Date current_date);
     void onCaptureStarted(); // called immediately before we start capturing the picture
     void onPictureCompleted(); // called after all picture callbacks have been called and returned

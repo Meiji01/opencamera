@@ -1,0 +1,111 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "LibRaw-0.21.4",
+					"jsonFile" : "directory-LibRaw-0.21.4-Debug-5e7315971e1344a58e49.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12..16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "LibRaw-0.21.4",
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "heif_saver",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "libraw",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "opencamera_heif::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-opencamera_heif-Debug-466a35ccf9553797b308.json",
+					"name" : "opencamera_heif",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "raw::@f43d2f8058717a03ac05",
+					"jsonFile" : "target-raw-Debug-9d0332f1da9b2a860e4a.json",
+					"name" : "raw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "raw_r::@f43d2f8058717a03ac05",
+					"jsonFile" : "target-raw_r-Debug-a39138a306807ece3f6f.json",
+					"name" : "raw_r",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86",
+		"source" : "/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

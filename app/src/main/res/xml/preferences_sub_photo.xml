@@ -54,6 +54,25 @@
         android:defaultValue="preference_raw_no"
         />
 
+    <!-- Raw WhiteBalance settings: control LibRaw use_auto_wb and use_camera_wb -->
+    <PreferenceCategory
+        android:key="preference_category_raw_wb"
+        android:title="@string/preference_raw_wb_category">
+
+        <SwitchPreference
+            android:key="preference_raw_use_auto_wb"
+            android:title="@string/preference_raw_use_auto_wb"
+            android:summary="@string/preference_raw_use_auto_wb_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="preference_raw_use_camera_wb"
+            android:title="@string/preference_raw_use_camera_wb"
+            android:summary="@string/preference_raw_use_camera_wb_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
     <!--  if we move this to another PreferenceGroup, we should update code to remove this Preference -->
     <SwitchPreference
         android:key="preference_raw_expo_bracketing"

@@ -74,6 +74,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        // Use Java 11 for compatibility with Android D8/R8 and minSdkVersion
+        languageVersion = JavaLanguageVersion.of(11)
     }
 }

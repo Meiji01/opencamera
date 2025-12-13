@@ -33,6 +33,8 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ContentValues;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -120,10 +122,11 @@ public class ImageSaver extends Thread {
     public volatile boolean test_slow_saving;
     public volatile boolean test_queue_blocked;
 
-    static class Request {
+public static class Request {
         enum Type {
             JPEG, // also covers WEBP
             RAW,
+            HEIC_FROM_RAW,
             DUMMY,
             ON_DESTROY // indicate that application is being destroyed, so should exit thread
         }
@@ -159,7 +162,7 @@ public class ImageSaver extends Thread {
         final boolean using_camera_extensions;
         /* image_format allows converting the standard JPEG image into another file format.
 #        */
-        enum ImageFormat {
+        public static enum ImageFormat {
             STD, // leave unchanged from the standard JPEG format
             WEBP,
             PNG,
@@ -623,6 +626,11 @@ public class ImageSaver extends Thread {
                             Log.d(TAG, "request is raw");
                         success = saveImageNowRaw(request);
                         break;
+                    case HEIC_FROM_RAW:
+                        if (MyDebug.LOG)
+                            Log.d(TAG, "request is heic from raw");
+                        success = saveImageNowHeicFromRaw(request);
+                        break;
                     case JPEG:
                         if (MyDebug.LOG)
                             Log.d(TAG, "request is jpeg");
@@ -732,6 +740,7 @@ public class ImageSaver extends Thread {
         }
         return saveImage(do_in_background,
                 false,
+                false,
                 processType,
                 force_suffix,
                 suffix_offset,
@@ -778,6 +787,7 @@ public class ImageSaver extends Thread {
         }
         return saveImage(do_in_background,
                 true,
+                false,
                 Request.ProcessType.NORMAL,
                 force_suffix,
                 suffix_offset,
@@ -792,13 +802,52 @@ public class ImageSaver extends Thread {
                 false,
                 false,
                 current_date,
-                HDRProcessor.default_tonemapping_algorithm_c,
+                HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_REINHARD,
                 null,
                 0,
                 0,
                 1.0f,
                 null, null, 0, 0, null, null, null, null,
                 //null,
+                null,
+                false, Request.RemoveDeviceExif.OFF, false, null, false, 0.0,
+                0.0, false,
+                null, null,
+                1);
+    }
+
+    boolean saveImageHeicFromRaw(boolean do_in_background,
+                                 RawImage raw_image,
+                                 Date current_date,
+                                 int image_quality) {
+        if( MyDebug.LOG ) {
+            Log.d(TAG, "saveImageHeicFromRaw");
+            Log.d(TAG, "do_in_background? " + do_in_background);
+        }
+    return saveImage(do_in_background,
+                false,
+                true,
+                Request.ProcessType.NORMAL,
+                false,
+                0,
+                false,
+                null,
+                null,
+                raw_image,
+                false, null,
+                true, // using_camera2
+                false,
+        Request.ImageFormat.HEIC, image_quality,
+                false, 0.0,
+                false,
+                false,
+                current_date,
+                HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_REINHARD,
+                null,
+                0,
+                0,
+                1.0f,
+                null, null, 0, 0, null, null, null, null,
                 null,
                 false, Request.RemoveDeviceExif.OFF, false, null, false, 0.0,
                 0.0, false,
@@ -923,6 +972,7 @@ public class ImageSaver extends Thread {
      */
     private boolean saveImage(boolean do_in_background,
                               boolean is_raw,
+                              boolean is_heic_from_raw,
                               Request.ProcessType processType,
                               boolean force_suffix,
                               int suffix_offset,
@@ -960,7 +1010,8 @@ public class ImageSaver extends Thread {
 
         //do_in_background = false;
 
-        Request request = new Request(is_raw ? Request.Type.RAW : Request.Type.JPEG,
+        Request.Type type = is_heic_from_raw ? Request.Type.HEIC_FROM_RAW : (is_raw ? Request.Type.RAW : Request.Type.JPEG);
+        Request request = new Request(type,
                 processType,
                 force_suffix,
                 suffix_offset,
@@ -992,14 +1043,18 @@ public class ImageSaver extends Thread {
         if( do_in_background ) {
             if( MyDebug.LOG )
                 Log.d(TAG, "add background request");
-            int cost = computeRequestCost(is_raw, is_raw ? 1 : request.jpeg_images.size());
+        int cost = computeRequestCost(is_raw || is_heic_from_raw,
+            (is_raw || is_heic_from_raw) ? 1 : (request.jpeg_images == null ? 0 : request.jpeg_images.size()));
             addRequest(request, cost);
             success = true; // always return true when done in background
         }
         else {
             // wait for queue to be empty
             waitUntilDone();
-            if( is_raw ) {
+            if( is_heic_from_raw ) {
+                success = saveImageNowHeicFromRaw(request);
+            }
+            else if( is_raw ) {
                 success = saveImageNowRaw(request);
             }
             else {
@@ -4338,6 +4393,127 @@ public class ImageSaver extends Thread {
         System.gc();
 
         main_activity.savingImage(false);
+
+        return success;
+    }
+
+    private boolean saveImageNowHeicFromRaw(Request request) {
+        if( MyDebug.LOG )
+            Log.d(TAG, "saveImageNowHeicFromRaw");
+
+        if( request.type != Request.Type.HEIC_FROM_RAW ) {
+            if( MyDebug.LOG )
+                Log.d(TAG, "saveImageNowHeicFromRaw called with non-heic-from-raw request");
+            // throw runtime exception, as this is a programming error
+            throw new RuntimeException();
+        }
+
+        StorageUtils storageUtils = main_activity.getStorageUtils();
+        boolean success = false;
+
+        main_activity.savingImage(true);
+
+        RawImage raw_image = request.raw_image;
+        try {
+            File picFile = null;
+            Uri saveUri = null;
+            boolean use_media_store = false;
+            ContentValues contentValues = null; // used if using scoped storage
+
+            String filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
+            if( storageUtils.isUsingSAF() ) {
+                saveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "heic", request.current_date);
+            }
+            else if( MainActivity.useScopedStorage() ) {
+                use_media_store = true;
+                Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
+                        MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                contentValues = new ContentValues();
+                String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, 0, ".heic", request.current_date);
+                contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
+                contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/heic");
+                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                    contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
+                    contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
+                }
+                saveUri = main_activity.getContentResolver().insert(folder, contentValues);
+                if( saveUri == null )
+                    throw new IOException();
+            }
+            else {
+                picFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "heic", request.current_date);
+            }
+
+            String output_path;
+            File tempFile = null;
+            if( picFile != null ) {
+                output_path = picFile.getAbsolutePath();
+            } else {
+                tempFile = File.createTempFile("heic_from_raw_temp", ".heic", main_activity.getCacheDir());
+                output_path = tempFile.getAbsolutePath();
+            }
+
+            // Convert RAW Image to Bitmap via DNG, then encode bitmap to HEIC. Using Image.getPlanes() buffer
+            // directly can result in incorrect colour interpretation for Camera2 RAW images. Instead write a DNG
+            // using RawImage.writeImage() and decode it with native RawProcessor.decodeDng.
+            File dngTemp = File.createTempFile("heic_from_raw_dng", ".dng", main_activity.getCacheDir());
+            try (OutputStream dngOut = new FileOutputStream(dngTemp)) {
+                raw_image.writeImage(dngOut);
+            }
+            // Use native pipeline: process DNG with libraw then encode to HEIC with libheif entirely in native code
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+            boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
+            boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
+            success = HeifSaver.saveDngToHeic(dngTemp.getAbsolutePath(), output_path, request.image_quality, use_auto_wb, use_camera_wb);
+            if (dngTemp.exists()) dngTemp.delete();
+
+            if( success && picFile == null && saveUri != null ) {
+                try (InputStream is = new FileInputStream(output_path);
+                     OutputStream os = main_activity.getContentResolver().openOutputStream(saveUri)) {
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = is.read(buffer)) > 0) {
+                        os.write(buffer, 0, length);
+                    }
+                }
+                if( tempFile != null && tempFile.exists() ) {
+                    tempFile.delete();
+                }
+            }
+
+            raw_image.close();
+            raw_image = null;
+
+            if( success ) {
+                if( saveUri == null ) {
+                    storageUtils.broadcastFile(picFile, true, false, true, false, null);
+                    main_activity.getApplicationInterface().addLastImage(picFile, true);
+                } else {
+                    if( use_media_store ) {
+                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                            contentValues.clear();
+                            contentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
+                            main_activity.getContentResolver().update(saveUri, contentValues, null, null);
+                        }
+                        main_activity.getApplicationInterface().addLastImageMediaStore(saveUri, true);
+                    }
+                    else {
+                        storageUtils.broadcastUri(saveUri, true, false, true, false, false);
+                        main_activity.getApplicationInterface().addLastImageSAF(saveUri, true);
+                    }
+                }
+            }
+        }
+        catch(Exception e) {
+            MyDebug.logStackTrace(TAG, "Exception saving HEIC from RAW", e);
+        }
+        finally {
+            if( raw_image != null ) {
+                raw_image.close();
+            }
+            main_activity.savingImage(false);
+        }
 
         return success;
     }

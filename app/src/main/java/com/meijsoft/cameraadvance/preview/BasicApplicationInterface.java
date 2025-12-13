@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 
 import androidx.annotation.RequiresApi;
 
+import com.meijsoft.cameraadvance.ImageSaver;
 import com.meijsoft.cameraadvance.cameracontroller.CameraController;
 import com.meijsoft.cameraadvance.cameracontroller.RawImage;
 
@@ -107,6 +108,11 @@ public abstract class BasicApplicationInterface implements ApplicationInterface 
     @Override
     public int getImageQualityPref() {
         return 90;
+    }
+
+    @Override
+    public ImageSaver.Request.ImageFormat getImageFormatPref() {
+        return ImageSaver.Request.ImageFormat.STD;
     }
 
     @Override
@@ -663,6 +669,11 @@ public abstract class BasicApplicationInterface implements ApplicationInterface 
 
     @Override
     public boolean onRawPictureTaken(RawImage raw_image, Date current_date) {
+        return false;
+    }
+
+    @Override
+    public boolean onHEICPictureTaken(RawImage raw_image, Date current_date) {
         return false;
     }
 
