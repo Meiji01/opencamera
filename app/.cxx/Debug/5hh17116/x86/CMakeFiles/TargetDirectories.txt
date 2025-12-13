@@ -1,3 +1,0 @@
-/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/opencamera_heif.dir
-/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/edit_cache.dir
-/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/CMakeFiles/rebuild_cache.dir

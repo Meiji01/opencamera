@@ -1,0 +1,6 @@
+libjpeg
+  DESCRIPTION: JPEG image format support
+  URL: http://www.ijg.org
+  MIN_VERSION: 80
+  COMMENTS: needed for the LibRaw DNG lossy codec
+

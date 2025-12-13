@@ -1,3 +1,7 @@
 /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/opencamera_heif.dir
 /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/edit_cache.dir
 /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/CMakeFiles/raw.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/CMakeFiles/raw_r.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/CMakeFiles/edit_cache.dir
+/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4/CMakeFiles/rebuild_cache.dir

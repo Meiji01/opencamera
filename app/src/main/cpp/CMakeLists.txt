@@ -3,7 +3,10 @@ cmake_minimum_required(VERSION 3.10.2)
 project("heif_saver")
 
 include_directories(src/main/cpp
-                    src/main/cpp/libheif)
+                    src/main/cpp/libheif
+                    src/main/cpp/LibRaw-0.21.4/libraw)
+
+add_subdirectory(LibRaw-0.21.4)
 
 add_library( # Sets the name of the library.
              opencamera_heif
@@ -48,4 +51,5 @@ target_link_libraries( # Specifies the target library.
                        ${log-lib}
                        heif_prebuilt
                        ${android-lib}
-                       ${jnigraphics-lib} )
+                       ${jnigraphics-lib} 
+                       raw_r)

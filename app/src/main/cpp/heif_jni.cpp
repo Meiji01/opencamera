@@ -3,6 +3,7 @@
 #include <android/log.h>
 #include <cstring>
 #include <android/bitmap.h>
+#include "libraw/libraw.h"
 
 #define TAG "libheif"
 
@@ -238,4 +239,47 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveBitmapAsHeic(JNIEnv *env, jclass c
     env->ReleaseStringUTFChars(outputPath_, outputPath);
 
     return JNI_TRUE;
+}
+
+extern "C"
+JNIEXPORT jobject JNICALL
+Java_com_meijsoft_cameraadvance_RawProcessor_decodeDng(JNIEnv *env, jclass clazz, jstring dngPath_) {
+    const char *dngPath = env->GetStringUTFChars(dngPath_, 0);
+
+    LibRaw RawProcessor;
+    RawProcessor.open_file(dngPath);
+    RawProcessor.unpack();
+
+    int width = RawProcessor.imgdata.sizes.width;
+    int height = RawProcessor.imgdata.sizes.height;
+
+    RawProcessor.dcraw_process();
+
+    libraw_processed_image_t *processed_image = RawProcessor.dcraw_make_mem_image();
+
+    jclass bitmapConfig = env->FindClass("android/graphics/Bitmap$Config");
+    jfieldID rgba8888FieldID = env->GetStaticFieldID(bitmapConfig, "ARGB_8888", "Landroid/graphics/Bitmap$Config;");
+    jobject rgba8888Obj = env->GetStaticObjectField(bitmapConfig, rgba8888FieldID);
+
+    jclass bitmapClass = env->FindClass("android/graphics/Bitmap");
+    jmethodID createBitmapMethodID = env->GetStaticMethodID(bitmapClass, "createBitmap", "(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;");
+    jobject bitmap = env->CallStaticObjectMethod(bitmapClass, createBitmapMethodID, width, height, rgba8888Obj);
+
+    AndroidBitmapInfo info;
+    void* pixels;
+    AndroidBitmap_getInfo(env, bitmap, &info);
+    AndroidBitmap_lockPixels(env, bitmap, &pixels);
+
+    if (processed_image->type == LIBRAW_IMAGE_BITMAP && processed_image->bits == 8) {
+        memcpy(pixels, processed_image->data, processed_image->data_size);
+    }
+
+    AndroidBitmap_unlockPixels(env, bitmap);
+
+    LibRaw::dcraw_clear_mem(processed_image);
+    RawProcessor.recycle();
+
+    env->ReleaseStringUTFChars(dngPath_, dngPath);
+
+    return bitmap;
 }

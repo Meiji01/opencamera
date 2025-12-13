@@ -23,6 +23,9 @@ ANDROID_NDK:UNINITIALIZED=/home/meijr/Android/Sdk/ndk/27.0.12077973
 //No help, variable specified on the command line.
 ANDROID_PLATFORM:UNINITIALIZED=android-21
 
+//Build library as shared library                 (default=ON)
+BUILD_SHARED_LIBS:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-addr2line
 
@@ -117,8 +120,56 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //No help, variable specified on the command line.
 CMAKE_EXPORT_COMPILE_COMMANDS:UNINITIALIZED=ON
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //No help, variable specified on the command line.
 CMAKE_LIBRARY_OUTPUT_DIRECTORY:UNINITIALIZED=/home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/x86
@@ -165,6 +216,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=heif_saver
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=0.21.4
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=21
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=4
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Ranlib
 CMAKE_RANLIB:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib
@@ -239,8 +305,62 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/build/cm
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Build library with Raspberry Pi RAW support     (default=OFF)
+ENABLE_6BY9RPI:BOOL=OFF
+
+//Build library with debug message from dcraw     (default=OFF)
+ENABLE_DCRAW_DEBUG:BOOL=OFF
+
+//Build library with sample command-line programs (default=ON)
+ENABLE_EXAMPLES:BOOL=OFF
+
+//Build library with libjasper support            (default=ON)
+ENABLE_JASPER:BOOL=OFF
+
+//Build library with LCMS support                 (default=ON)
+ENABLE_LCMS:BOOL=OFF
+
+//Build library with OpenMP support               (default=ON)
+ENABLE_OPENMP:BOOL=OFF
+
+//Build library with extra RawSpeed codec support (default=OFF)
+ENABLE_RAWSPEED:BOOL=OFF
+
+//Build library with Foveon X3F support           (default=OFF)
+ENABLE_X3FTOOLS:BOOL=OFF
+
+//Path to a file.
+JPEG_INCLUDE_DIR:PATH=JPEG_INCLUDE_DIR-NOTFOUND
+
 //Path to a library.
-android-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libandroid.so
+JPEG_LIBRARY_DEBUG:FILEPATH=JPEG_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+JPEG_LIBRARY_RELEASE:FILEPATH=JPEG_LIBRARY_RELEASE-NOTFOUND
+
+//Generate the install target.
+LIBRAW_INSTALL:BOOL=OFF
+
+//Relative path to libraw directory (default=CMAKE_CURRENT_SOURCE_DIR)
+LIBRAW_PATH:STRING=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
+
+//Add a custom target to ease removal of installed targets
+LIBRAW_UNINSTALL_TARGET:BOOL=OFF
+
+//Path to a library.
+MATH_LIBRARY:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libm.so
+
+//Relative path to extra RawSpeed codec     (default=RawSpeed)
+RAWSPEED_RPATH:STRING=RawSpeed
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libz.so
 
 //Value Computed by CMake
 heif_saver_BINARY_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86
@@ -251,14 +371,14 @@ heif_saver_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 heif_saver_SOURCE_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp
 
-//Path to a library.
-jnigraphics-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libjnigraphics.so
+//Value Computed by CMake
+libraw_BINARY_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/x86/LibRaw-0.21.4
 
-//Path to a library.
-log-lib:FILEPATH=/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so
+//Value Computed by CMake
+libraw_IS_TOP_LEVEL:STATIC=OFF
 
-//Dependencies for the target
-opencamera_heif_LIB_DEPENDS:STATIC=general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/liblog.so;general;heif_prebuilt;general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libandroid.so;general;/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libjnigraphics.so;
+//Value Computed by CMake
+libraw_SOURCE_DIR:STATIC=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
 
 
 ########################
@@ -342,8 +462,40 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -359,7 +511,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -402,4 +554,20 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/i686-linux-android/21/libz.so][/home/meijr/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include][v1.3.0.1()]
+//ADVANCED property for variable: JPEG_INCLUDE_DIR
+JPEG_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: JPEG_LIBRARY_DEBUG
+JPEG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: JPEG_LIBRARY_RELEASE
+JPEG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 
