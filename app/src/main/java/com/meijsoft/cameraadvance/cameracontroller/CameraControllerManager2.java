@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CameraMetadata;
+import android.os.Build;
 import android.util.Log;
 import android.util.SizeF;
 
@@ -27,6 +28,9 @@ public class CameraControllerManager2 extends CameraControllerManager {
     public int getNumberOfCameras() {
         CameraManager manager = (CameraManager)context.getSystemService(Context.CAMERA_SERVICE);
         try {
+            // Return logical camera count (keeps compatibility with other methods that index
+            // directly into manager.getCameraIdList()). Use getNumberOfPhysicalCameras()
+            // if you need the flattened physical sensor count.
             return manager.getCameraIdList().length;
         }
         catch(Throwable e) {
@@ -37,6 +41,101 @@ public class CameraControllerManager2 extends CameraControllerManager {
             MyDebug.logStackTrace(TAG, "exception trying to get camera ids", e);
         }
         return 0;
+    }
+
+    /**
+     * Returns the number of physical camera sensors available on the device.
+     * This counts physical camera ids behind logical cameras (API 28+). On older
+     * platforms this returns the logical camera count.
+     */
+    public int getNumberOfPhysicalCameras() {
+        CameraManager manager = (CameraManager)context.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            String[] ids = manager.getCameraIdList();
+            if (ids == null) return 0;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                int total = 0;
+                for (String id : ids) {
+                    try {
+                        CameraCharacteristics chars = manager.getCameraCharacteristics(id);
+                        java.util.Set<String> physical = chars.getPhysicalCameraIds();
+                        if (physical != null && !physical.isEmpty()) {
+                            total += physical.size();
+                        } else {
+                            total += 1;
+                        }
+                    }
+                    catch(Throwable e) {
+                        MyDebug.logStackTrace(TAG, "exception getting characteristics for id " + id, e);
+                        total += 1;
+                    }
+                }
+                return total;
+            }
+
+            return ids.length;
+        }
+        catch(Throwable e) {
+            MyDebug.logStackTrace(TAG, "exception trying to get camera ids", e);
+        }
+        return 0;
+    }
+
+    /**
+     * Information for a physical camera entry: the logical camera id that owns it,
+     * and the physical camera id (or null when not applicable).
+     */
+    public static class PhysicalCameraInfo {
+        public final String logicalCameraId;
+        public final String physicalCameraId; // may be null for single-sensor logical cameras
+
+        public PhysicalCameraInfo(String logicalCameraId, String physicalCameraId) {
+            this.logicalCameraId = logicalCameraId;
+            this.physicalCameraId = physicalCameraId;
+        }
+    }
+
+    /**
+     * Returns the PhysicalCameraInfo for a flattened physical camera index.
+     * If the platform doesn't expose physical ids, physicalCameraId will be null and
+     * logicalCameraId will point to the logical id.
+     */
+    public PhysicalCameraInfo getPhysicalCameraInfo(int physicalIndex) {
+        CameraManager manager = (CameraManager)context.getSystemService(Context.CAMERA_SERVICE);
+        try {
+            String[] ids = manager.getCameraIdList();
+            if (ids == null) return null;
+
+            int idx = physicalIndex;
+            for (String id : ids) {
+                try {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                        CameraCharacteristics chars = manager.getCameraCharacteristics(id);
+                        java.util.Set<String> physical = chars.getPhysicalCameraIds();
+                        if (physical != null && !physical.isEmpty()) {
+                            for (String phys : physical) {
+                                if (idx == 0) return new PhysicalCameraInfo(id, phys);
+                                idx--;
+                            }
+                            continue;
+                        }
+                    }
+                    // Single-sensor logical camera
+                    if (idx == 0) return new PhysicalCameraInfo(id, null);
+                    idx--;
+                }
+                catch(Throwable e) {
+                    MyDebug.logStackTrace(TAG, "exception getting characteristics for id " + id, e);
+                    if (idx == 0) return new PhysicalCameraInfo(id, null);
+                    idx--;
+                }
+            }
+        }
+        catch(Throwable e) {
+            MyDebug.logStackTrace(TAG, "exception trying to get camera ids", e);
+        }
+        return null;
     }
 
     @Override

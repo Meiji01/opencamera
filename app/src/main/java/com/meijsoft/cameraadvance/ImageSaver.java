@@ -324,6 +324,30 @@ public static class Request {
         }
     }
 
+    /** Checks whether device supports native HEIC encoding via MediaCodec/MediaMuxer.
+     *  Returns true if an encoder for image/heic can be found.
+     */
+    private boolean supportsNativeHeicEncoding() {
+        try {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return false;
+            Log.d(TAG,"Trying to use native image/heic to check device eligibility");
+            final String mime_type = "image/heic";
+            // use a tiny resolution - just to query available encoders
+            MediaFormat format = MediaFormat.createVideoFormat(mime_type, 2, 2);
+            // request surface input since that's what we use for encoding bitmaps
+            format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
+            MediaCodecList codecs = new MediaCodecList(MediaCodecList.REGULAR_CODECS);
+            String encoder_name = codecs.findEncoderForFormat(format);
+            return encoder_name != null;
+        }
+        catch(Throwable t) {
+            if (MyDebug.LOG) {
+                Log.d(TAG, "supportsNativeHeicEncoding: exception trying to detect encoder: " + t);
+            }
+            return false;
+        }
+    }
+
     ImageSaver(MainActivity main_activity) {
         super("ImageSaver");
         if( MyDebug.LOG )
@@ -4556,12 +4580,60 @@ public static class Request {
             try (OutputStream dngOut = new FileOutputStream(dngTemp)) {
                 raw_image.writeImage(dngOut);
             }
-            // Use native pipeline: process DNG with libraw then encode to HEIC with libheif entirely in native code
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
-            boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
-            boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
-            success = HeifSaver.saveDngToHeic(dngTemp.getAbsolutePath(), output_path, request.image_quality, use_auto_wb, use_camera_wb);
-            if (dngTemp.exists()) dngTemp.delete();
+            // Prefer native Android HEIC encoding if device supports it; otherwise fall back to JNI/libheif pipeline
+            if (supportsNativeHeicEncoding()) {
+                if (MyDebug.LOG) Log.d(TAG, "Device supports native HEIC encoding - using MediaCodec/MediaMuxer path");
+                Bitmap decoded = null;
+                try {
+                    // decode DNG to Bitmap using native RawProcessor (may use native code)
+                    decoded = RawProcessor.decodeDng(dngTemp.getAbsolutePath());
+                    if (decoded != null) {
+                        if (picFile != null) {
+                            try (FileOutputStream fos = new FileOutputStream(picFile)) {
+                                FileDescriptor fd = fos.getFD();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                                    saveBitmapAsHeic(decoded, fd, request.image_quality);
+                                }
+                            }
+                        } else {
+                            try (ParcelFileDescriptor pfd = main_activity.getContentResolver().openFileDescriptor(saveUri, "rw")) {
+                                FileDescriptor fd = pfd.getFileDescriptor();
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                                    saveBitmapAsHeic(decoded, fd, request.image_quality);
+                                }
+                            }
+                        }
+                        success = true;
+                    }
+                    else {
+                        if (MyDebug.LOG) Log.e(TAG, "failed to decode DNG for native HEIC path; falling back to JNI pipeline");
+                        // fall through to JNI path below
+                    }
+                }
+                catch(Throwable t) {
+                    MyDebug.logStackTrace(TAG, "exception decoding DNG or saving native HEIC", t);
+                    success = false;
+                }
+                finally {
+                    if (decoded != null) decoded.recycle();
+                    if (dngTemp.exists()) dngTemp.delete();
+                }
+            }
+            if (!success) {
+                // Use native pipeline: process DNG with libraw then encode to HEIC with libheif entirely in native code
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+                boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
+                boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
+                int color_space_output=1; //RGB
+                try {
+                    // Ensure native LibRaw output color is set (1 = sRGB by default)
+                    RawProcessor.setLibRawOutputColor(color_space_output);
+                    success = HeifSaver.saveDngToHeic(dngTemp.getAbsolutePath(), output_path, request.image_quality, use_auto_wb, use_camera_wb);
+                }
+                finally {
+                    if (dngTemp.exists()) dngTemp.delete();
+                }
+            }
 
             if( success && picFile == null && saveUri != null ) {
                 try (InputStream is = new FileInputStream(output_path);

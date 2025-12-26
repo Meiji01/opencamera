@@ -434,6 +434,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
         // If there are more than two cameras, but all cameras have the same "facing, we still stick
         // with using the switch camera icon to iterate over all cameras.
         int n_cameras = preview.getCameraControllerManager().getNumberOfCameras();
+        Log.d(TAG, "number of cameras detected: " + n_cameras);
         if( n_cameras > 2 ) {
             this.back_camera_ids = new ArrayList<>();
             this.front_camera_ids = new ArrayList<>();
@@ -1026,6 +1027,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
             CameraControllerManager2 manager2 = new CameraControllerManager2(this);
             supports_camera2 = false;
             int n_cameras = manager2.getNumberOfCameras();
+            Log.d(TAG, "Camera Support 2 count: " + n_cameras);
             if( n_cameras == 0 ) {
                 if( MyDebug.LOG )
                     Log.d(TAG, "Camera2 reports 0 cameras");

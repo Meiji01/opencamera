@@ -56,8 +56,6 @@ build CMakeFiles/opencamera_heif.dir/heif_saver.cpp.o: CXX_COMPILER__opencamera_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = CMakeFiles/opencamera_heif.dir
   OBJECT_FILE_DIR = CMakeFiles/opencamera_heif.dir
-  TARGET_COMPILE_PDB = CMakeFiles/opencamera_heif.dir/
-  TARGET_PDB = /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/armeabi-v7a/libopencamera_heif.pdb
 
 build CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o: CXX_COMPILER__opencamera_heif_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/heif_jni.cpp || cmake_object_order_depends_target_opencamera_heif
   DEFINES = -DLIBRAW_NODLL -Dopencamera_heif_EXPORTS
@@ -66,8 +64,6 @@ build CMakeFiles/opencamera_heif.dir/heif_jni.cpp.o: CXX_COMPILER__opencamera_he
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = CMakeFiles/opencamera_heif.dir
   OBJECT_FILE_DIR = CMakeFiles/opencamera_heif.dir
-  TARGET_COMPILE_PDB = CMakeFiles/opencamera_heif.dir/
-  TARGET_PDB = /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/armeabi-v7a/libopencamera_heif.pdb
 
 
 # =============================================================================
@@ -86,9 +82,8 @@ build /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/
   PRE_LINK = :
   SONAME = libopencamera_heif.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_COMPILE_PDB = CMakeFiles/opencamera_heif.dir/
   TARGET_FILE = /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/armeabi-v7a/libopencamera_heif.so
-  TARGET_PDB = /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/cxx/Debug/5hh17116/obj/armeabi-v7a/libopencamera_heif.pdb
+  TARGET_PDB = opencamera_heif.so.dbg
 
 
 #############################################
@@ -134,8 +129,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/canon_600.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/crx.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/crx.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -144,8 +137,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/crx.cpp.o: CXX_COMPILER__raw
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_dcraw.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_dcraw.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -154,8 +145,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_dcraw.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_libraw.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_libraw.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -164,8 +153,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_libraw.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_libraw_dcrdefs.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_libraw_dcrdefs.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -174,8 +161,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/decoders_libraw_dcrdefs.cpp.
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/dng.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/dng.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -184,8 +169,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/dng.cpp.o: CXX_COMPILER__raw
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/fp_dng.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/fp_dng.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -194,8 +177,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/fp_dng.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/fuji_compressed.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/fuji_compressed.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -204,8 +185,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/fuji_compressed.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/generic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/generic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -214,8 +193,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/generic.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/kodak_decoders.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/kodak_decoders.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -224,8 +201,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/kodak_decoders.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/load_mfbacks.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/load_mfbacks.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -234,8 +209,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/load_mfbacks.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/smal.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/smal.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -244,8 +217,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/smal.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/unpack.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/unpack.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -254,8 +225,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/unpack.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/unpack_thumb.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/unpack_thumb.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -264,8 +233,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders/unpack_thumb.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/aahd_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/aahd_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -274,8 +241,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/aahd_demosaic.cpp.o: CXX_COM
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/ahd_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/ahd_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -284,8 +249,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/ahd_demosaic.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/dcb_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/dcb_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -294,8 +257,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/dcb_demosaic.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/dht_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/dht_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -304,8 +265,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/dht_demosaic.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/misc_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/misc_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -314,8 +273,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/misc_demosaic.cpp.o: CXX_COM
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/xtrans_demosaic.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/xtrans_demosaic.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -324,8 +281,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic/xtrans_demosaic.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration/dngsdk_glue.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/integration/dngsdk_glue.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -334,8 +289,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration/dngsdk_glue.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration/rawspeed_glue.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/integration/rawspeed_glue.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -344,8 +297,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration/rawspeed_glue.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/integration
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/libraw_c_api.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/libraw_c_api.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -354,8 +305,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/libraw_c_api.cpp.o: CXX_COMPILER__raw
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/libraw_datastream.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/libraw_datastream.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -364,8 +313,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/libraw_datastream.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/adobepano.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/adobepano.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -374,8 +321,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/adobepano.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/canon.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/canon.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -384,8 +329,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/canon.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/ciff.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/ciff.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -394,8 +337,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/ciff.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/cr3_parser.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/cr3_parser.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -404,8 +345,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/cr3_parser.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/epson.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/epson.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -414,8 +353,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/epson.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/exif_gps.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/exif_gps.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -424,8 +361,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/exif_gps.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/fuji.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/fuji.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -434,8 +369,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/fuji.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/hasselblad_model.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/hasselblad_model.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -444,8 +377,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/hasselblad_model.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/identify.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/identify.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -454,8 +385,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/identify.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/identify_tools.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/identify_tools.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -464,8 +393,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/identify_tools.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/kodak.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/kodak.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -474,8 +401,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/kodak.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/leica.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/leica.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -484,8 +409,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/leica.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/makernotes.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/makernotes.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -494,8 +417,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/makernotes.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/mediumformat.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/mediumformat.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -504,8 +425,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/mediumformat.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/minolta.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/minolta.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -514,8 +433,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/minolta.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/misc_parsers.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/misc_parsers.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -524,8 +441,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/misc_parsers.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/nikon.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/nikon.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -534,8 +449,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/nikon.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/normalize_model.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/normalize_model.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -544,8 +457,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/normalize_model.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/olympus.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/olympus.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -554,8 +465,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/olympus.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/p1.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/p1.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -564,8 +473,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/p1.cpp.o: CXX_COMPILER__raw_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/pentax.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/pentax.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -574,8 +481,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/pentax.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/samsung.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/samsung.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -584,8 +489,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/samsung.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/sony.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/sony.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -594,8 +497,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/sony.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/tiff.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/tiff.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -604,8 +505,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata/tiff.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/aspect_ratio.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/aspect_ratio.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -614,8 +513,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/aspect_ratio.cpp.o: CX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/dcraw_process.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/dcraw_process.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -624,8 +521,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/dcraw_process.cpp.o: C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/mem_image.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/mem_image.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -634,8 +529,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/mem_image.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_aux.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_aux.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -644,8 +537,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_aux.cpp
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_utils.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_utils.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -654,8 +545,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_utils.c
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_utils_dcrdefs.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_utils_dcrdefs.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -664,8 +553,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing/postprocessing_utils_d
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/ext_preprocess.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/ext_preprocess.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -674,8 +561,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/ext_preprocess.cpp.o: C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/raw2image.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/raw2image.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -684,8 +569,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/raw2image.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/subtract_black.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/subtract_black.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -694,8 +577,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing/subtract_black.cpp.o: C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/cameralist.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/cameralist.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -704,8 +585,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/cameralist.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/colorconst.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/colorconst.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -714,8 +593,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/colorconst.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/colordata.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/colordata.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -724,8 +601,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/colordata.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/wblists.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/wblists.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -734,8 +609,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables/wblists.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/curves.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/curves.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -744,8 +617,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/curves.cpp.o: CXX_COMPILER__raw
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/decoder_info.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/decoder_info.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -754,8 +625,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/decoder_info.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/init_close_utils.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/init_close_utils.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -764,8 +633,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/init_close_utils.cpp.o: CXX_COM
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/open.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/open.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -774,8 +641,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/open.cpp.o: CXX_COMPILER__raw_D
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/phaseone_processing.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/phaseone_processing.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -784,8 +649,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/phaseone_processing.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/read_utils.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/read_utils.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -794,8 +657,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/read_utils.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/thumb_utils.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/thumb_utils.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -804,8 +665,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/thumb_utils.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/utils_dcraw.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/utils_dcraw.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -814,8 +673,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/utils_dcraw.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/utils_libraw.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/utils_libraw.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -824,8 +681,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils/utils_libraw.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/apply_profile.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/apply_profile.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -834,8 +689,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/apply_profile.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/file_write.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/file_write.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -844,8 +697,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/file_write.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/tiff_writer.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/tiff_writer.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -854,8 +705,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/write/tiff_writer.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f/x3f_parse_process.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/x3f/x3f_parse_process.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -864,8 +713,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f/x3f_parse_process.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f/x3f_utils_patched.cpp.o: CXX_COMPILER__raw_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/x3f/x3f_utils_patched.cpp || cmake_object_order_depends_target_raw
   DEFINES = -DLIBRAW_NODLL -DLIBRAW_NOTHREADS -DUSE_ZLIB
@@ -874,8 +721,6 @@ build LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f/x3f_utils_patched.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir/src/x3f
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
 
 
 # =============================================================================
@@ -890,9 +735,8 @@ build LibRaw-0.21.4/libraw.a: CXX_STATIC_LIBRARY_LINKER__raw_Debug LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw.pdb
   TARGET_FILE = LibRaw-0.21.4/libraw.a
-  TARGET_PDB = LibRaw-0.21.4/libraw.pdb
+  TARGET_PDB = raw.a.dbg
 
 # =============================================================================
 # Object build statements for STATIC_LIBRARY target raw_r
@@ -910,8 +754,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/canon_600.cpp.o: CXX_COMPI
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/crx.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/crx.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -920,8 +762,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/crx.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_dcraw.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_dcraw.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -930,8 +770,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_dcraw.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_libraw.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_libraw.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -940,8 +778,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_libraw.cpp.o: CXX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_libraw_dcrdefs.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/decoders_libraw_dcrdefs.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -950,8 +786,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/decoders_libraw_dcrdefs.cp
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/dng.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/dng.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -960,8 +794,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/dng.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/fp_dng.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/fp_dng.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -970,8 +802,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/fp_dng.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/fuji_compressed.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/fuji_compressed.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -980,8 +810,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/fuji_compressed.cpp.o: CXX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/generic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/generic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -990,8 +818,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/generic.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/kodak_decoders.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/kodak_decoders.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1000,8 +826,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/kodak_decoders.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/load_mfbacks.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/load_mfbacks.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1010,8 +834,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/load_mfbacks.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/smal.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/smal.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1020,8 +842,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/smal.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/unpack.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/unpack.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1030,8 +850,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/unpack.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/unpack_thumb.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/decoders/unpack_thumb.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1040,8 +858,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders/unpack_thumb.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/decoders
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/aahd_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/aahd_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1050,8 +866,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/aahd_demosaic.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/ahd_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/ahd_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1060,8 +874,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/ahd_demosaic.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/dcb_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/dcb_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1070,8 +882,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/dcb_demosaic.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/dht_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/dht_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1080,8 +890,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/dht_demosaic.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/misc_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/misc_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1090,8 +898,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/misc_demosaic.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/xtrans_demosaic.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/demosaic/xtrans_demosaic.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1100,8 +906,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic/xtrans_demosaic.cpp.o: CXX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/demosaic
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration/dngsdk_glue.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/integration/dngsdk_glue.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1110,8 +914,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration/dngsdk_glue.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration/rawspeed_glue.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/integration/rawspeed_glue.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1120,8 +922,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration/rawspeed_glue.cpp.o: CX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/integration
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/libraw_c_api.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/libraw_c_api.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1130,8 +930,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/libraw_c_api.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/libraw_datastream.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/libraw_datastream.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1140,8 +938,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/libraw_datastream.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/adobepano.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/adobepano.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1150,8 +946,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/adobepano.cpp.o: CXX_COMPI
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/canon.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/canon.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1160,8 +954,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/canon.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/ciff.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/ciff.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1170,8 +962,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/ciff.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/cr3_parser.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/cr3_parser.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1180,8 +970,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/cr3_parser.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/epson.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/epson.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1190,8 +978,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/epson.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/exif_gps.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/exif_gps.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1200,8 +986,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/exif_gps.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/fuji.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/fuji.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1210,8 +994,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/fuji.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/hasselblad_model.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/hasselblad_model.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1220,8 +1002,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/hasselblad_model.cpp.o: CX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/identify.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/identify.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1230,8 +1010,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/identify.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/identify_tools.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/identify_tools.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1240,8 +1018,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/identify_tools.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/kodak.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/kodak.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1250,8 +1026,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/kodak.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/leica.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/leica.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1260,8 +1034,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/leica.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/makernotes.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/makernotes.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1270,8 +1042,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/makernotes.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/mediumformat.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/mediumformat.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1280,8 +1050,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/mediumformat.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/minolta.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/minolta.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1290,8 +1058,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/minolta.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/misc_parsers.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/misc_parsers.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1300,8 +1066,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/misc_parsers.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/nikon.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/nikon.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1310,8 +1074,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/nikon.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/normalize_model.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/normalize_model.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1320,8 +1082,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/normalize_model.cpp.o: CXX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/olympus.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/olympus.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1330,8 +1090,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/olympus.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/p1.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/p1.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1340,8 +1098,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/p1.cpp.o: CXX_COMPILER__ra
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/pentax.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/pentax.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1350,8 +1106,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/pentax.cpp.o: CXX_COMPILER
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/samsung.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/samsung.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1360,8 +1114,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/samsung.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/sony.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/sony.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1370,8 +1122,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/sony.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/tiff.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/metadata/tiff.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1380,8 +1130,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata/tiff.cpp.o: CXX_COMPILER__
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/metadata
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/aspect_ratio.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/aspect_ratio.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1390,8 +1138,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/aspect_ratio.cpp.o: 
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/dcraw_process.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/dcraw_process.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1400,8 +1146,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/dcraw_process.cpp.o:
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/mem_image.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/mem_image.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1410,8 +1154,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/mem_image.cpp.o: CXX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_aux.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_aux.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1420,8 +1162,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_aux.c
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_utils.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_utils.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1430,8 +1170,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_utils
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_utils_dcrdefs.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/postprocessing/postprocessing_utils_dcrdefs.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1440,8 +1178,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing/postprocessing_utils
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/postprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/ext_preprocess.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/ext_preprocess.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1450,8 +1186,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/ext_preprocess.cpp.o:
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/raw2image.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/raw2image.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1460,8 +1194,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/raw2image.cpp.o: CXX_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/subtract_black.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/preprocessing/subtract_black.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1470,8 +1202,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing/subtract_black.cpp.o:
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/preprocessing
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/cameralist.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/cameralist.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1480,8 +1210,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/cameralist.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/colorconst.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/colorconst.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1490,8 +1218,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/colorconst.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/colordata.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/colordata.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1500,8 +1226,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/colordata.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/wblists.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/tables/wblists.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1510,8 +1234,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables/wblists.cpp.o: CXX_COMPILER_
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/tables
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/curves.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/curves.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1520,8 +1242,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/curves.cpp.o: CXX_COMPILER__r
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/decoder_info.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/decoder_info.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1530,8 +1250,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/decoder_info.cpp.o: CXX_COMPI
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/init_close_utils.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/init_close_utils.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1540,8 +1258,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/init_close_utils.cpp.o: CXX_C
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/open.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/open.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1550,8 +1266,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/open.cpp.o: CXX_COMPILER__raw
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/phaseone_processing.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/phaseone_processing.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1560,8 +1274,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/phaseone_processing.cpp.o: CX
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/read_utils.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/read_utils.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1570,8 +1282,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/read_utils.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/thumb_utils.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/thumb_utils.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1580,8 +1290,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/thumb_utils.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/utils_dcraw.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/utils_dcraw.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1590,8 +1298,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/utils_dcraw.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/utils_libraw.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/utils/utils_libraw.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1600,8 +1306,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils/utils_libraw.cpp.o: CXX_COMPI
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/utils
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/apply_profile.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/apply_profile.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1610,8 +1314,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/apply_profile.cpp.o: CXX_COMP
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/file_write.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/file_write.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1620,8 +1322,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/file_write.cpp.o: CXX_COMPILE
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/tiff_writer.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/write/tiff_writer.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1630,8 +1330,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write/tiff_writer.cpp.o: CXX_COMPIL
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/write
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f/x3f_parse_process.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/x3f/x3f_parse_process.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1640,8 +1338,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f/x3f_parse_process.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f/x3f_utils_patched.cpp.o: CXX_COMPILER__raw_r_Debug /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/src/x3f/x3f_utils_patched.cpp || cmake_object_order_depends_target_raw_r
   DEFINES = -DLIBRAW_NODLL -DUSE_ZLIB
@@ -1650,8 +1346,6 @@ build LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f/x3f_utils_patched.cpp.o: CXX_CO
   INCLUDES = -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/libheif -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/src/main/cpp/LibRaw-0.21.4/libraw -I/home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/LibRaw-0.21.4 -I/home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   OBJECT_FILE_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir/src/x3f
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
 
 
 # =============================================================================
@@ -1666,9 +1360,8 @@ build LibRaw-0.21.4/libraw_r.a: CXX_STATIC_LIBRARY_LINKER__raw_r_Debug LibRaw-0.
   OBJECT_DIR = LibRaw-0.21.4/CMakeFiles/raw_r.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = LibRaw-0.21.4/libraw_r.pdb
   TARGET_FILE = LibRaw-0.21.4/libraw_r.a
-  TARGET_PDB = LibRaw-0.21.4/libraw_r.pdb
+  TARGET_PDB = raw_r.a.dbg
 
 
 #############################################
@@ -1746,14 +1439,14 @@ build /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/cmake.verify_globs | /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystem.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-FindBinUtils.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindJPEG.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageMessage.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindZLIB.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/GNUInstallDirs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android/Determine-Compiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/abis.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/flags.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Determine.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Determine-Compiler.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/platforms.cmake /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/data/libraw_config.h.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroBoolTo01.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroLogFeature.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroOptionalFindPackage.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/cmake.verify_globs | /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindJPEG.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageMessage.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindZLIB.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/GNUInstallDirs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/abis.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/flags.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/platforms.cmake /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/data/libraw_config.h.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroBoolTo01.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroLogFeature.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroOptionalFindPackage.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompiler.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCompilerIdDetection.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCXXCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompileFeatures.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerABI.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineCompilerId.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeDetermineSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeFindBinUtils.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitIncludeInfo.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseImplicitLinkInfo.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeParseLibraryArchitecture.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystem.cmake.in /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCXXCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCompilerCommon.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ADSP-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMCC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/ARMClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/AppleClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Borland-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-FindBinUtils.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Cray-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GHS-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IAR-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Intel-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/MSVC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVHPC-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PGI-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/PathScale-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SCO-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TI-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Watcom-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-C-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindJPEG.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageMessage.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindZLIB.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/GNUInstallDirs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Internal/FeatureTesting.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Determine.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android/Determine-Compiler.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/abis.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/flags.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Determine.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Determine-Compiler.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/platforms.cmake /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/data/libraw_config.h.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroBoolTo01.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroLogFeature.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroOptionalFindPackage.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
+build /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeGenericSystem.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeInitializeConfigs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeLanguageInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInformation.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeSystemSpecificInitialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Compiler/GNU.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindJPEG.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindPackageMessage.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/FindZLIB.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/GNUInstallDirs.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-C.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang-CXX.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Clang.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android-Initialize.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Android.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/Linux.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/Platform/UnixPaths.cmake /home/meijr/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/abis.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android-legacy.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/android.toolchain.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/flags.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Clang.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android-Initialize.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/hooks/pre/Android.cmake /home/meijr/Android/Sdk/ndk/27.0.12077973/build/cmake/platforms.cmake /home/meijr/Documents/GitHub/opencamera/app/.cxx/Debug/5hh17116/armeabi-v7a/CMakeFiles/VerifyGlobs.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/CMakeLists.txt /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/data/libraw_config.h.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroBoolTo01.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroLogFeature.cmake /home/meijr/Documents/GitHub/opencamera/app/src/main/cpp/LibRaw-0.21.4/cmake/modules/MacroOptionalFindPackage.cmake CMakeCache.txt CMakeFiles/3.22.1-g37088a8/CMakeCCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeCXXCompiler.cmake CMakeFiles/3.22.1-g37088a8/CMakeSystem.cmake: phony
 
 
 #############################################
