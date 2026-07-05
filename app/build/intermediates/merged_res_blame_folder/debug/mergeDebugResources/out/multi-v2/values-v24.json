@@ -4,7 +4,17 @@
             "outputFile": "com.meijsoft.cameraadvance.app-mergeDebugResources-24:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/meijr/.gradle/caches/8.9/transforms/1d322f5dc37f619b7d88f33cdfda87c2/transformed/media-1.0.0/res/values-v24/values-v24.xml",
+                    "source": "C:\\Users\\MeijSandbox\\.gradle\\caches\\8.9\\transforms\\9c4bb12d63fe16c9eb72d766915a013c\\transformed\\appcompat-1.7.1\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\MeijSandbox\\.gradle\\caches\\8.9\\transforms\\c6d6a8c3c1e27f3fa3136d2c9133d5b5\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "/home/meijr/.gradle/caches/8.9/transforms/e7b00e66593cf2a3d4b77c079dbadee0/transformed/appcompat-1.7.1/res/values-v24/values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]

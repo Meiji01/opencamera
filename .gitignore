@@ -1,0 +1,48 @@
+# Gradle files
+.gradle/
+/gradle/
+**/build/
+/build/
+
+# Local configuration
+/local.properties
+/.idea/
+*.iml
+
+# Android Studio captures and logs
+captures/
+.externalNativeBuild/
+.cxx/
+obj/
+
+# Gradle wrapper
+/gradle/wrapper/gradle-wrapper.jar
+
+# Keystores and signing
+*.jks
+*.keystore
+
+# NDK
+*.so
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Misc
+*.log
+*.orig
+.idea_modules/
+
+# Ignore APKs and AARs
+*.apk
+*.ap_
+*.aar
+
+# Proguard
+/proguard/

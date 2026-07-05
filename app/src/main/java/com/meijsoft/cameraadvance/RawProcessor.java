@@ -24,4 +24,9 @@ public class RawProcessor {
      * Typical values: 1 = sRGB. See LibRaw documentation for other values.
      */
     public static native void setLibRawOutputColor(int outputColor);
+
+    /**
+     * Configure the LibRaw decode parameters used by native DNG decoding.
+     */
+    public static native void configureRawProcessor(boolean useAutoWB, boolean useCameraWB);
 }

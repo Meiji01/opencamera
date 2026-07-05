@@ -4,7 +4,7 @@
             "outputFile": "com.meijsoft.cameraadvance.app-mergeDebugResources-24:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/meijr/.gradle/caches/8.9/transforms/e7b00e66593cf2a3d4b77c079dbadee0/transformed/appcompat-1.7.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "C:\\Users\\MeijSandbox\\.gradle\\caches\\8.9\\transforms\\9c4bb12d63fe16c9eb72d766915a013c\\transformed\\appcompat-1.7.1\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

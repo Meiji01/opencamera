@@ -4580,11 +4580,18 @@ public static class Request {
             try (OutputStream dngOut = new FileOutputStream(dngTemp)) {
                 raw_image.writeImage(dngOut);
             }
+            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
+            boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
+            boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
+            int color_space_output = 1; // RGB
+
             // Prefer native Android HEIC encoding if device supports it; otherwise fall back to JNI/libheif pipeline
             if (supportsNativeHeicEncoding()) {
                 if (MyDebug.LOG) Log.d(TAG, "Device supports native HEIC encoding - using MediaCodec/MediaMuxer path");
                 Bitmap decoded = null;
                 try {
+                    RawProcessor.setLibRawOutputColor(color_space_output);
+                    RawProcessor.configureRawProcessor(use_auto_wb, use_camera_wb);
                     // decode DNG to Bitmap using native RawProcessor (may use native code)
                     decoded = RawProcessor.decodeDng(dngTemp.getAbsolutePath());
                     if (decoded != null) {
@@ -4621,10 +4628,6 @@ public static class Request {
             }
             if (!success) {
                 // Use native pipeline: process DNG with libraw then encode to HEIC with libheif entirely in native code
-                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
-                boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
-                boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
-                int color_space_output=1; //RGB
                 try {
                     // Ensure native LibRaw output color is set (1 = sRGB by default)
                     RawProcessor.setLibRawOutputColor(color_space_output);

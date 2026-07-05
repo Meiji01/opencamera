@@ -9,11 +9,29 @@
 
 // Global configurable LibRaw output color space (default 1 = sRGB)
 static int g_libraw_output_color = 1;
+static int g_libraw_use_auto_wb = 1;
+static int g_libraw_use_camera_wb = 0;
+static int g_libraw_use_camera_matrix = 1;
+static int g_libraw_output_bps = 8;
+static float g_libraw_gamma0 = 1.0f / 2.2f;
+static float g_libraw_gamma1 = 4.5f;
+static int g_libraw_user_qual = 3;
+static int g_libraw_fbdd_noiserd = 0;
+static int g_libraw_med_passes = 0;
+static int g_libraw_dcb_iterations = 0;
+static int g_libraw_dcb_enhance_fl = 0;
 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_meijsoft_cameraadvance_RawProcessor_setLibRawOutputColor(JNIEnv *env, jclass type, jint value) {
     g_libraw_output_color = value;
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_meijsoft_cameraadvance_RawProcessor_configureRawProcessor(JNIEnv *env, jclass type, jboolean useAutoWB, jboolean useCameraWB) {
+    g_libraw_use_auto_wb = useAutoWB ? 1 : 0;
+    g_libraw_use_camera_wb = useCameraWB ? 1 : 0;
 }
 
 extern "C"
@@ -259,8 +277,18 @@ Java_com_meijsoft_cameraadvance_RawProcessor_decodeDng(JNIEnv *env, jclass clazz
     RawProcessor.open_file(dngPath);
     RawProcessor.unpack();
 
-    // Default to configurable output color space (g_libraw_output_color)
+    // Default to configurable output color space and processing parameters
     RawProcessor.imgdata.params.output_color = g_libraw_output_color;
+    RawProcessor.imgdata.params.use_auto_wb = g_libraw_use_auto_wb;
+    RawProcessor.imgdata.params.use_camera_wb = g_libraw_use_camera_wb;
+    RawProcessor.imgdata.params.output_bps = g_libraw_output_bps;
+    RawProcessor.imgdata.params.gamm[0] = g_libraw_gamma0;
+    RawProcessor.imgdata.params.gamm[1] = g_libraw_gamma1;
+    RawProcessor.imgdata.params.user_qual = g_libraw_user_qual;
+    RawProcessor.imgdata.params.fbdd_noiserd = g_libraw_fbdd_noiserd;
+    RawProcessor.imgdata.params.med_passes = g_libraw_med_passes;
+    RawProcessor.imgdata.params.dcb_iterations = g_libraw_dcb_iterations;
+    RawProcessor.imgdata.params.dcb_enhance_fl = g_libraw_dcb_enhance_fl;
 
     int width = RawProcessor.imgdata.sizes.width;
     int height = RawProcessor.imgdata.sizes.height;
@@ -428,24 +456,21 @@ Java_com_meijsoft_cameraadvance_HeifSaver_saveDngToHeic(JNIEnv *env, jclass claz
     // Apply white balance preferences from Java
     RawProcessor.imgdata.params.use_auto_wb = use_auto_wb ? 1 : 0;
     RawProcessor.imgdata.params.use_camera_wb = use_camera_wb ? 1 : 0;
+    RawProcessor.imgdata.params.use_camera_matrix = g_libraw_use_camera_matrix;
 
-    // Improve demosaic / color fidelity and enable denoising for higher-quality output
-    // user_qual: interpolation quality (0=linear,1=VNG,2=PPG,3=AHD,4=DCB - high quality)
-    RawProcessor.imgdata.params.user_qual = 4; // DCB - high quality demosaic
-    // Enable FBDD (fast block-based denoiser): 0=off,1=light,2=full
-    RawProcessor.imgdata.params.fbdd_noiserd = 1; // 2-full denoise; 1-partial
-    // Median passes on R-G and B-G
-    RawProcessor.imgdata.params.med_passes = 1;
-    // DCB specific tuning
-    RawProcessor.imgdata.params.dcb_iterations = 2; // extra DCB iterations
-    RawProcessor.imgdata.params.dcb_enhance_fl = 1; // enhance colors in DCB (float flag)
+    // Use a more natural demosaic and color rendering profile for closer bitmap-like output
+    RawProcessor.imgdata.params.user_qual = g_libraw_user_qual;
+    RawProcessor.imgdata.params.fbdd_noiserd = g_libraw_fbdd_noiserd;
+    RawProcessor.imgdata.params.med_passes = g_libraw_med_passes;
+    RawProcessor.imgdata.params.dcb_iterations = g_libraw_dcb_iterations;
+    RawProcessor.imgdata.params.dcb_enhance_fl = g_libraw_dcb_enhance_fl;
 
     // Apply gamma ~2.2 (dcraw uses gamm[0]=1/gamma, gamm[1]=toe)
-    RawProcessor.imgdata.params.gamm[0] = 1.0f / 2.2f; // inverse gamma
-    RawProcessor.imgdata.params.gamm[1] = 4.5f; // toe slope (dcraw default)
+    RawProcessor.imgdata.params.gamm[0] = g_libraw_gamma0;
+    RawProcessor.imgdata.params.gamm[1] = g_libraw_gamma1;
 
     // Keep output as 8-bit RGB (we convert to YUV420 later)
-    RawProcessor.imgdata.params.output_bps = 8;
+    RawProcessor.imgdata.params.output_bps = g_libraw_output_bps;
     // Default output color space (configurable from Java via RawProcessor.setLibRawOutputColor)
     RawProcessor.imgdata.params.output_color = g_libraw_output_color;
 
