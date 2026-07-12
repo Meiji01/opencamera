@@ -126,7 +126,6 @@ public static class Request {
         enum Type {
             JPEG, // also covers WEBP
             RAW,
-            HEIC_FROM_RAW,
             DUMMY,
             ON_DESTROY // indicate that application is being destroyed, so should exit thread
         }
@@ -321,30 +320,6 @@ public static class Request {
                     this.custom_tag_artist,
                     this.custom_tag_copyright,
                     this.sample_factor);
-        }
-    }
-
-    /** Checks whether device supports native HEIC encoding via MediaCodec/MediaMuxer.
-     *  Returns true if an encoder for image/heic can be found.
-     */
-    private boolean supportsNativeHeicEncoding() {
-        try {
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return false;
-            Log.d(TAG,"Trying to use native image/heic to check device eligibility");
-            final String mime_type = "image/heic";
-            // use a tiny resolution - just to query available encoders
-            MediaFormat format = MediaFormat.createVideoFormat(mime_type, 2, 2);
-            // request surface input since that's what we use for encoding bitmaps
-            format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
-            MediaCodecList codecs = new MediaCodecList(MediaCodecList.REGULAR_CODECS);
-            String encoder_name = codecs.findEncoderForFormat(format);
-            return encoder_name != null;
-        }
-        catch(Throwable t) {
-            if (MyDebug.LOG) {
-                Log.d(TAG, "supportsNativeHeicEncoding: exception trying to detect encoder: " + t);
-            }
-            return false;
         }
     }
 
@@ -650,11 +625,6 @@ public static class Request {
                             Log.d(TAG, "request is raw");
                         success = saveImageNowRaw(request);
                         break;
-                    case HEIC_FROM_RAW:
-                        if (MyDebug.LOG)
-                            Log.d(TAG, "request is heic from raw");
-                        success = saveImageNowHeicFromRaw(request);
-                        break;
                     case JPEG:
                         if (MyDebug.LOG)
                             Log.d(TAG, "request is jpeg");
@@ -764,7 +734,6 @@ public static class Request {
         }
         return saveImage(do_in_background,
                 false,
-                false,
                 processType,
                 force_suffix,
                 suffix_offset,
@@ -811,7 +780,6 @@ public static class Request {
         }
         return saveImage(do_in_background,
                 true,
-                false,
                 Request.ProcessType.NORMAL,
                 force_suffix,
                 suffix_offset,
@@ -833,45 +801,6 @@ public static class Request {
                 1.0f,
                 null, null, 0, 0, null, null, null, null,
                 //null,
-                null,
-                false, Request.RemoveDeviceExif.OFF, false, null, false, 0.0,
-                0.0, false,
-                null, null,
-                1);
-    }
-
-    boolean saveImageHeicFromRaw(boolean do_in_background,
-                                 RawImage raw_image,
-                                 Date current_date,
-                                 int image_quality) {
-        if( MyDebug.LOG ) {
-            Log.d(TAG, "saveImageHeicFromRaw");
-            Log.d(TAG, "do_in_background? " + do_in_background);
-        }
-    return saveImage(do_in_background,
-                false,
-                true,
-                Request.ProcessType.NORMAL,
-                false,
-                0,
-                false,
-                null,
-                null,
-                raw_image,
-                false, null,
-                true, // using_camera2
-                false,
-        Request.ImageFormat.HEIC, image_quality,
-                false, 0.0,
-                false,
-                false,
-                current_date,
-                HDRProcessor.TonemappingAlgorithm.TONEMAPALGORITHM_REINHARD,
-                null,
-                0,
-                0,
-                1.0f,
-                null, null, 0, 0, null, null, null, null,
                 null,
                 false, Request.RemoveDeviceExif.OFF, false, null, false, 0.0,
                 0.0, false,
@@ -996,7 +925,6 @@ public static class Request {
      */
     private boolean saveImage(boolean do_in_background,
                               boolean is_raw,
-                              boolean is_heic_from_raw,
                               Request.ProcessType processType,
                               boolean force_suffix,
                               int suffix_offset,
@@ -1034,7 +962,7 @@ public static class Request {
 
         //do_in_background = false;
 
-        Request.Type type = is_heic_from_raw ? Request.Type.HEIC_FROM_RAW : (is_raw ? Request.Type.RAW : Request.Type.JPEG);
+        Request.Type type = is_raw ? Request.Type.RAW : Request.Type.JPEG;
         Request request = new Request(type,
                 processType,
                 force_suffix,
@@ -1067,18 +995,15 @@ public static class Request {
         if( do_in_background ) {
             if( MyDebug.LOG )
                 Log.d(TAG, "add background request");
-        int cost = computeRequestCost(is_raw || is_heic_from_raw,
-            (is_raw || is_heic_from_raw) ? 1 : (request.jpeg_images == null ? 0 : request.jpeg_images.size()));
+        int cost = computeRequestCost(is_raw,
+            is_raw ? 1 : (request.jpeg_images == null ? 0 : request.jpeg_images.size()));
             addRequest(request, cost);
             success = true; // always return true when done in background
         }
         else {
             // wait for queue to be empty
             waitUntilDone();
-            if( is_heic_from_raw ) {
-                success = saveImageNowHeicFromRaw(request);
-            }
-            else if( is_raw ) {
+            if( is_raw ) {
                 success = saveImageNowRaw(request);
             }
             else {
@@ -4424,340 +4349,7 @@ public static class Request {
     private boolean saveImageNowHeicFromRaw(Request request) {
         if( MyDebug.LOG )
             Log.d(TAG, "saveImageNowHeicFromRaw");
-
-        if( request.type != Request.Type.HEIC_FROM_RAW ) {
-            if( MyDebug.LOG )
-                Log.d(TAG, "saveImageNowHeicFromRaw called with non-heic-from-raw request");
-            // throw runtime exception, as this is a programming error
-            throw new RuntimeException();
-        }
-
-        StorageUtils storageUtils = main_activity.getStorageUtils();
-        boolean success = false;
-
-        main_activity.savingImage(true);
-
-        RawImage raw_image = request.raw_image;
-        try {
-            // Determine RAW preference and whether user wants DNG saved
-            MyApplicationInterface applicationInterface = main_activity.getApplicationInterface();
-            boolean raw_only = applicationInterface.isRawOnly();
-            boolean want_dng = applicationInterface.getRawPref() == ApplicationInterface.RawPref.RAWPREF_JPEG_DNG;
-
-            // If RAW only mode, save only the DNG and skip HEIC conversion
-            if( raw_only ) {
-                if( MyDebug.LOG )
-                    Log.d(TAG, "RAW only mode - saving DNG only");
-                File picFile = null;
-                Uri saveUri = null;
-                boolean use_media_store = false;
-                ContentValues contentValues = null; // used if using scoped storage
-
-                String filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
-                if( storageUtils.isUsingSAF() ) {
-                    saveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "dng", request.current_date);
-                }
-                else if( MainActivity.useScopedStorage() ) {
-                    use_media_store = true;
-                    Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
-                            MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
-                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                    contentValues = new ContentValues();
-                    String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, 0, ".dng", request.current_date);
-                    contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
-                    contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/dng");
-                    if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                        contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
-                        contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
-                    }
-
-                    try {
-                        saveUri = main_activity.getContentResolver().insert(folder, contentValues);
-                    }
-                    catch(IllegalArgumentException e) {
-                        MyDebug.logStackTrace(TAG, "IllegalArgumentException inserting to mediastore", e);
-                        throw new IOException();
-                    }
-                    catch(IllegalStateException e) {
-                        MyDebug.logStackTrace(TAG, "IllegalStateException inserting to mediastore", e);
-                        throw new IOException();
-                    }
-                    if( saveUri == null )
-                        throw new IOException();
-                }
-                else {
-                    picFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "dng", request.current_date);
-                }
-
-                OutputStream output = null;
-                try {
-                    if( picFile != null ) {
-                        output = new FileOutputStream(picFile);
-                    }
-                    else {
-                        output = main_activity.getContentResolver().openOutputStream(saveUri);
-                    }
-                    raw_image.writeImage(output);
-                    raw_image.close();
-                    raw_image = null;
-                    output.close();
-                    output = null;
-                    // set last image for share/trash options for pause preview
-                    boolean hasnoexifdatetime = request.remove_device_exif != Request.RemoveDeviceExif.OFF && request.remove_device_exif != Request.RemoveDeviceExif.KEEP_DATETIME;
-                    if( picFile != null ) {
-                        storageUtils.broadcastFile(picFile, true, false, true, hasnoexifdatetime, null);
-                        main_activity.getApplicationInterface().addLastImage(picFile, true);
-                    }
-                    else if( use_media_store ) {
-                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                            contentValues.clear();
-                            contentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
-                            main_activity.getContentResolver().update(saveUri, contentValues, null, null);
-                        }
-                        main_activity.getApplicationInterface().addLastImageMediaStore(saveUri, true);
-                    }
-                    else {
-                        storageUtils.broadcastUri(saveUri, true, false, true, hasnoexifdatetime, false);
-                        main_activity.getApplicationInterface().addLastImageSAF(saveUri, true);
-                    }
-                }
-                finally {
-                    if( output != null ) {
-                        try { output.close(); } catch(IOException e) { MyDebug.logStackTrace(TAG, "ioexception closing raw output", e); }
-                    }
-                    if( raw_image != null ) raw_image.close();
-                }
-
-                System.gc();
-                main_activity.savingImage(false);
-                return true;
-            }
-
-            // Not RAW only: proceed to save HEIC (and possibly also save DNG afterwards)
-            File picFile = null;
-            Uri saveUri = null;
-            boolean use_media_store = false;
-            ContentValues contentValues = null; // used if using scoped storage
-
-            String filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
-            if( storageUtils.isUsingSAF() ) {
-                saveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "heic", request.current_date);
-            }
-            else if( MainActivity.useScopedStorage() ) {
-                use_media_store = true;
-                Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
-                        MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                contentValues = new ContentValues();
-                String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, 0, ".heic", request.current_date);
-                contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
-                contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/heic");
-                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                    contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
-                    contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
-                }
-                saveUri = main_activity.getContentResolver().insert(folder, contentValues);
-                if( saveUri == null )
-                    throw new IOException();
-            }
-            else {
-                picFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, filename_suffix, "heic", request.current_date);
-            }
-
-            String output_path;
-            File tempFile = null;
-            if( picFile != null ) {
-                output_path = picFile.getAbsolutePath();
-            } else {
-                tempFile = File.createTempFile("heic_from_raw_temp", ".heic", main_activity.getCacheDir());
-                output_path = tempFile.getAbsolutePath();
-            }
-
-            // Convert RAW Image to Bitmap via DNG, then encode bitmap to HEIC. Using Image.getPlanes() buffer
-            // directly can result in incorrect colour interpretation for Camera2 RAW images. Instead write a DNG
-            // using RawImage.writeImage() and decode it with native RawProcessor.decodeDng.
-            File dngTemp = File.createTempFile("heic_from_raw_dng", ".dng", main_activity.getCacheDir());
-            try (OutputStream dngOut = new FileOutputStream(dngTemp)) {
-                raw_image.writeImage(dngOut);
-            }
-            SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(main_activity);
-            boolean use_auto_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseAutoWBPreferenceKey, true);
-            boolean use_camera_wb = sharedPreferences.getBoolean(PreferenceKeys.RawUseCameraWBPreferenceKey, false);
-            int color_space_output = 1; // RGB
-
-            // Prefer native Android HEIC encoding if device supports it; otherwise fall back to JNI/libheif pipeline
-            if (supportsNativeHeicEncoding()) {
-                if (MyDebug.LOG) Log.d(TAG, "Device supports native HEIC encoding - using MediaCodec/MediaMuxer path");
-                Bitmap decoded = null;
-                try {
-                    RawProcessor.setLibRawOutputColor(color_space_output);
-                    RawProcessor.configureRawProcessor(use_auto_wb, use_camera_wb);
-                    // decode DNG to Bitmap using native RawProcessor (may use native code)
-                    decoded = RawProcessor.decodeDng(dngTemp.getAbsolutePath());
-                    if (decoded != null) {
-                        if (picFile != null) {
-                            try (FileOutputStream fos = new FileOutputStream(picFile)) {
-                                FileDescriptor fd = fos.getFD();
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                                    saveBitmapAsHeic(decoded, fd, request.image_quality);
-                                }
-                            }
-                        } else {
-                            try (ParcelFileDescriptor pfd = main_activity.getContentResolver().openFileDescriptor(saveUri, "rw")) {
-                                FileDescriptor fd = pfd.getFileDescriptor();
-                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                                    saveBitmapAsHeic(decoded, fd, request.image_quality);
-                                }
-                            }
-                        }
-                        success = true;
-                    }
-                    else {
-                        if (MyDebug.LOG) Log.e(TAG, "failed to decode DNG for native HEIC path; falling back to JNI pipeline");
-                        // fall through to JNI path below
-                    }
-                }
-                catch(Throwable t) {
-                    MyDebug.logStackTrace(TAG, "exception decoding DNG or saving native HEIC", t);
-                    success = false;
-                }
-                finally {
-                    if (decoded != null) decoded.recycle();
-                    if (dngTemp.exists()) dngTemp.delete();
-                }
-            }
-            if (!success) {
-                // Use native pipeline: process DNG with libraw then encode to HEIC with libheif entirely in native code
-                try {
-                    // Ensure native LibRaw output color is set (1 = sRGB by default)
-                    RawProcessor.setLibRawOutputColor(color_space_output);
-                    success = HeifSaver.saveDngToHeic(dngTemp.getAbsolutePath(), output_path, request.image_quality, use_auto_wb, use_camera_wb);
-                }
-                finally {
-                    if (dngTemp.exists()) dngTemp.delete();
-                }
-            }
-
-            if( success && picFile == null && saveUri != null ) {
-                try (InputStream is = new FileInputStream(output_path);
-                     OutputStream os = main_activity.getContentResolver().openOutputStream(saveUri)) {
-                    byte[] buffer = new byte[1024];
-                    int length;
-                    while ((length = is.read(buffer)) > 0) {
-                        os.write(buffer, 0, length);
-                    }
-                }
-                if( tempFile != null && tempFile.exists() ) {
-                    tempFile.delete();
-                }
-            }
-
-            
-
-            if( success ) {
-                if( saveUri == null ) {
-                    storageUtils.broadcastFile(picFile, true, false, true, false, null);
-                    main_activity.getApplicationInterface().addLastImage(picFile, true);
-                } else {
-                    if( use_media_store ) {
-                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                            contentValues.clear();
-                            contentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
-                            main_activity.getContentResolver().update(saveUri, contentValues, null, null);
-                        }
-                        main_activity.getApplicationInterface().addLastImageMediaStore(saveUri, true);
-                    }
-                    else {
-                        storageUtils.broadcastUri(saveUri, true, false, true, false, false);
-                        main_activity.getApplicationInterface().addLastImageSAF(saveUri, true);
-                    }
-                }
-            }
-
-            // If user wants DNG in addition to HEIC (standard + DNG), save the original RAW/DNG
-            if( want_dng ) {
-                try {
-                    // Save DNG similarly to saveImageNowRaw, but don't override the last image/share which was set for HEIC
-                    File dngPicFile = null;
-                    Uri dngSaveUri = null;
-                    boolean dng_use_media_store = false;
-                    ContentValues dngContentValues = null;
-                    String dng_filename_suffix = (request.force_suffix) ? "_" + (request.suffix_offset) : "";
-                    if( storageUtils.isUsingSAF() ) {
-                        dngSaveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, "dng", request.current_date);
-                    }
-                    else if( MainActivity.useScopedStorage() ) {
-                        dng_use_media_store = true;
-                        Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
-                                MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
-                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                        dngContentValues = new ContentValues();
-                        String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, 0, ".dng", request.current_date);
-                        dngContentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
-                        dngContentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/dng");
-                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                            dngContentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
-                            dngContentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
-                        }
-                        dngSaveUri = main_activity.getContentResolver().insert(folder, dngContentValues);
-                        if( dngSaveUri == null ) throw new IOException();
-                    }
-                    else {
-                        dngPicFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, dng_filename_suffix, "dng", request.current_date);
-                    }
-
-                    OutputStream dngOut = null;
-                    try {
-                        if( dngPicFile != null )
-                            dngOut = new FileOutputStream(dngPicFile);
-                        else
-                            dngOut = main_activity.getContentResolver().openOutputStream(dngSaveUri);
-                        raw_image.writeImage(dngOut);
-                    }
-                    finally {
-                        if( dngOut != null ) try { dngOut.close(); } catch(IOException e) { MyDebug.logStackTrace(TAG, "failed to close dng output", e); }
-                    }
-
-                    boolean dng_hasnoexifdatetime = request.remove_device_exif != Request.RemoveDeviceExif.OFF && request.remove_device_exif != Request.RemoveDeviceExif.KEEP_DATETIME;
-                    if( dngPicFile != null ) {
-                        storageUtils.broadcastFile(dngPicFile, true, false, false, dng_hasnoexifdatetime, null);
-                        main_activity.getApplicationInterface().addLastImage(dngPicFile, false);
-                    }
-                    else if( dng_use_media_store ) {
-                        if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
-                            dngContentValues.clear();
-                            dngContentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
-                            main_activity.getContentResolver().update(dngSaveUri, dngContentValues, null, null);
-                        }
-                        main_activity.getApplicationInterface().addLastImageMediaStore(dngSaveUri, false);
-                    }
-                    else {
-                        storageUtils.broadcastUri(dngSaveUri, true, false, false, dng_hasnoexifdatetime, false);
-                        main_activity.getApplicationInterface().addLastImageSAF(dngSaveUri, false);
-                    }
-                }
-                catch(Exception e) {
-                    MyDebug.logStackTrace(TAG, "failed to save DNG alongside HEIC", e);
-                }
-            }
-
-            // close raw image now (after possibly saving the DNG)
-            if( raw_image != null ) {
-                raw_image.close();
-                raw_image = null;
-            }
-        }
-        catch(Exception e) {
-            MyDebug.logStackTrace(TAG, "Exception saving HEIC from RAW", e);
-        }
-        finally {
-            if( raw_image != null ) {
-                raw_image.close();
-            }
-            main_activity.savingImage(false);
-        }
-
-        return success;
+        return saveImageNowRaw(request);
     }
 
     /** Rotates the supplied bitmap according to the orientation tag stored in the exif data. If no

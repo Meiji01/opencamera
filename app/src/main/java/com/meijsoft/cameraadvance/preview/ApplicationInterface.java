@@ -271,7 +271,6 @@ public interface ApplicationInterface {
     boolean onPictureTaken(byte [] data, Date current_date);
     boolean onBurstPictureTaken(List<byte []> images, Date current_date);
     boolean onRawPictureTaken(RawImage raw_image, Date current_date);
-    boolean onHEICPictureTaken(RawImage raw_image, Date current_date);
     boolean onRawBurstPictureTaken(List<RawImage> raw_images, Date current_date);
     void onCaptureStarted(); // called immediately before we start capturing the picture
     void onPictureCompleted(); // called after all picture callbacks have been called and returned

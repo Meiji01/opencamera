@@ -1,5 +1,0 @@
-com.meijsoft.cameraadvance.test.app-jetified-core-1.7.0-0 /home/meijr/.gradle/caches/8.9/transforms/fd8550f7a8f8f3815dce98577dfb00a9/transformed/jetified-core-1.7.0/res
-com.meijsoft.cameraadvance.test.app-androidTest-1 /home/meijr/Documents/GitHub/opencamera/app/build/generated/res/resValues/androidTest/debug
-com.meijsoft.cameraadvance.test.app-mergeDebugAndroidTestResources-2 /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.meijsoft.cameraadvance.test.app-mergeDebugAndroidTestResources-3 /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.meijsoft.cameraadvance.test.app-debugAndroidTest-4 /home/meijr/Documents/GitHub/opencamera/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

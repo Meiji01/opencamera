@@ -673,11 +673,6 @@ public abstract class BasicApplicationInterface implements ApplicationInterface 
     }
 
     @Override
-    public boolean onHEICPictureTaken(RawImage raw_image, Date current_date) {
-        return false;
-    }
-
-    @Override
     public boolean onRawBurstPictureTaken(List<RawImage> raw_images, Date current_date) {
         return false;
     }

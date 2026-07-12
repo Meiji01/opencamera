@@ -2220,8 +2220,7 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
             camera_controller.setJpegR(false);
         }
 
-    boolean force_raw = applicationInterface.useCamera2() && applicationInterface.getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC;
-        if( (this.supports_raw && applicationInterface.getRawPref() != ApplicationInterface.RawPref.RAWPREF_JPEG_ONLY) || force_raw ) {
+        if( this.supports_raw && applicationInterface.getRawPref() != ApplicationInterface.RawPref.RAWPREF_JPEG_ONLY ) {
             camera_controller.setRaw(true, applicationInterface.getMaxRawImages());
         }
         else {
@@ -6722,17 +6721,9 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 if( MyDebug.LOG )
                     Log.d(TAG, "onRawPictureTaken");
                 initDate();
-                if( applicationInterface.useCamera2() && applicationInterface.getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC ) {
-                    if( !applicationInterface.onHEICPictureTaken(raw_image, current_date) ) {
-                        if( MyDebug.LOG )
-                            Log.e(TAG, "applicationInterface.onHEICPictureTaken failed");
-                    }
-                }
-                else {
-                    if( !applicationInterface.onRawPictureTaken(raw_image, current_date) ) {
-                        if( MyDebug.LOG )
-                            Log.e(TAG, "applicationInterface.onRawPictureTaken failed");
-                    }
+                if( !applicationInterface.onRawPictureTaken(raw_image, current_date) ) {
+                    if( MyDebug.LOG )
+                        Log.e(TAG, "applicationInterface.onRawPictureTaken failed");
                 }
             }
 
