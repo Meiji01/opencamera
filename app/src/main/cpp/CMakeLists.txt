@@ -18,6 +18,17 @@ add_library( # Sets the name of the library.
              heif_saver.cpp
              heif_jni.cpp )
 
+# Keep Debug behavior unchanged; apply aggressive optimization only for Release builds.
+target_compile_options(opencamera_heif PRIVATE
+    $<$<CONFIG:Release>:-O3>
+)
+
+target_link_options(opencamera_heif PRIVATE
+    $<$<CONFIG:Release>:-flto>
+)
+
+set_property(TARGET opencamera_heif PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
+
 find_library( # Sets the name of the path variable.
               log-lib
 
