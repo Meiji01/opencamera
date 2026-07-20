@@ -441,8 +441,24 @@ static bool copyYuvPlane(JNIEnv *env, jobject plane_obj, uint8_t *dst, int dst_w
 
     jobject buffer_obj = env->CallObjectMethod(plane_obj, get_buffer_mid);
     auto *src = reinterpret_cast<uint8_t *>(env->GetDirectBufferAddress(buffer_obj));
+    jbyteArray src_array = nullptr;
+    jbyte *src_bytes = nullptr;
     const int row_stride = env->CallIntMethod(plane_obj, get_row_stride_mid);
     const int pixel_stride = env->CallIntMethod(plane_obj, get_pixel_stride_mid);
+
+    if( src == nullptr ) {
+        jclass buffer_class = env->GetObjectClass(buffer_obj);
+        jmethodID remaining_mid = env->GetMethodID(buffer_class, "remaining", "()I");
+        jmethodID get_mid = env->GetMethodID(buffer_class, "get", "([B)Ljava/nio/ByteBuffer;");
+        const jint remaining = env->CallIntMethod(buffer_obj, remaining_mid);
+        src_array = env->NewByteArray(remaining);
+        if( src_array != nullptr ) {
+            env->CallObjectMethod(buffer_obj, get_mid, src_array);
+            src_bytes = env->GetByteArrayElements(src_array, nullptr);
+            src = reinterpret_cast<uint8_t *>(src_bytes);
+        }
+        env->DeleteLocalRef(buffer_class);
+    }
 
     if( src == nullptr ) {
         env->DeleteLocalRef(buffer_obj);
@@ -458,6 +474,12 @@ static bool copyYuvPlane(JNIEnv *env, jobject plane_obj, uint8_t *dst, int dst_w
         }
     }
 
+    if( src_bytes != nullptr ) {
+        env->ReleaseByteArrayElements(src_array, src_bytes, JNI_ABORT);
+    }
+    if( src_array != nullptr ) {
+        env->DeleteLocalRef(src_array);
+    }
     env->DeleteLocalRef(buffer_obj);
     env->DeleteLocalRef(plane_class);
     return true;
@@ -472,8 +494,24 @@ static bool copyYuvPlaneRotated(JNIEnv *env, jobject plane_obj, uint8_t *dst, in
 
     jobject buffer_obj = env->CallObjectMethod(plane_obj, get_buffer_mid);
     auto *src = reinterpret_cast<uint8_t *>(env->GetDirectBufferAddress(buffer_obj));
+    jbyteArray src_array = nullptr;
+    jbyte *src_bytes = nullptr;
     const int row_stride = env->CallIntMethod(plane_obj, get_row_stride_mid);
     const int pixel_stride = env->CallIntMethod(plane_obj, get_pixel_stride_mid);
+
+    if( src == nullptr ) {
+        jclass buffer_class = env->GetObjectClass(buffer_obj);
+        jmethodID remaining_mid = env->GetMethodID(buffer_class, "remaining", "()I");
+        jmethodID get_mid = env->GetMethodID(buffer_class, "get", "([B)Ljava/nio/ByteBuffer;");
+        const jint remaining = env->CallIntMethod(buffer_obj, remaining_mid);
+        src_array = env->NewByteArray(remaining);
+        if( src_array != nullptr ) {
+            env->CallObjectMethod(buffer_obj, get_mid, src_array);
+            src_bytes = env->GetByteArrayElements(src_array, nullptr);
+            src = reinterpret_cast<uint8_t *>(src_bytes);
+        }
+        env->DeleteLocalRef(buffer_class);
+    }
 
     if( src == nullptr ) {
         env->DeleteLocalRef(buffer_obj);
@@ -491,8 +529,7 @@ static bool copyYuvPlaneRotated(JNIEnv *env, jobject plane_obj, uint8_t *dst, in
             }
         }
     }
-
-    if( normalized_rotation == 180 ) {
+    else if( normalized_rotation == 180 ) {
         for( int y = 0; y < src_height; ++y ) {
             uint8_t *dst_row = dst + (y * dst_stride);
             for( int x = 0; x < src_width; ++x ) {
@@ -528,6 +565,12 @@ static bool copyYuvPlaneRotated(JNIEnv *env, jobject plane_obj, uint8_t *dst, in
         return false;
     }
 
+    if( src_bytes != nullptr ) {
+        env->ReleaseByteArrayElements(src_array, src_bytes, JNI_ABORT);
+    }
+    if( src_array != nullptr ) {
+        env->DeleteLocalRef(src_array);
+    }
     env->DeleteLocalRef(buffer_obj);
     env->DeleteLocalRef(plane_class);
     return true;
