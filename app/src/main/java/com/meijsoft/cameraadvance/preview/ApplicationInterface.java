@@ -11,6 +11,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.location.Location;
 import android.net.Uri;
+import android.media.Image;
 import android.os.Build;
 import android.util.Log;
 import android.util.Pair;
@@ -269,6 +270,7 @@ public interface ApplicationInterface {
     // callbacks
     void onDrawPreview(Canvas canvas);
     boolean onPictureTaken(byte [] data, Date current_date);
+    boolean onYuvPictureTaken(Image image, Date current_date, int rotation);
     boolean onBurstPictureTaken(List<byte []> images, Date current_date);
     boolean onRawPictureTaken(RawImage raw_image, Date current_date);
     boolean onRawBurstPictureTaken(List<RawImage> raw_images, Date current_date);

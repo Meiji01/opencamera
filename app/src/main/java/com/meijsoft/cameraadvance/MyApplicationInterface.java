@@ -1,9 +1,12 @@
 package com.meijsoft.cameraadvance;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,6 +29,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Insets;
@@ -39,6 +43,7 @@ import android.location.Location;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -3652,6 +3657,112 @@ public class MyApplicationInterface extends BasicApplicationInterface {
 
         if( MyDebug.LOG )
             Log.d(TAG, "onPictureTaken complete, success: " + success);
+
+        return success;
+    }
+
+    @Override
+    public boolean onYuvPictureTaken(Image image, Date current_date, int rotation) {
+        if( MyDebug.LOG )
+            Log.d(TAG, "onYuvPictureTaken");
+
+        boolean success = false;
+        File picFile = null;
+        Uri saveUri = null;
+        boolean use_media_store = false;
+        File tempFile = null;
+        try {
+            StorageUtils storageUtils = main_activity.getStorageUtils();
+
+            if( isImageCaptureIntent() ) {
+                Bundle myExtras = main_activity.getIntent().getExtras();
+                if( myExtras != null ) {
+                    saveUri = myExtras.getParcelable(MediaStore.EXTRA_OUTPUT);
+                }
+            }
+            else if( storageUtils.isUsingSAF() ) {
+                saveUri = storageUtils.createOutputMediaFileSAF(StorageUtils.MEDIA_TYPE_IMAGE, null, "heic", current_date);
+            }
+            else if( MainActivity.useScopedStorage() ) {
+                use_media_store = true;
+                Uri folder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ?
+                        MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY) :
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                ContentValues contentValues = new ContentValues();
+                String picName = storageUtils.createMediaFilename(StorageUtils.MEDIA_TYPE_IMAGE, null, 0, ".heic", current_date);
+                contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, picName);
+                contentValues.put(MediaStore.Images.Media.MIME_TYPE, storageUtils.getImageMimeType("heic"));
+                if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                    contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, storageUtils.getSaveRelativeFolder());
+                    contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
+                }
+                saveUri = main_activity.getContentResolver().insert(folder, contentValues);
+            }
+            else {
+                picFile = storageUtils.createOutputMediaFile(StorageUtils.MEDIA_TYPE_IMAGE, null, "heic", current_date);
+            }
+
+            String outputPath;
+            if( picFile != null ) {
+                outputPath = picFile.getAbsolutePath();
+            }
+            else {
+                tempFile = File.createTempFile("heic_temp", ".heic", main_activity.getCacheDir());
+                outputPath = tempFile.getAbsolutePath();
+            }
+
+            imageSaver.saveYuvImageAsHeic(image, outputPath, null, getSaveImageQualityPref(), rotation);
+
+            if( picFile == null && saveUri != null ) {
+                try (InputStream is = new FileInputStream(outputPath);
+                     OutputStream os = main_activity.getContentResolver().openOutputStream(saveUri)) {
+                    if( os == null ) {
+                        throw new IOException();
+                    }
+                    byte[] buffer = new byte[4096];
+                    int length;
+                    while( (length = is.read(buffer)) > 0 ) {
+                        os.write(buffer, 0, length);
+                    }
+                }
+            }
+
+            if( picFile != null ) {
+                addLastImage(picFile, false);
+            }
+            else if( saveUri != null ) {
+                if( use_media_store ) {
+                    addLastImageMediaStore(saveUri, false);
+                    if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q ) {
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put(MediaStore.Images.Media.IS_PENDING, 0);
+                        main_activity.getContentResolver().update(saveUri, contentValues, null, null);
+                    }
+                }
+                else {
+                    addLastImageSAF(saveUri, false);
+                }
+            }
+
+            Bitmap thumbnail = BitmapFactory.decodeFile(outputPath);
+            if( thumbnail != null ) {
+                updateThumbnail(thumbnail, false);
+            }
+
+            if( tempFile != null && tempFile.exists() ) {
+                tempFile.delete();
+            }
+
+            success = true;
+        }
+        catch(IOException e) {
+            MyDebug.logStackTrace(TAG, "failed to save YUV HEIC image", e);
+        }
+        finally {
+            if( image != null ) {
+                image.close();
+            }
+        }
 
         return success;
     }

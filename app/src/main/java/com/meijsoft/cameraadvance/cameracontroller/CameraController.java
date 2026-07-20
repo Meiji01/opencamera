@@ -13,6 +13,7 @@ import java.util.Set;
 
 import android.graphics.Rect;
 import android.location.Location;
+import android.media.Image;
 import android.media.MediaRecorder;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -306,6 +307,8 @@ public abstract class CameraController {
 
         void onPictureTaken(byte[] data);
 
+        void onYuvPictureTaken(Image image, int rotation);
+
         /** Only called if RAW is requested.
          *  Caller should call raw_image.close() when done with the image.
          */
@@ -520,6 +523,8 @@ public abstract class CameraController {
      * @param want_jpeg_r Whether to enable taking photos in JPEG_R (Ultra HDR) format.
      */
     public abstract void setJpegR(boolean want_jpeg_r);
+
+    public abstract void setHeic(boolean want_heic);
 
     /**
      * @param want_raw       Whether to enable taking photos in RAW (DNG) format.

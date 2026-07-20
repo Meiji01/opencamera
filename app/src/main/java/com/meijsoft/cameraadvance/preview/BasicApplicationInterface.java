@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Canvas;
+import android.media.Image;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
@@ -660,6 +661,16 @@ public abstract class BasicApplicationInterface implements ApplicationInterface 
     @Override
     public void onDrawPreview(Canvas canvas) {
 
+    }
+
+    @Override
+    public boolean onPictureTaken(byte[] data, Date current_date) {
+        return false;
+    }
+
+    @Override
+    public boolean onYuvPictureTaken(Image image, Date current_date, int rotation) {
+        return false;
     }
 
     @Override

@@ -11,6 +11,7 @@ import java.util.List;
 import android.hardware.Camera;
 import android.hardware.Camera.AutoFocusMoveCallback;
 import android.location.Location;
+import android.media.Image;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Handler;
@@ -873,6 +874,11 @@ public class CameraController1 extends CameraController {
 
     @Override
     public void setJpegR(boolean want_jpeg_r) {
+        // not supported for CameraController1
+    }
+
+    @Override
+    public void setHeic(boolean want_heic) {
         // not supported for CameraController1
     }
 
@@ -1839,6 +1845,12 @@ public class CameraController1 extends CameraController {
                 else {
                     picture.onPictureTaken(data);
                     picture.onCompleted();
+                }
+            }
+
+            public void onYuvPictureTaken(Image image, int rotation) {
+                if( image != null ) {
+                    image.close();
                 }
             }
         };

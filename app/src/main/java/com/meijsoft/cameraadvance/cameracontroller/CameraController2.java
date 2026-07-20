@@ -230,6 +230,7 @@ public class CameraController2 extends CameraController {
     //private boolean dummy_capture_hack = true; // test
 
     private boolean want_jpeg_r;
+    private boolean want_heic;
     private boolean want_raw;
     //private boolean want_raw = true;
     private int max_raw_images;
@@ -278,6 +279,10 @@ public class CameraController2 extends CameraController {
     private static final int STATE_WAITING_FAKE_PRECAPTURE_START = 4;
     private static final int STATE_WAITING_FAKE_PRECAPTURE_DONE = 5;
     private int state = STATE_NORMAL;
+
+    private int getRotationDegrees() {
+        return camera_settings.rotation;
+    }
     private long precapture_state_change_time_ms = -1; // time we changed state for precapture modes
     private static final long precapture_start_timeout_c = 2000;
     private static final long precapture_done_timeout_c = 3000;
@@ -1610,50 +1615,64 @@ public class CameraController2 extends CameraController {
             }
             if( MyDebug.LOG )
                 Log.d(TAG, "image timestamp: " + image.getTimestamp());
-            ByteBuffer buffer = image.getPlanes()[0].getBuffer();
-            byte [] bytes = new byte[buffer.remaining()];
-            if( MyDebug.LOG )
-                Log.d(TAG, "read " + bytes.length + " bytes");
-            buffer.get(bytes);
-            image.close();
-
-            synchronized( background_camera_lock ) {
-                n_burst_taken++;
-                if( MyDebug.LOG ) {
-                    Log.d(TAG, "n_burst_taken is now: " + n_burst_taken);
-                    Log.d(TAG, "n_burst: " + n_burst);
-                    Log.d(TAG, "burst_single_request: " + burst_single_request);
-                }
-                if( burst_single_request ) {
-                    pending_burst_images.add(bytes);
+            if( image.getFormat() == ImageFormat.YUV_420_888 ) {
+                synchronized( background_camera_lock ) {
+                    n_burst_taken++;
                     if( MyDebug.LOG ) {
-                        Log.d(TAG, "pending_burst_images size is now: " + pending_burst_images.size());
-                    }
-                    if( pending_burst_images.size() >= n_burst ) { // shouldn't ever be greater, but just in case
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "all burst images available");
-                        if( pending_burst_images.size() > n_burst ) {
-                            Log.e(TAG, "pending_burst_images size " + pending_burst_images.size() + " is greater than n_burst " + n_burst);
-                        }
-                        // take a copy, so that we can clear pending_burst_images
-                        single_burst_complete_images = new ArrayList<>(pending_burst_images);
-                        // continued below after lock...
-                    }
-                    else {
-                        if( MyDebug.LOG )
-                            Log.d(TAG, "number of burst images is now: " + pending_burst_images.size());
-                        call_takePhotoPartial = true;
+                        Log.d(TAG, "n_burst_taken is now: " + n_burst_taken);
+                        Log.d(TAG, "n_burst: " + n_burst);
+                        Log.d(TAG, "burst_single_request: " + burst_single_request);
                     }
                 }
-                // case for burst_single_request==false handled below
+                picture_cb.onYuvPictureTaken(image, getRotationDegrees());
+                image = null;
             }
+            else {
+                ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                byte [] bytes = new byte[buffer.remaining()];
+                if( MyDebug.LOG )
+                    Log.d(TAG, "read " + bytes.length + " bytes");
+                buffer.get(bytes);
+                image.close();
 
-            // need to call without a lock
-            if( single_burst_complete_images != null ) {
-                picture_cb.onBurstPictureTaken(single_burst_complete_images);
-            }
-            else if( !burst_single_request ) {
-                picture_cb.onPictureTaken(bytes);
+                synchronized( background_camera_lock ) {
+                    n_burst_taken++;
+                    if( MyDebug.LOG ) {
+                        Log.d(TAG, "n_burst_taken is now: " + n_burst_taken);
+                        Log.d(TAG, "n_burst: " + n_burst);
+                        Log.d(TAG, "burst_single_request: " + burst_single_request);
+                    }
+                    if( burst_single_request ) {
+                        pending_burst_images.add(bytes);
+                        if( MyDebug.LOG ) {
+                            Log.d(TAG, "pending_burst_images size is now: " + pending_burst_images.size());
+                        }
+                        if( pending_burst_images.size() >= n_burst ) { // shouldn't ever be greater, but just in case
+                            if( MyDebug.LOG )
+                                Log.d(TAG, "all burst images available");
+                            if( pending_burst_images.size() > n_burst ) {
+                                Log.e(TAG, "pending_burst_images size " + pending_burst_images.size() + " is greater than n_burst " + n_burst);
+                            }
+                            // take a copy, so that we can clear pending_burst_images
+                            single_burst_complete_images = new ArrayList<>(pending_burst_images);
+                            // continued below after lock...
+                        }
+                        else {
+                            if( MyDebug.LOG )
+                                Log.d(TAG, "number of burst images is now: " + pending_burst_images.size());
+                            call_takePhotoPartial = true;
+                        }
+                    }
+                    // case for burst_single_request==false handled below
+                }
+
+                // need to call without a lock
+                if( single_burst_complete_images != null ) {
+                    picture_cb.onBurstPictureTaken(single_burst_complete_images);
+                }
+                else if( !burst_single_request ) {
+                    picture_cb.onPictureTaken(bytes);
+                }
             }
 
             synchronized( background_camera_lock ) {
@@ -4657,6 +4676,27 @@ public class CameraController2 extends CameraController {
     }
 
     @Override
+    public void setHeic(boolean want_heic) {
+        if( MyDebug.LOG ) {
+            Log.d(TAG, "setHeic: " + want_heic);
+        }
+        if( camera == null ) {
+            if( MyDebug.LOG )
+                Log.e(TAG, "no camera");
+            return;
+        }
+        if( this.want_heic == want_heic ) {
+            return;
+        }
+        if( hasCaptureSession() ) {
+            if( MyDebug.LOG )
+                Log.e(TAG, "can't set heic when captureSession running!");
+            throw new RuntimeException();
+        }
+        this.want_heic = want_heic;
+    }
+
+    @Override
     public void setRaw(boolean want_raw, int max_raw_images) {
         if( MyDebug.LOG ) {
             Log.d(TAG, "setRaw: " + want_raw);
@@ -4947,8 +4987,8 @@ public class CameraController2 extends CameraController {
             throw new RuntimeException(); // throw as RuntimeException, as this is a programming error
         }
         // maxImages only needs to be 2, as we always read the JPEG data and close the image straight away in the imageReader
-        imageReader = ImageReader.newInstance(picture_width, picture_height, Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE && want_jpeg_r ? ImageFormat.JPEG_R : ImageFormat.JPEG, 2);
-        //imageReader = ImageReader.newInstance(picture_width, picture_height, ImageFormat.YUV_420_888, 2);
+        int picture_format = want_heic ? ImageFormat.YUV_420_888 : (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE && want_jpeg_r ? ImageFormat.JPEG_R : ImageFormat.JPEG);
+        imageReader = ImageReader.newInstance(picture_width, picture_height, picture_format, 2);
         if( MyDebug.LOG ) {
             Log.d(TAG, "created new imageReader: " + imageReader);
             Log.d(TAG, "imageReader surface: " + imageReader.getSurface().toString());

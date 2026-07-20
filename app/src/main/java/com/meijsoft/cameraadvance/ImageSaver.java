@@ -55,6 +55,7 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
@@ -3090,6 +3091,16 @@ public static class Request {
                 muxer.stop();
                 muxer.release();
             }
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    void saveYuvImageAsHeic(Image image, String outputPath, byte[] exifData, int quality, int rotation) throws IOException {
+        if (MyDebug.LOG)
+            Log.d(TAG, "saveYuvImageAsHeic");
+
+        if( !HeifSaver.saveYuvToHeic(image, outputPath, exifData, quality, rotation) ) {
+            throw new IOException();
         }
     }
 

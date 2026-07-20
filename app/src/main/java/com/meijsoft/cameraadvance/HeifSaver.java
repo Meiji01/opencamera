@@ -1,6 +1,7 @@
 package com.meijsoft.cameraadvance;
 
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.util.Log;
 
 public class HeifSaver {
@@ -17,6 +18,7 @@ public class HeifSaver {
     }
 
     public static native boolean saveBitmapAsHeic(Bitmap bitmap, String path, byte[] exifData, int quality);
+    public static native boolean saveYuvToHeic(Image image, String path, byte[] exifData, int quality, int rotation);
     public static native boolean saveRawToHeic(android.media.Image image, String path, int quality);
     public static native boolean saveDngToHeic(String dngPath, String path, int quality, boolean use_auto_wb, boolean use_camera_wb);
 }

@@ -62,6 +62,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.hardware.camera2.CameraExtensionCharacteristics;
 import android.location.Location;
+import android.media.Image;
 import android.media.CamcorderProfile;
 import android.media.MediaRecorder;
 import android.net.Uri;
@@ -2213,6 +2214,8 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
         }
 
         boolean is_extension = camera_controller.isCameraExtension();
+        boolean want_heic = applicationInterface.getImageFormatPref() == ImageSaver.Request.ImageFormat.HEIC;
+        camera_controller.setHeic(want_heic);
         if( this.supports_jpeg_r && !is_extension && applicationInterface.getJpegRPref() ) {
             camera_controller.setJpegR(true);
         }
@@ -6710,6 +6713,20 @@ public class Preview implements SurfaceHolder.Callback, TextureView.SurfaceTextu
                 if( !applicationInterface.onPictureTaken(data, current_date) ) {
                     if( MyDebug.LOG )
                         Log.e(TAG, "applicationInterface.onPictureTaken failed");
+                    success = false;
+                }
+                else {
+                    success = true;
+                }
+            }
+
+            public void onYuvPictureTaken(Image image, int rotation) {
+                if( MyDebug.LOG )
+                    Log.d(TAG, "onYuvPictureTaken");
+                initDate();
+                if( !applicationInterface.onYuvPictureTaken(image, current_date, rotation) ) {
+                    if( MyDebug.LOG )
+                        Log.e(TAG, "applicationInterface.onYuvPictureTaken failed");
                     success = false;
                 }
                 else {
