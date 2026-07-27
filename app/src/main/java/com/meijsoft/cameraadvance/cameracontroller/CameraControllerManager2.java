@@ -28,6 +28,17 @@ public class CameraControllerManager2 extends CameraControllerManager {
     public int getNumberOfCameras() {
         CameraManager manager = (CameraManager)context.getSystemService(Context.CAMERA_SERVICE);
         try {
+
+            //debug enumerat the logical camera ids
+            /*if( MyDebug.LOG ) {
+                String[] ids = manager.getCameraIdList();
+                Log.d(TAG, "logical camera ids: ");
+                for(String id : ids) {
+                    Log.d(TAG, "    " + id);
+                }
+            }*/
+           Log.d(TAG, "getNumberOfCameras: returning " + manager.getCameraIdList().length);
+
             // Return logical camera count (keeps compatibility with other methods that index
             // directly into manager.getCameraIdList()). Use getNumberOfPhysicalCameras()
             // if you need the flattened physical sensor count.

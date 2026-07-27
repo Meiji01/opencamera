@@ -40,6 +40,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
@@ -56,6 +57,7 @@ import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.media.Image;
+import android.media.ImageWriter;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
@@ -3079,7 +3081,8 @@ public static class Request {
 
             encodeVideoFrame(encoder, muxer_info, 0, true);
 
-        } finally {
+        }
+        finally {
             if (inputSurface != null) {
                 inputSurface.release();
             }
@@ -3095,12 +3098,221 @@ public static class Request {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
+    boolean checkHeicEncoderAvailable() {
+        MediaCodecList list = new MediaCodecList(MediaCodecList.ALL_CODECS);
+        for (MediaCodecInfo info : list.getCodecInfos()) {
+            for (String type : info.getSupportedTypes()) {
+                if (type.equalsIgnoreCase("image/heic") || type.equalsIgnoreCase("image/vnd.android.heic")) {
+                    Log.d(TAG, "Native Encoder available: " + info.getName());
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    private String findNativeHeicSurfaceEncoderName() {
+        MediaCodecList list = new MediaCodecList(MediaCodecList.ALL_CODECS);
+        for(MediaCodecInfo info : list.getCodecInfos()) {
+            if( !info.isEncoder() ) {
+                continue;
+            }
+            for(String type : info.getSupportedTypes()) {
+                if( !type.equalsIgnoreCase("image/heic") && !type.equalsIgnoreCase("image/vnd.android.heic") ) {
+                    continue;
+                }
+                MediaCodecInfo.CodecCapabilities capabilities;
+                try {
+                    capabilities = info.getCapabilitiesForType(type);
+                }
+                catch(IllegalArgumentException e) {
+                    continue;
+                }
+                for(int color_format : capabilities.colorFormats) {
+                    if( color_format == MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface ) {
+                        if( MyDebug.LOG )
+                            Log.d(TAG, "Native surface HEIC encoder available: " + info.getName());
+                        return info.getName();
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
     void saveYuvImageAsHeic(Image image, String outputPath, byte[] exifData, int quality, int rotation) throws IOException {
         if (MyDebug.LOG)
             Log.d(TAG, "saveYuvImageAsHeic");
 
+        // Native YUV->HEIC path currently handles only non-rotated output; use libheif when rotation is required.
+        if( rotation == 0 && checkHeicEncoderAvailable() ) {
+            String encoder_name = findNativeHeicSurfaceEncoderName();
+            if( encoder_name != null ) {
+                try {
+                    saveYuvImageAsHeicNative(image, outputPath, quality, rotation, encoder_name);
+                    return;
+                }
+                catch(IOException | RuntimeException e) {
+                    // Fallback to libheif for devices that report HEIC support but fail during encoding.
+                    Log.e(TAG, "native MediaCodec HEIC path failed, falling back to libheif: " + e.getClass().getSimpleName() + ": " + String.valueOf(e.getMessage()), e);
+                }
+            }
+            else if( MyDebug.LOG ) {
+                Log.d(TAG, "checkHeicEncoderAvailable=true but no surface HEIC encoder found, using libheif fallback");
+            }
+        }
+        else if( rotation == 0 && MyDebug.LOG ) {
+            Log.d(TAG, "checkHeicEncoderAvailable=false, using libheif fallback");
+        }
+        else if( rotation != 0 && MyDebug.LOG ) {
+            Log.d(TAG, "skip native MediaCodec HEIC path due to rotation=" + rotation + ", using libheif fallback");
+        }
+
         if( !HeifSaver.saveYuvToHeic(image, outputPath, exifData, quality, rotation) ) {
             throw new IOException();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    private void saveYuvImageAsHeicNative(Image image, String outputPath, int quality, int rotation, String encoder_name) throws IOException {
+        if( image.getFormat() != ImageFormat.YUV_420_888 ) {
+            throw new IOException("input image format is not YUV_420_888: " + image.getFormat());
+        }
+        // Rotation metadata via MediaFormat is not reliably supported by HEIC encoders; defer to fallback path.
+        if( rotation != 0 ) {
+            throw new IOException("native HEIC path does not support rotation: " + rotation);
+        }
+
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        final String mime_type = "image/heic";
+        MediaFormat format = MediaFormat.createVideoFormat(mime_type, width, height);
+        format.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
+        format.setInteger(MediaFormat.KEY_QUALITY, quality);
+        format.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 0);
+
+        if( encoder_name == null ) {
+            throw new IOException("native encoder name is null");
+        }
+
+        MediaCodec encoder = null;
+        Surface inputSurface = null;
+        ImageWriter imageWriter = null;
+        MediaMuxer muxer = null;
+        boolean muxer_started = false;
+        int videoTrackIndex = -1;
+        try {
+            encoder = MediaCodec.createByCodecName(encoder_name);
+            encoder.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
+            inputSurface = encoder.createInputSurface();
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                imageWriter = ImageWriter.newInstance(inputSurface, 2, ImageFormat.YUV_420_888);
+            }
+            encoder.start();
+
+            muxer = new MediaMuxer(outputPath, MediaMuxer.OutputFormat.MUXER_OUTPUT_HEIF);
+
+            Image encoderInputImage = imageWriter.dequeueInputImage();
+            if( encoderInputImage == null ) {
+                throw new IOException("image writer input image is null");
+            }
+            copyYuv420Image(image, encoderInputImage);
+            imageWriter.queueInputImage(encoderInputImage);
+            encoder.signalEndOfInputStream();
+
+            boolean outputDone = false;
+            MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+            final int timeout_us = 10000;
+            while( !outputDone ) {
+                int outputBufferIndex = encoder.dequeueOutputBuffer(bufferInfo, timeout_us);
+                if( outputBufferIndex == MediaCodec.INFO_TRY_AGAIN_LATER ) {
+                    // wait for encoder output
+                }
+                else if( outputBufferIndex == MediaCodec.INFO_OUTPUT_FORMAT_CHANGED ) {
+                    videoTrackIndex = muxer.addTrack(encoder.getOutputFormat());
+                    muxer.start();
+                    muxer_started = true;
+                }
+                else if( outputBufferIndex >= 0 ) {
+                    ByteBuffer outputBuffer = encoder.getOutputBuffer(outputBufferIndex);
+                    if( outputBuffer == null ) {
+                        throw new IOException("encoder output buffer is null");
+                    }
+
+                    if( (bufferInfo.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) != 0 ) {
+                        bufferInfo.size = 0;
+                    }
+
+                    if( bufferInfo.size > 0 ) {
+                        if( !muxer_started || videoTrackIndex < 0 ) {
+                            throw new IOException("muxer not started before sample write");
+                        }
+                        outputBuffer.position(bufferInfo.offset);
+                        outputBuffer.limit(bufferInfo.offset + bufferInfo.size);
+                        muxer.writeSampleData(videoTrackIndex, outputBuffer, bufferInfo);
+                    }
+
+                    outputDone = (bufferInfo.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0;
+                    encoder.releaseOutputBuffer(outputBufferIndex, false);
+                }
+            }
+        }
+        finally {
+            if( imageWriter != null ) {
+                imageWriter.close();
+            }
+            if( inputSurface != null ) {
+                inputSurface.release();
+            }
+            if( encoder != null ) {
+                encoder.stop();
+                encoder.release();
+            }
+            if( muxer != null ) {
+                if( muxer_started ) {
+                    muxer.stop();
+                }
+                muxer.release();
+            }
+        }
+    }
+
+    private static void copyYuv420Image(Image srcImage, Image dstImage) throws IOException {
+        if( srcImage.getFormat() != ImageFormat.YUV_420_888 || dstImage.getFormat() != ImageFormat.YUV_420_888 ) {
+            throw new IOException("YUV plane copy requires YUV_420_888 source and destination");
+        }
+
+        int width = srcImage.getWidth();
+        int height = srcImage.getHeight();
+        Image.Plane[] srcPlanes = srcImage.getPlanes();
+        Image.Plane[] dstPlanes = dstImage.getPlanes();
+        if( srcPlanes.length < 3 || dstPlanes.length < 3 ) {
+            throw new IOException("invalid YUV planes: src=" + srcPlanes.length + " dst=" + dstPlanes.length);
+        }
+
+        copyYuv420Plane(srcPlanes[0], dstPlanes[0], width, height);
+        copyYuv420Plane(srcPlanes[1], dstPlanes[1], width / 2, height / 2);
+        copyYuv420Plane(srcPlanes[2], dstPlanes[2], width / 2, height / 2);
+    }
+
+    private static void copyYuv420Plane(Image.Plane srcPlane, Image.Plane dstPlane, int width, int height) {
+        ByteBuffer srcBuffer = srcPlane.getBuffer();
+        ByteBuffer dstBuffer = dstPlane.getBuffer();
+        int srcRowStride = srcPlane.getRowStride();
+        int srcPixelStride = srcPlane.getPixelStride();
+        int dstRowStride = dstPlane.getRowStride();
+        int dstPixelStride = dstPlane.getPixelStride();
+
+        for(int row=0;row<height;row++) {
+            int srcRowStart = row * srcRowStride;
+            int dstRowStart = row * dstRowStride;
+            for(int col=0;col<width;col++) {
+                byte value = srcBuffer.get(srcRowStart + col * srcPixelStride);
+                dstBuffer.put(dstRowStart + col * dstPixelStride, value);
+            }
         }
     }
 

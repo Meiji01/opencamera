@@ -839,11 +839,6 @@ string preference_raw_focus_bracketing
 string preference_raw_focus_bracketing_summary
 string preference_raw_no
 string preference_raw_only
-string preference_raw_use_auto_wb
-string preference_raw_use_auto_wb_summary
-string preference_raw_use_camera_wb
-string preference_raw_use_camera_wb_summary
-string preference_raw_wb_category
 string preference_raw_yes
 string preference_record_audio
 string preference_record_audio_channels
